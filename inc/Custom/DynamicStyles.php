@@ -34,7 +34,7 @@ class DynamicStyles {
 
 	private function inline_style() {
 
-		$primary_color       = newsfit_option( 'rt_primary_color', '#007BFF' );
+		$primary_color       = newsfit_option( 'rt_primary_color', '#000000' );
 		$primary_dark_color  = newsfit_option( 'rt_primary_dark_color', '#0273EC' );
 		$primary_light_color = newsfit_option( 'rt_primary_light_color', '#479DFA' );
 		$secondary_color     = newsfit_option( 'rt_secondary_color', '#131619' );
