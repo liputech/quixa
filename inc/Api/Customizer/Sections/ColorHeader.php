@@ -2,19 +2,19 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
  * Customizer class
  */
 class ColorHeader extends Customizer {
-	protected string $section_header_color = 'newsfit_header_color_section';
+	protected string $section_header_color = 'quixa_header_color_section';
 
 	/**
 	 * Register controls
@@ -25,8 +25,8 @@ class ColorHeader extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_header_color,
 			'panel'       => 'rt_color_panel',
-			'title'       => __( 'Header Colors', 'newsfit' ),
-			'description' => __( 'Newsfit Header Color Section', 'newsfit' ),
+			'title'       => __( 'Header Colors', 'quixa' ),
+			'description' => __( 'Quixa Header Color Section', 'quixa' ),
 			'priority'    => 4
 		] );
 
@@ -39,51 +39,51 @@ class ColorHeader extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_header_color_controls', [
+		return apply_filters( 'quixa_header_color_controls', [
 
 			'rt_menu_heading1' => [
 				'type'  => 'heading',
-				'label' => __( 'Default Menu', 'newsfit' ),
+				'label' => __( 'Default Menu', 'quixa' ),
 			],
 
 			'rt_menu_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Menu Color', 'newsfit' ),
+				'label' => __( 'Menu Color', 'quixa' ),
 			],
 
 			'rt_menu_active_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Menu Hover & Active Color', 'newsfit' ),
+				'label' => __( 'Menu Hover & Active Color', 'quixa' ),
 			],
 
 			'rt_menu_bg_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Menu Background Color', 'newsfit' ),
+				'label' => __( 'Menu Background Color', 'quixa' ),
 			],
 
 			'rt_menu_heading2' => [
 				'type'  => 'heading',
-				'label' => __( 'Transparent Menu', 'newsfit' ),
+				'label' => __( 'Transparent Menu', 'quixa' ),
 			],
 
 			'rt_tr_menu_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'TR Menu Color', 'newsfit' ),
+				'label' => __( 'TR Menu Color', 'quixa' ),
 			],
 
 			'rt_tr_menu_active_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'TR Menu Hover & Active Color', 'newsfit' ),
+				'label' => __( 'TR Menu Hover & Active Color', 'quixa' ),
 			],
 
 			'rt_menu_heading4' => [
 				'type'  => 'heading',
-				'label' => __( 'Others Style', 'newsfit' ),
+				'label' => __( 'Others Style', 'quixa' ),
 			],
 
 			'rt_menu_border_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Menu Border Color', 'newsfit' ),
+				'label' => __( 'Menu Border Color', 'quixa' ),
 			],
 
 

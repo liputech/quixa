@@ -1,7 +1,7 @@
 /* Main Navigation
 ***************************/
 
-.newsfit-navigation {
+.quixa-navigation {
 	flex: 1;
 	display: flex;
 	align-items: center;
@@ -12,12 +12,12 @@
 	}
 
 	.main-header-section & {
-		@media (max-width: 900px) {
+		@media (max-width: 1024px) {
 			display: none;
 		}
 	}
 
-	ul.newsfit-navbar {
+	ul.quixa-navbar {
 		padding: 0;
 		margin: 0;
 	}
@@ -29,18 +29,19 @@
 	}
 
 	ul li a {
-		text-decoration: none;
+		font-size: 16px;
+		font-weight: 600;
 		line-height: 22px;
-		font-weight: 500;
-		transition: all 0.3s ease-out 0s;
 		color: $title_color;
-		padding: 32px 16px;
+		text-decoration: none;
 		text-transform: capitalize;
+		padding: 32px 16px;
 		position: relative;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		gap: 5px;
+		transition: all 0.3s ease-out 0s;
 
 		@media (max-width: 1199px) {
 			padding: 4px 10px;
@@ -218,7 +219,7 @@
 }
 
 //Navigation offset change if it try to cross the body width
-.newsfit-navbar li > .dropdown-menu li {
+.quixa-navbar li > .dropdown-menu li {
 	&.dropdown-inverse .dropdown-menu {
 		left: auto;
 		right: 100%;

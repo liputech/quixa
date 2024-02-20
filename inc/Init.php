@@ -5,12 +5,12 @@
  * Every function, hook and action is properly divided and organized inside related folders and files
  * Use the file `config/custom/custom.php` to write your custom functions
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit;
+namespace RT\Quixa;
 
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Traits\SingletonTraits;
 
 final class Init {
 

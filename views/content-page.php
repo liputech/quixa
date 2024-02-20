@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package newsfit
+ * @package quixa
  */
 
 ?>
@@ -20,7 +20,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'newsfit' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'quixa' ),
 				'after'  => '</div>',
 			)
 		);

@@ -1,8 +1,8 @@
 <?php
 
-namespace RT\Newsfit\Options;
+namespace RT\Quixa\Options;
 
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Traits\SingletonTraits;
 
 class Layouts {
 
@@ -41,48 +41,56 @@ class Layouts {
 					$this->type = 'page';
 			}
 
-			Opt::$layout         = $this->check_meta_and_layout_value( 'layout', false, true );
-			Opt::$header_style   = $this->check_meta_and_layout_value( 'header_style', false, true );
-			Opt::$sidebar        = $this->check_meta_and_layout_value( 'sidebar', false, true );
-			Opt::$header_width   = $this->check_meta_and_layout_value( 'header_width' );
-			Opt::$menu_alignment = $this->check_meta_and_layout_value( 'menu_alignment' );
-			Opt::$padding_top    = $this->check_meta_and_layout_value( 'padding_top' );
-			Opt::$padding_bottom = $this->check_meta_and_layout_value( 'padding_bottom' );
-			Opt::$banner_image   = $this->check_meta_and_layout_value( 'banner_image', false, true );
-			Opt::$banner_height  = $this->check_meta_and_layout_value( 'banner_height', false, true );
-			Opt::$footer_style   = $this->check_meta_and_layout_value( 'footer_style', false, true );
-			Opt::$footer_schema  = $this->check_meta_and_layout_value( 'footer_schema', false, true );
-			Opt::$has_top_bar    = $this->check_meta_and_layout_value( 'top_bar', true, true );
-			Opt::$has_tr_header  = $this->check_meta_and_layout_value( 'tr_header', true, true );
-			Opt::$has_breadcrumb = $this->check_meta_and_layout_value( 'breadcrumb', true, true );
-			Opt::$has_banner     = $this->check_meta_and_layout_value( 'banner', true, true );
+			Opt::$layout           = $this->check_meta_and_layout_value( 'layout', false, true );
+			Opt::$topbar_style     = $this->check_meta_and_layout_value( 'topbar_style', false, true );
+			Opt::$header_style     = $this->check_meta_and_layout_value( 'header_style', false, true );
+			Opt::$sidebar          = $this->check_meta_and_layout_value( 'sidebar', false, true );
+			Opt::$header_width     = $this->check_meta_and_layout_value( 'header_width' );
+			Opt::$menu_alignment   = $this->check_meta_and_layout_value( 'menu_alignment' );
+			Opt::$padding_top      = $this->check_meta_and_layout_value( 'padding_top' );
+			Opt::$padding_bottom   = $this->check_meta_and_layout_value( 'padding_bottom' );
+			Opt::$banner_style     = $this->check_meta_and_layout_value( 'banner_style', false, true );
+			Opt::$banner_image     = $this->check_meta_and_layout_value( 'banner_image', false, true );
+			Opt::$banner_height    = $this->check_meta_and_layout_value( 'banner_height', false, true );
+			Opt::$footer_style     = $this->check_meta_and_layout_value( 'footer_style', false, true );
+			Opt::$footer_schema    = $this->check_meta_and_layout_value( 'footer_schema', false, true );
+			Opt::$has_top_bar      = $this->check_meta_and_layout_value( 'top_bar', true, true );
+			Opt::$has_tr_header    = $this->check_meta_and_layout_value( 'tr_header', true, true );
+			Opt::$breadcrumb_title = $this->check_meta_and_layout_value( 'breadcrumb_title', true, true );
+			Opt::$has_breadcrumb   = $this->check_meta_and_layout_value( 'breadcrumb', true, true );
+			Opt::$has_banner       = $this->check_meta_and_layout_value( 'banner', true, true );
 
 
 			Opt::$single_style = $this->check_meta_option_value( 'single_post_style' );
 
 		} // Blog and Archive
-		elseif ( is_home() || is_archive() || is_search() ) {
+		elseif ( is_home() || is_archive() || is_search() || is_404() ) {
 			if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 				$this->type = 'woocommerce_archive';
+			} elseif ( is_404() ) {
+				$this->type = 'error';
 			} else {
 				$this->type = 'blog';
 			}
 
-			Opt::$layout         = $this->check_option_value( 'layout', false, true );
-			Opt::$header_style   = $this->check_option_value( 'header_style', false, true );
-			Opt::$sidebar        = $this->check_option_value( 'sidebar', false, true );
-			Opt::$header_width   = $this->check_option_value( 'header_width' );
-			Opt::$menu_alignment = $this->check_option_value( 'menu_alignment' );
-			Opt::$padding_top    = $this->check_option_value( 'padding_top' );
-			Opt::$padding_bottom = $this->check_option_value( 'padding_bottom' );
-			Opt::$banner_image   = $this->check_option_value( 'banner_image', false, true );
-			Opt::$banner_height  = $this->check_option_value( 'banner_height', false, true );
-			Opt::$footer_style   = $this->check_option_value( 'footer_style', false, true );
-			Opt::$footer_schema  = $this->check_option_value( 'footer_schema', false, true );
-			Opt::$has_top_bar    = $this->check_option_value( 'top_bar', true, true );
-			Opt::$has_tr_header  = $this->check_option_value( 'tr_header', true, true );
-			Opt::$has_breadcrumb = $this->check_option_value( 'breadcrumb', true, true );
-			Opt::$has_banner     = $this->check_option_value( 'banner', true, true );
+			Opt::$layout           = $this->check_option_value( 'layout', false, true );
+			Opt::$topbar_style     = $this->check_option_value( 'topbar_style', false, true );
+			Opt::$header_style     = $this->check_option_value( 'header_style', false, true );
+			Opt::$sidebar          = $this->check_option_value( 'sidebar', false, true );
+			Opt::$header_width     = $this->check_option_value( 'header_width' );
+			Opt::$menu_alignment   = $this->check_option_value( 'menu_alignment' );
+			Opt::$padding_top      = $this->check_option_value( 'padding_top' );
+			Opt::$padding_bottom   = $this->check_option_value( 'padding_bottom' );
+			Opt::$banner_style     = $this->check_option_value( 'banner_style', false, true );
+			Opt::$banner_image     = $this->check_option_value( 'banner_image', false, true );
+			Opt::$banner_height    = $this->check_option_value( 'banner_height', false, true );
+			Opt::$footer_style     = $this->check_option_value( 'footer_style', false, true );
+			Opt::$footer_schema    = $this->check_option_value( 'footer_schema', false, true );
+			Opt::$has_top_bar      = $this->check_option_value( 'top_bar', true, true );
+			Opt::$has_tr_header    = $this->check_option_value( 'tr_header', true, true );
+			Opt::$breadcrumb_title = $this->check_option_value( 'breadcrumb_title', true, true );
+			Opt::$has_breadcrumb   = $this->check_option_value( 'breadcrumb', true, true );
+			Opt::$has_banner       = $this->check_option_value( 'banner', true, true );
 		}
 	}
 

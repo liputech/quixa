@@ -2,12 +2,12 @@
 /**
  * Build Gutenberg Blocks
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api;
+namespace RT\Quixa\Api;
 
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Traits\SingletonTraits;
 
 /**
  * Customizer class
@@ -43,27 +43,27 @@ class Gutenberg {
 
 		add_theme_support( 'editor-color-palette', [
 			[
-				'name'  => __( 'White', 'newsfit' ),
+				'name'  => __( 'White', 'quixa' ),
 				'slug'  => 'white',
 				'color' => '#ffffff',
 			],
 			[
-				'name'  => __( 'Black', 'newsfit' ),
+				'name'  => __( 'Black', 'quixa' ),
 				'slug'  => 'black',
 				'color' => '#333333',
 			],
 			[
-				'name'  => __( 'Gold', 'newsfit' ),
+				'name'  => __( 'Gold', 'quixa' ),
 				'slug'  => 'gold',
 				'color' => '#FCBB6D',
 			],
 			[
-				'name'  => __( 'Pink', 'newsfit' ),
+				'name'  => __( 'Pink', 'quixa' ),
 				'slug'  => 'pink',
 				'color' => '#FF4444',
 			],
 			[
-				'name'  => __( 'Grey', 'newsfit' ),
+				'name'  => __( 'Grey', 'quixa' ),
 				'slug'  => 'grey',
 				'color' => '#b8c2cc',
 			],

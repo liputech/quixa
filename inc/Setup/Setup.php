@@ -1,8 +1,8 @@
 <?php
 
-namespace RT\Newsfit\Setup;
+namespace RT\Quixa\Setup;
 
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Traits\SingletonTraits;
 
 class Setup {
 	use SingletonTraits;
@@ -14,7 +14,7 @@ class Setup {
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
-		add_filter( 'upload_mimes', [ $this, 'newsfit_mime_types' ] );
+		add_filter( 'upload_mimes', [ $this, 'quixa_mime_types' ] );
 	}
 
 
@@ -23,7 +23,7 @@ class Setup {
 	 * @return void
 	 */
 	public function setup() {
-		load_theme_textdomain( 'newsfit', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'quixa', get_template_directory() . '/languages' );
 
 		$this->add_theme_support();
 		$this->add_image_size();
@@ -36,10 +36,10 @@ class Setup {
 	private function add_image_size() {
 		$sizes = [
 			'rdtheme-1200-650' => [ 1200, 650, true ],
-			'newsfit-500-500'  => [ 500, 500, true ],
+			'quixa-500-500'  => [ 500, 500, true ],
 		];
 
-		$sizes = apply_filters( 'newsfit_image_size', $sizes );
+		$sizes = apply_filters( 'quixa_image_size', $sizes );
 
 		foreach ( $sizes as $size => $value ) {
 			add_image_size( $size, $value[0], $value[1], $value[2] );
@@ -102,8 +102,8 @@ class Setup {
 	 *
 	 * @return mixed
 	 */
-	function newsfit_mime_types( $mimes ) {
-		if ( ! newsfit_option( 'rt_svg_enable' ) ) {
+	function quixa_mime_types( $mimes ) {
+		if ( ! quixa_option( 'rt_svg_enable' ) ) {
 			return $mimes;
 		}
 		$mimes['svg'] = 'image/svg+xml';

@@ -17,6 +17,7 @@
 		}
 	}
 
+
 	.site-header {
 		position: absolute;
 		width: 100%;
@@ -27,20 +28,8 @@
 			background: none !important;
 		}
 
-		.site-branding a,
-		.newsfit-navigation *,
-		.newsfit-navigation ul li a {
-			color: $transparent_menu_color;
-		}
 
-
-		.newsfit-navigation ul li.current-menu-item > a,
-		.newsfit-navigation ul li.current-menu-ancestor > a {
-			color: #ffffff;
-		}
-
-
-		.newsfit-navigation ul li a svg {
+		.quixa-navigation ul li a svg {
 			opacity: 0.7;
 		}
 
@@ -48,18 +37,18 @@
 			background-color: $transparent_menu_color !important;
 		}
 
-		.newsfit-topbar .caret svg,
+		.quixa-topbar .caret svg,
 		.main-header-section .caret svg {
 			fill: $white_color;
 			width: 9px;
 			height: 9px;
 		}
 
-		.newsfit-navigation ul > li > ul {
+		.quixa-navigation ul > li > ul {
 			background-color: rgba($title_rgb, 0.9);
 		}
 
-		.newsfit-navigation ul > li > ul li > a:hover {
+		.quixa-navigation ul > li > ul li > a:hover {
 			background-color: rgba(255, 255, 255, .2);
 		}
 
@@ -71,9 +60,12 @@
 			background: $transparent_menu_color;
 		}
 	}
-
-	.rt-sticky {
-		background: rgba($title_rgb, 0.94);
+}
+.quixa-banner-1 {
+	#rt-site-logo {
+		display: none;
 	}
-
+	#rt-mobile-logo {
+		display: block;
+	}
 }

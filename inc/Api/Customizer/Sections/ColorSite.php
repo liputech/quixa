@@ -2,19 +2,19 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
  * Customizer class
  */
 class ColorSite extends Customizer {
-	protected string $section_site_color = 'newsfit_site_color_section';
+	protected string $section_site_color = 'quixa_site_color_section';
 
 	/**
 	 * Register controls
@@ -24,8 +24,8 @@ class ColorSite extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_site_color,
 			'panel'       => 'rt_color_panel',
-			'title'       => __( 'Site Colors', 'newsfit' ),
-			'description' => __( 'Newsfit Site Color Section', 'newsfit' ),
+			'title'       => __( 'Site Colors', 'quixa' ),
+			'description' => __( 'Quixa Site Color Section', 'quixa' ),
 			'priority'    => 2
 		] );
 		Customize::add_controls( $this->section_site_color, $this->get_controls() );
@@ -37,69 +37,63 @@ class ColorSite extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_site_color_controls', [
+		return apply_filters( 'quixa_site_color_controls', [
 
 			'rt_site_color1'   => [
 				'type'  => 'heading',
-				'label' => __( 'Site Ascent Color', 'newsfit' ),
+				'label' => __( 'Site Ascent Color', 'quixa' ),
 			],
 			'rt_primary_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Primary Color', 'newsfit' ),
+				'label'   => __( 'Primary Color', 'quixa' ),
 			],
-
-			'rt_primary_dark_color' => [
-				'type'    => 'color',
-				'label'   => __( 'Primary Dark Color', 'newsfit' ),
-			],
-
-			'rt_primary_light_color' => [
-				'type'    => 'color',
-				'label'   => __( 'Primary Light Color', 'newsfit' ),
-			],
-
 			'rt_color_separator2' => [
 				'type' => 'separator',
 			],
 
 			'rt_secondary_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Secondary Color', 'newsfit' ),
+				'label'   => __( 'Secondary Color', 'quixa' ),
 			],
 
 			'rt_site_color2' => [
 				'type'  => 'heading',
-				'label' => __( 'Others Color', 'newsfit' ),
+				'label' => __( 'Others Color', 'quixa' ),
 			],
 
 			'rt_body_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Body Color', 'newsfit' ),
+				'label'   => __( 'Body Color', 'quixa' ),
+			],
+
+			'rt_body_bg_color' => [
+				'type'    => 'color',
+				'label'   => __( 'Body BG Color', 'quixa' ),
 			],
 
 			'rt_title_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Title Color', 'newsfit' ),
+				'label'   => __( 'Title Color', 'quixa' ),
 			],
 
 			'rt_meta_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Meta Color', 'newsfit' ),
+				'label'   => __( 'Meta Color', 'quixa' ),
 			],
 
 			'rt_meta_light' => [
 				'type'    => 'color',
-				'label'   => __( 'Meta Light', 'newsfit' ),
+				'label'   => __( 'Meta Light', 'quixa' ),
+			],
+
+			'rt_gray10_color' => [
+				'type'    => 'color',
+				'label'   => __( 'Gray # 1', 'quixa' ),
 			],
 
 			'rt_gray20_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Gray # 1', 'newsfit' ),
-			],
-
-			'rt_gray40_color' => [
-				'type'    => 'color',
-				'label'   => __( 'Gray # 2', 'newsfit' ),
+				'label'   => __( 'Gray # 2', 'quixa' ),
 			],
 
 		] );

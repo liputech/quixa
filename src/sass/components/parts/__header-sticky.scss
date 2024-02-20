@@ -28,3 +28,21 @@ body.admin-bar .rt-sticky {
 		top: 0;
 	}
 }
+.has-sticky-header {
+	.rt-sticky {
+		#rt-site-logo {
+			display: none;
+		}
+		#rt-mobile-logo {
+			display: block;
+		}
+		.menu-icon-wrapper {
+			.ham_burger {
+				.line {
+					stroke: $white_color;
+				}
+			}
+		}
+	}
+
+}

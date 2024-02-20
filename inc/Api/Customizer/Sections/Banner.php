@@ -2,13 +2,13 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
-use RT\Newsfit\Helpers\Fns;
+use RT\Quixa\Api\Customizer;
+use RT\Quixa\Helpers\Fns;
 use RTFramework\Customize;
 
 /**
@@ -16,7 +16,7 @@ use RTFramework\Customize;
  */
 class Banner extends Customizer {
 
-	protected string $section_breadcrumb = 'newsfit_breadcrumb_section';
+	protected string $section_breadcrumb = 'quixa_breadcrumb_section';
 
 	/**
 	 * Register controls
@@ -25,8 +25,8 @@ class Banner extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'          => $this->section_breadcrumb,
-			'title'       => __( 'Banner - Breadcrumb', 'newsfit' ),
-			'description' => __( 'Newsfit Banner Section', 'newsfit' ),
+			'title'       => __( 'Banner - Breadcrumb', 'quixa' ),
+			'description' => __( 'Quixa Banner Section', 'quixa' ),
 			'priority'    => 23
 		] );
 
@@ -39,27 +39,27 @@ class Banner extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_topbar_controls', [
+		return apply_filters( 'quixa_topbar_controls', [
 
 			'rt_banner' => [
 				'type'    => 'switch',
-				'label'   => __( 'Banner Visibility', 'newsfit' ),
+				'label'   => __( 'Banner Visibility', 'quixa' ),
 				'default' => 0
 			],
 
 			'rt_banner_style' => [
 				'type'      => 'image_select',
-				'label'     => __( 'Breadcrumb Style', 'newsfit' ),
+				'label'     => __( 'Breadcrumb Style', 'quixa' ),
 				'default'   => '1',
-				'choices'   => Fns::image_placeholder( 'menu', 1 ),
+				'choices'   => Fns::image_placeholder( 'banner', 2 ),
 				'condition' => [ 'rt_banner' ]
 			],
 
 			'rt_banner_image' => [
 				'type'         => 'image',
-				'label'        => __( 'Banner Image', 'newsfit' ),
-				'description'  => __( 'Upload Banner Image', 'newsfit' ),
-				'button_label' => __( 'Banner', 'newsfit' ),
+				'label'        => __( 'Banner Image', 'quixa' ),
+				'description'  => __( 'Upload Banner Image', 'quixa' ),
+				'button_label' => __( 'Banner', 'quixa' ),
 				'condition'    => [ 'rt_banner' ]
 			],
 
@@ -78,28 +78,35 @@ class Banner extends Customizer {
 
 			'rt_banner_height' => [
 				'type'        => 'number',
-				'label'       => __( 'Banner Height (px)', 'newsfit' ),
-				'description' => __( 'Height can be differ for transparent header.', 'newsfit' ),
+				'label'       => __( 'Banner Height (px)', 'quixa' ),
+				'description' => __( 'Height can be differ for transparent header.', 'quixa' ),
 				'default'     => '',
 				'condition'   => [ 'rt_banner' ]
 			],
 
 			'rt_banner1' => [
 				'type'      => 'heading',
-				'label'     => __( 'Breadcrumb Settings', 'newsfit' ),
+				'label'     => __( 'Breadcrumb Settings', 'quixa' ),
+				'condition' => [ 'rt_banner' ]
+			],
+
+			'rt_breadcrumb_title' => [
+				'type'      => 'switch',
+				'label'     => __( 'Banner Title', 'quixa' ),
+				'default'   => 1,
 				'condition' => [ 'rt_banner' ]
 			],
 
 			'rt_breadcrumb' => [
 				'type'      => 'switch',
-				'label'     => __( 'Banner Content (Breadcrumb) Visibility', 'newsfit' ),
+				'label'     => __( 'Banner Breadcrumb', 'quixa' ),
 				'default'   => 1,
 				'condition' => [ 'rt_banner' ]
 			],
 
 			'rt_breadcrumb_border' => [
 				'type'      => 'switch',
-				'label'     => __( 'Breadcrumb Border', 'newsfit' ),
+				'label'     => __( 'Breadcrumb Border', 'quixa' ),
 				'default'   => 1,
 				'condition' => [ 'rt_banner' ]
 			],

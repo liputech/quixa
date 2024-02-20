@@ -1,8 +1,8 @@
 //Grid
 $columns: 12;
-$gutter: 30px;
+$gutter: 24px;
 $spacing: 20;
-$container_width: 1240px;
+$container_width: var(--rt-container-width, 1240px);
 
 //Spacing
 $paddings: ('pt': 'padding-top', 'pr': 'padding-right', 'pb': 'padding-bottom', 'pl': 'padding-left');
@@ -23,15 +23,14 @@ $breakpoints: ('sm': $sm, 'md': $md, 'lg': $lg, 'xl': $xl);
 //Colours
 
 $primary_color: var(--rt-primary-color);
-$primary_dark_color: var(--rt-primary-dark);
-$primary_light_color: var(--rt-primary-light);
 $secondary_color: var(--rt-secondary-color);
 $body_color: var(--rt-body-color);
+$body_bg_color: var(--rt-body-bg-color);
 $title_color: var(--rt-title-color);
 $meta_color: var(--rt-meta-color);
 $meta_light: var(--rt-meta-light);
+$gray10: var(--rt-gray10);
 $gray20: var(--rt-gray20);
-$gray40: var(--rt-gray40);
 $footer_bg: #F7F7F7;
 
 $white_color: #FFFFFF;
@@ -50,13 +49,11 @@ $transparent_menu_color: rgba(255, 255, 255, 0.9);
 
 $colors: (
 	'primary': $primary_color,
-	'primary-dark': $primary_dark_color,
-	'primary-light': $primary_light_color,
 	'secondary': $secondary_color,
 	'body': $body_color,
 	'title': $title_color,
 	'meta': $meta_color,
-	'grey1': $gray40,
+	'grey1': $gray10,
 	'grey2': $gray20,
 	'white': $white_color,
 	'black': $black_color,
@@ -64,11 +61,11 @@ $colors: (
 
 //Typography
 
-$base_font: var(--rt-body-font, 'IBM Plex Sans'), sans-serif;
-$heading_font: var(--rt-heading-font, 'IBM Plex Sans'), sans-serif;
-$menu_font: var(--rt-menu-font, 'IBM Plex Sans'), sans-serif;
+$base_font: var(--rt-body-font, 'Urbanist'), sans-serif;
+$heading_font: var(--rt-heading-font, 'Urbanist'), sans-serif;
+$menu_font: var(--rt-menu-font, 'Urbanist'), sans-serif;
 
-$base_fs: 16px;
+$base_fs: 17px;
 
 //Animations
 $time: 320ms;

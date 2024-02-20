@@ -2,13 +2,13 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
-use RT\Newsfit\Helpers\Fns;
+use RT\Quixa\Api\Customizer;
+use RT\Quixa\Helpers\Fns;
 use RTFramework\Customize;
 
 /**
@@ -16,7 +16,7 @@ use RTFramework\Customize;
  */
 class Socials extends Customizer {
 
-	protected string $section_socials = 'newsfit_socials_section';
+	protected string $section_socials = 'quixa_socials_section';
 
 	/**
 	 * Register controls
@@ -26,8 +26,8 @@ class Socials extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_socials,
 			'panel'       => 'rt_contact_social_panel',
-			'title'       => __( 'Socials Information', 'newsfit' ),
-			'description' => __( 'Newsfit Socials Section', 'newsfit' ),
+			'title'       => __( 'Socials Information', 'quixa' ),
+			'description' => __( 'Quixa Socials Section', 'quixa' ),
 			'priority'    => 2
 		] );
 
@@ -54,6 +54,6 @@ class Socials extends Customizer {
 			$count ++;
 		}
 
-		return apply_filters( 'newsfit_socials_controls', $social_icon_list );
+		return apply_filters( 'quixa_socials_controls', $social_icon_list );
 	}
 }

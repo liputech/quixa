@@ -6,11 +6,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package newsfit
+ * @package quixa
  */
 
-use RT\Newsfit\Options\Opt;
-use RT\Newsfit\Helpers\Fns;
+use RT\Quixa\Options\Opt;
+use RT\Quixa\Helpers\Fns;
 
 $classes = Fns::class_list([
 	'site-footer',

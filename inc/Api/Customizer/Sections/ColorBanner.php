@@ -2,12 +2,12 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
@@ -15,7 +15,7 @@ use RTFramework\Customize;
  */
 class ColorBanner extends Customizer {
 
-	protected string $section_banner_color = 'newsfit_banner_color_section';
+	protected string $section_banner_color = 'quixa_banner_color_section';
 
 	/**
 	 * Register controls
@@ -25,8 +25,8 @@ class ColorBanner extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_banner_color,
 			'panel'       => 'rt_color_panel',
-			'title'       => __( 'Banner / Breadcrumb Colors', 'newsfit' ),
-			'description' => __( 'Newsfit Banner Color Section', 'newsfit' ),
+			'title'       => __( 'Banner / Breadcrumb Colors', 'quixa' ),
+			'description' => __( 'Quixa Banner Color Section', 'quixa' ),
 			'priority'    => 6
 		] );
 
@@ -39,21 +39,26 @@ class ColorBanner extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_site_color_controls', [
+		return apply_filters( 'quixa_site_color_controls', [
 
 			'rt_banner_bg' => [
 				'type'    => 'color',
-				'label'   => __( 'Banner Background', 'newsfit' ),
+				'label'   => __( 'Banner Background', 'quixa' ),
 			],
 
 			'rt_breadcrumb_color' => [
 				'type'    => 'color',
-				'label'   => __( 'Link Color', 'newsfit' ),
+				'label'   => __( 'Link Color', 'quixa' ),
 			],
 
 			'rt_breadcrumb_active' => [
 				'type'    => 'color',
-				'label'   => __( 'Link Active Color', 'newsfit' ),
+				'label'   => __( 'Link Active Color', 'quixa' ),
+			],
+
+			'rt_breadcrumb_title_color' => [
+				'type'    => 'color',
+				'label'   => __( 'Title Color', 'quixa' ),
 			],
 
 

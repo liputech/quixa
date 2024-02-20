@@ -54,11 +54,11 @@ if (mix.inProduction()) {
 	fs.ensureDir(languages, function (err) {
 		if (err) return console.error(err); // if file or folder does not exist
 		wpPot({
-			package: "Newsfit Theme",
+			package: "Quixa Theme",
 			bugReport: "",
 			src: "**/*.php",
-			domain: "newsfit",
-			destFile: "languages/newsfit.pot",
+			domain: "quixa",
+			destFile: "languages/quixa.pot",
 		});
 	});
 }

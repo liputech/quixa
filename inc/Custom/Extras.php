@@ -1,9 +1,9 @@
 <?php
 
-namespace RT\Newsfit\Custom;
+namespace RT\Quixa\Custom;
 
-use RT\Newsfit\Traits\SingletonTraits;
-use RT\Newsfit\Options\Opt;
+use RT\Quixa\Traits\SingletonTraits;
+use RT\Quixa\Options\Opt;
 
 /**
  * Extras.
@@ -31,8 +31,9 @@ class Extras {
 
 		// Adds a class of group-blog to blogs with more than 1 published author.
 
-		$classes[] = 'newsfit-header-' . Opt::$header_style;
-		$classes[] = 'newsfit-footer-' . Opt::$footer_style;
+		$classes[] = 'quixa-header-' . Opt::$header_style;
+		$classes[] = 'quixa-footer-' . Opt::$footer_style;
+		$classes[] = 'quixa-banner-' . Opt::$banner_style;
 
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
@@ -48,7 +49,7 @@ class Extras {
 			$classes[] = 'no-trheader';
 		}
 
-		if ( newsfit_option( 'rt_tr_header_shadow' ) ) {
+		if ( quixa_option( 'rt_tr_header_shadow' ) ) {
 			$classes[] = 'has-menu-shadow';
 		}
 
@@ -62,12 +63,12 @@ class Extras {
 			$classes[] = 'layout-' . Opt::$layout;
 		}
 
-		if ( newsfit_option( 'rt_sticy_header' ) ) {
+		if ( quixa_option( 'rt_sticy_header' ) ) {
 			$classes[] = 'has-sticky-header';
 		}
 
 		if ( is_single() && Opt::$single_style ) {
-			$classes[] = 'newsfit-single-' . Opt::$single_style;
+			$classes[] = 'quixa-single-' . Opt::$single_style;
 		}
 
 		return $classes;
@@ -78,18 +79,18 @@ class Extras {
 	 */
 	function menu_customize( $item_id, $item ) {
 		//Mega menu
-		$_mega_menu = get_post_meta( $item_id, 'newsfit_mega_menu', true );
+		$_mega_menu = get_post_meta( $item_id, 'quixa_mega_menu', true );
 		//Query string
-		$menu_query_string_key = get_post_meta( $item_id, 'newsfit_menu_qs_key', true );
-		$menu_query_string     = get_post_meta( $item_id, 'newsfit_menu_qs', true );
+		$menu_query_string_key = get_post_meta( $item_id, 'quixa_menu_qs_key', true );
+		$menu_query_string     = get_post_meta( $item_id, 'quixa_menu_qs', true );
 		?>
 
 		<?php if ( $item->menu_item_parent < 1 ) : ?>
 			<p class="description mega-menu-wrapper widefat">
-				<label for="newsfit_mega_menu-<?php echo $item_id; ?>" class="widefat">
-					<?php _e( 'Make as Mega Menu', 'newsfit' ); ?><br>
-					<select class="widefat" id="newsfit_mega_menu-<?php echo $item_id; ?>" name="newsfit_mega_menu[<?php echo $item_id; ?>]">
-						<option value=""><?php _e( "Choose Mega Menu", "newsfit" ) ?></option>
+				<label for="quixa_mega_menu-<?php echo $item_id; ?>" class="widefat">
+					<?php _e( 'Make as Mega Menu', 'quixa' ); ?><br>
+					<select class="widefat" id="quixa_mega_menu-<?php echo $item_id; ?>" name="quixa_mega_menu[<?php echo $item_id; ?>]">
+						<option value=""><?php _e( "Choose Mega Menu", "quixa" ) ?></option>
 						<?php
 						for ( $item = 2; $item < 12; $item ++ ) {
 							$menu_item  = $item;
@@ -104,7 +105,7 @@ class Extras {
 							$selected = ( $_mega_menu == $class ) ? ' selected="selected" ' : null;
 							?>
 							<option <?php echo esc_attr( $selected ) ?> value="<?php echo esc_attr( $class ) ?>">
-								<?php printf( __( 'Mega menu - %s Col %s', 'newsfit' ), $menu_item, $label_hide ); ?>
+								<?php printf( __( 'Mega menu - %s Col %s', 'quixa' ), $menu_item, $label_hide ); ?>
 							</option>
 							<?php
 						}
@@ -116,21 +117,21 @@ class Extras {
 
 		<div class="menu-query-string" style="width:100%">
 			<p class="description description-thin">
-				<label for="newsfit-menu-qs-key-<?php echo $item_id; ?>">
-					<?php echo esc_html__( 'Query String Key', 'newsfit' ); ?><br>
+				<label for="quixa-menu-qs-key-<?php echo $item_id; ?>">
+					<?php echo esc_html__( 'Query String Key', 'quixa' ); ?><br>
 					<input type="text"
-						   id="newsfit-menu-qs-key-<?php echo $item_id; ?>"
-						   name="newsfit-menu-qs-key[<?php echo $item_id; ?>]"
+						   id="quixa-menu-qs-key-<?php echo $item_id; ?>"
+						   name="quixa-menu-qs-key[<?php echo $item_id; ?>]"
 						   value="<?php echo esc_html( $menu_query_string_key ); ?>"
 					/>
 				</label>
 			</p>
 			<p class="description description-thin">
-				<label for="newsfit-menu-qs-<?php echo $item_id; ?>">
-					<?php echo esc_html__( 'Query String Value', 'newsfit' ); ?><br>
+				<label for="quixa-menu-qs-<?php echo $item_id; ?>">
+					<?php echo esc_html__( 'Query String Value', 'quixa' ); ?><br>
 					<input type="text"
-						   id="newsfit-menu-qs-<?php echo $item_id; ?>"
-						   name="newsfit-menu-qs[<?php echo $item_id; ?>]"
+						   id="quixa-menu-qs-<?php echo $item_id; ?>"
+						   name="quixa-menu-qs[<?php echo $item_id; ?>]"
 						   value="<?php echo esc_html( $menu_query_string ); ?>"
 					/>
 				</label>
@@ -150,13 +151,13 @@ class Extras {
 	 * @return void
 	 */
 	function menu_update( $menu_id, $menu_item_db_id ) {
-		$_mega_menu         = $_POST['newsfit_mega_menu'][ $menu_item_db_id ] ?? '';
-		$query_string_key   = $_POST['newsfit-menu-qs-key'][ $menu_item_db_id ] ?? '';
-		$query_string_value = $_POST['newsfit-menu-qs'][ $menu_item_db_id ] ?? '';
+		$_mega_menu         = $_POST['quixa_mega_menu'][ $menu_item_db_id ] ?? '';
+		$query_string_key   = $_POST['quixa-menu-qs-key'][ $menu_item_db_id ] ?? '';
+		$query_string_value = $_POST['quixa-menu-qs'][ $menu_item_db_id ] ?? '';
 
-		update_post_meta( $menu_item_db_id, 'newsfit_mega_menu', $_mega_menu );
-		update_post_meta( $menu_item_db_id, 'newsfit_menu_qs_key', $query_string_key );
-		update_post_meta( $menu_item_db_id, 'newsfit_menu_qs', $query_string_value );
+		update_post_meta( $menu_item_db_id, 'quixa_mega_menu', $_mega_menu );
+		update_post_meta( $menu_item_db_id, 'quixa_menu_qs_key', $query_string_key );
+		update_post_meta( $menu_item_db_id, 'quixa_menu_qs', $query_string_value );
 	}
 
 	/**
@@ -170,8 +171,8 @@ class Extras {
 	 */
 	function menu_modify( $items, $menu, $args ) {
 		foreach ( $items as $item ) {
-			$menu_query_string_key = get_post_meta( $item->ID, 'newsfit_menu_qs_key', true );
-			$menu_query_string     = get_post_meta( $item->ID, 'newsfit_menu_qs', true );
+			$menu_query_string_key = get_post_meta( $item->ID, 'quixa_menu_qs_key', true );
+			$menu_query_string     = get_post_meta( $item->ID, 'quixa_menu_qs', true );
 			if ( $menu_query_string ) {
 				$item->url = add_query_arg( $menu_query_string_key, $menu_query_string, $item->url );
 			}
@@ -186,12 +187,12 @@ class Extras {
 	 */
 	public function search_form() {
 		$output = '
-		<form method="get" class="newsfit-search-form" action="' . esc_url( home_url( '/' ) ) . '">
+		<form method="get" class="quixa-search-form" action="' . esc_url( home_url( '/' ) ) . '">
             <div class="search-box">
-				<input type="text" class="form-control" placeholder="' . esc_attr__( 'Search here...', 'newsfit' ) . '" value="' . get_search_query() . '" name="s" />
+				<input type="text" class="form-control" placeholder="' . esc_attr__( 'Search here...', 'quixa' ) . '" value="' . get_search_query() . '" name="s" />
 				<button class="item-btn" type="submit">
-					' . newsfit_get_svg( 'search' ) . '
-					<span class="btn-label">' . esc_html__( "Search", "newsfit" ) . '</span>
+					' . quixa_get_svg( 'search' ) . '
+					<span class="btn-label">' . esc_html__( "Search", "quixa" ) . '</span>
 				</button>
             </div>
 		</form>

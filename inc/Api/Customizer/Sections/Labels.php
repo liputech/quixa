@@ -2,19 +2,19 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
  * Customizer class
  */
 class Labels extends Customizer {
-	protected string $section_labels = 'newsfit_labels_section';
+	protected string $section_labels = 'quixa_labels_section';
 
 	/**
 	 * Register controls
@@ -23,8 +23,8 @@ class Labels extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'          => $this->section_labels,
-			'title'       => __( 'Modify Static Text', 'newsfit' ),
-			'description' => __( 'You can change all static text of the theme.', 'newsfit' ),
+			'title'       => __( 'Modify Static Text', 'quixa' ),
+			'description' => __( 'You can change all static text of the theme.', 'quixa' ),
 			'priority'    => 999
 		] );
 		Customize::add_controls( $this->section_labels, $this->get_controls() );
@@ -36,42 +36,49 @@ class Labels extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_labels_controls', [
+		return apply_filters( 'quixa_labels_controls', [
 
 			'rt_header_labels' => [
 				'type'  => 'heading',
-				'label' => __( 'Header Labels', 'newsfit' ),
+				'label' => __( 'Header Labels', 'quixa' ),
+			],
+
+			'rt_get_login_label' => [
+				'type'        => 'text',
+				'label'       => __( 'Sign In', 'quixa' ),
+				'default'     => __( 'Sign In', 'quixa' ),
+				'description' => __( 'Context: SignIn Button', 'quixa' ),
 			],
 
 			'rt_get_started_label' => [
 				'type'        => 'text',
-				'label'       => __( 'Get Started', 'newsfit' ),
-				'default'     => __( 'Get Started', 'newsfit' ),
-				'description' => __( 'Context: Menu Button', 'newsfit' ),
+				'label'       => __( 'Get Started', 'quixa' ),
+				'default'     => __( 'Get Started', 'quixa' ),
+				'description' => __( 'Context: Menu Button', 'quixa' ),
 			],
 
 			'rt_follow_us_label' => [
 				'type'        => 'text',
-				'label'       => __( 'Follow Us On:', 'newsfit' ),
-				'default'     => __( 'Follow Us On:', 'newsfit' ),
-				'description' => __( 'Context: Topbar icon label', 'newsfit' ),
+				'label'       => __( 'Follow Us On:', 'quixa' ),
+				'default'     => __( 'Follow Us On:', 'quixa' ),
+				'description' => __( 'Context: Topbar icon label', 'quixa' ),
 			],
 
 			'rt_blog_labels'          => [
 				'type'  => 'heading',
-				'label' => __( 'Blog Labels', 'newsfit' ),
+				'label' => __( 'Blog Labels', 'quixa' ),
 			],
 			'rt_author_prefix' => [
 				'type'        => 'text',
-				'label'       => __( 'By', 'newsfit' ),
+				'label'       => __( 'By', 'quixa' ),
 				'default'     => 'by',
-				'description' => __( 'Context: Meta Author Prefix', 'newsfit' ),
+				'description' => __( 'Context: Meta Author Prefix', 'quixa' ),
 			],
 			'rt_tags'                 => [
 				'type'        => 'text',
-				'label'       => __( 'Tags:', 'newsfit' ),
-				'default'     => __( 'Tags:', 'newsfit' ),
-				'description' => __( 'Context: Single blog footer tags label', 'newsfit' ),
+				'label'       => __( 'Tags:', 'quixa' ),
+				'default'     => __( 'Tags:', 'quixa' ),
+				'description' => __( 'Context: Single blog footer tags label', 'quixa' ),
 			],
 
 		] );

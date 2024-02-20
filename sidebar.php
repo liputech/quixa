@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package newsfit
+ * @package quixa
  */
 
 
 if ( is_singular() && is_active_sidebar( 'rt-single-sidebar' ) ) {
-	newsfit_sidebar( 'rt-single-sidebar' );
+	quixa_sidebar( 'rt-single-sidebar' );
 } else {
-	newsfit_sidebar( 'rt-sidebar' );
+	quixa_sidebar( 'rt-sidebar' );
 }

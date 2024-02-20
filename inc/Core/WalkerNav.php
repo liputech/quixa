@@ -1,6 +1,6 @@
 <?php
 
-namespace RT\Newsfit\Core;
+namespace RT\Quixa\Core;
 
 use Walker_Nav_Menu;
 
@@ -28,7 +28,7 @@ class WalkerNav extends Walker_Nav_Menu {
 		$classes[] = ( $item->current || $item->current_item_ancestor ) ? 'active' : '';
 		$classes[] = 'menu-item-' . $item->ID;
 
-		$_mega_menu = get_post_meta( $item->ID, 'newsfit_mega_menu', true );
+		$_mega_menu = get_post_meta( $item->ID, 'quixa_mega_menu', true );
 		if ( ! empty( $_mega_menu ) ) {
 			$classes[] = $_mega_menu;
 		}

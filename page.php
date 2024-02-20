@@ -9,10 +9,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package newsfit
+ * @package quixa
  */
 
-use RT\Newsfit\Helpers\Fns;
+use RT\Quixa\Helpers\Fns;
 
 get_header(); ?>
 

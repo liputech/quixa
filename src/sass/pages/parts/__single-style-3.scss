@@ -1,11 +1,11 @@
 //Style 3
 
-.newsfit-single-3 {
+.quixa-single-3 {
 	.site-content {
 		padding-top: 0;
 	}
 
-	.newsfit-breadcrumb-wrapper {
+	.quixa-breadcrumb-wrapper {
 		padding-top: 130px;
 		position: absolute;
 		top: 0;
@@ -16,7 +16,7 @@
 		background: none !important;
 	}
 
-	&.admin-bar .newsfit-breadcrumb-wrapper {
+	&.admin-bar .quixa-breadcrumb-wrapper {
 		padding-top: 160px;
 	}
 
@@ -60,7 +60,7 @@
 			@extend .whiteColor;
 		}
 
-		.newsfit-post-meta {
+		.quixa-post-meta {
 			font-size: 20px;
 			color: $gray20;
 

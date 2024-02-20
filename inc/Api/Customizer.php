@@ -2,13 +2,13 @@
 /**
  * Theme Customizer
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api;
+namespace RT\Quixa\Api;
 
-use RT\Newsfit\Api\Customizer\Pannels;
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Api\Customizer\Pannels;
+use RT\Quixa\Traits\SingletonTraits;
 
 /**
  * Customizer class
@@ -57,10 +57,10 @@ class Customizer {
 			Customizer\Sections\LayoutsBlogs::class,
 			Customizer\Sections\LayoutsSingle::class,
 			Customizer\Sections\LayoutsPage::class,
-//			Customizer\Sections\LayoutsError::class,
+			Customizer\Sections\LayoutsError::class,
 			Customizer\Sections\Footer::class,
 			Customizer\Sections\ZControllerExample::class,
-//			Customizer\Sections\Test::class,
+			Customizer\Sections\Error::class,
 		];
 
 		if ( class_exists( 'WooCommerce' ) ) {

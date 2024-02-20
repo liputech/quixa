@@ -1,10 +1,10 @@
 <?php
 
-namespace RT\Newsfit\Custom;
+namespace RT\Quixa\Custom;
 
-use RT\Newsfit\Helpers\Fns;
-use RT\Newsfit\Traits\SingletonTraits;
-use RT\Newsfit\Options\Opt;
+use RT\Quixa\Helpers\Fns;
+use RT\Quixa\Traits\SingletonTraits;
+use RT\Quixa\Options\Opt;
 
 /**
  * Extras.
@@ -18,14 +18,14 @@ class Hooks {
 	public function __construct() {
 		add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
 		add_action( 'admin_enqueue_scripts', [ __CLASS__, 'meta_css' ] );
-		add_action( 'newsfit_before_single_content', [ __CLASS__, 'before_single_content' ] );
+		add_action( 'quixa_before_single_content', [ __CLASS__, 'before_single_content' ] );
 		add_action( 'wp_footer', [ __CLASS__, 'wp_footer_hook' ] );
 	}
 
 	public static function wp_footer_hook() {
 		?>
 		<style>
-			.newsfit-header-footer .site-header {
+			.quixa-header-footer .site-header {
 				opacity: 1;
 			}
 		</style>
@@ -67,14 +67,14 @@ class Hooks {
 
 			<div class="<?php echo esc_attr( $classes ) ?>">
 
-				<?php newsfit_post_single_thumbnail(); ?>
+				<?php quixa_post_single_thumbnail(); ?>
 
 				<?php if ( $style == '3' ) : ?>
-					<div class='single-top-header <?php echo esc_attr( newsfit_post_class( null ) ) ?>'>
+					<div class='single-top-header <?php echo esc_attr( quixa_post_class( null ) ) ?>'>
 						<div class='container'>
 							<div class="row">
 								<div class="<?php echo esc_attr( Fns::content_columns() ); ?>">
-									<?php newsfit_single_entry_header(); ?>
+									<?php quixa_single_entry_header(); ?>
 								</div>
 							</div>
 						</div>

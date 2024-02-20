@@ -1,11 +1,18 @@
 /* Topbar Navigation
 ***************************/
 
-.newsfit-topbar {
-	font-size: 13px;
+.quixa-topbar {
+	font-size: 14px;
 	border-bottom: 1px solid rgba($black_color, 0.1);
 	background: rgba($title_rgb, 0.9);
-	color: $gray40;
+	color: $meta_light;
+	padding: 7px 0;
+
+	& {
+		@media(max-width: 1024px) {
+			display: none;
+		}
+	}
 
 	@media(max-width: 650px) {
 		#topbar-menu > div{
@@ -16,10 +23,29 @@
 		}
 	}
 
+	.topbar-left {
+		li {
+			display: flex;
+			align-items: center;
+			column-gap: 8px;
+		}
+		svg {
+			fill: $meta_light;
+			width: 15px;
+			height: 15px;
+		}
+		a {
+			color: $meta_light;
+			&:hover {
+				color: $primary_color;
+			}
+		}
+	}
+
 	.social-icon {
 		display: inline-flex;
 		align-items: center;
-		gap: 10px;
+		column-gap: 15px;
 
 		a {
 			display: flex;
@@ -35,54 +61,11 @@
 		[class*=rticon] svg {
 			width: 15px;
 			height: 15px;
-			fill: $gray40;
-		}
-	}
-
-
-	#topbar-menu {
-		ul.newsfit-topbar-menu > li > a {
-			color: $gray40;
-		}
-
-		ul li a {
-			padding: 5px 20px 5px 0;
-			color: inherit;
-			font-weight: normal;
-		}
-
-		ul ul li a {
-			font-size: 0.95em;
-			line-height: 1.6em;
-			padding: 3px 27px 3px 18px;
-			color: $body_color;
-		}
-
-		ul ul li a:hover {
-			@extend .primaryColor;
-		}
-
-		ul.newsfit-topbar-menu > li.current-menu-item > a,
-		ul.newsfit-topbar-menu > li.current-menu-ancestor > a {
-			color: $white_color !important;
-		}
-
-		ul ul li.current_page_item > a,
-		ul ul li.current-menu-ancestor > a {
-			color: $primary_color !important;
-		}
-
-		.newsfit-topbar-menu > li .dropdown-menu li a .caret svg {
-			transform: rotate(-90deg) scale(0.8);
-		}
-
-		.newsfit-topbar-menu > li > a .caret svg {
-			transform: scale(0.8);
-			fill: $gray40;
+			fill: $meta_light;
 		}
 	}
 }
 
-.has-trheader .site-header .newsfit-topbar * {
-	color: $gray40 !important;
+.has-trheader .site-header .quixa-topbar * {
+	color: $meta_light !important;
 }

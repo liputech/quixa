@@ -2,12 +2,12 @@
 /**
  * Theme Customizer Pannels
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer;
+namespace RT\Quixa\Api\Customizer;
 
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Traits\SingletonTraits;
 use RTFramework\Customize;
 
 /**
@@ -33,32 +33,32 @@ class Pannels {
 			[
 				[
 					'id'          => 'rt_header_panel',
-					'title'       => esc_html__( 'Header - Topbar - Menu', 'newsfit' ),
-					'description' => esc_html__( 'Newsfit Header', 'newsfit' ),
+					'title'       => esc_html__( 'Header - Topbar - Menu', 'quixa' ),
+					'description' => esc_html__( 'Quixa Header', 'quixa' ),
 					'priority'    => 22,
 				],
 				[
 					'id'          => 'rt_typography_panel',
-					'title'       => esc_html__( 'Typography', 'newsfit' ),
-					'description' => esc_html__( 'Newsfit Typography', 'newsfit' ),
+					'title'       => esc_html__( 'Typography', 'quixa' ),
+					'description' => esc_html__( 'Quixa Typography', 'quixa' ),
 					'priority'    => 24,
 				],
 				[
 					'id'          => 'rt_color_panel',
-					'title'       => esc_html__( 'Colors', 'newsfit' ),
-					'description' => esc_html__( 'Newsfit Color Settings', 'newsfit' ),
+					'title'       => esc_html__( 'Colors', 'quixa' ),
+					'description' => esc_html__( 'Quixa Color Settings', 'quixa' ),
 					'priority'    => 28,
 				],
 				[
 					'id'          => 'rt_layouts_panel',
-					'title'       => esc_html__( 'Layout Settings', 'newsfit' ),
-					'description' => esc_html__( 'Newsfit Layout Settings', 'newsfit' ),
+					'title'       => esc_html__( 'Layout Settings', 'quixa' ),
+					'description' => esc_html__( 'Quixa Layout Settings', 'quixa' ),
 					'priority'    => 34,
 				],
 				[
 					'id'          => 'rt_contact_social_panel',
-					'title'       => esc_html__( 'Contact & Socials', 'newsfit' ),
-					'description' => esc_html__( 'Newsfit Contact & Socials', 'newsfit' ),
+					'title'       => esc_html__( 'Contact & Socials', 'quixa' ),
+					'description' => esc_html__( 'Quixa Contact & Socials', 'quixa' ),
 					'priority'    => 24,
 				],
 

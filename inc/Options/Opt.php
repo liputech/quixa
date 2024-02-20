@@ -1,9 +1,9 @@
 <?php
 
-namespace RT\Newsfit\Options;
+namespace RT\Quixa\Options;
 
-use RT\Newsfit\Api\Customizer;
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Api\Customizer;
+use RT\Quixa\Traits\SingletonTraits;
 
 class Opt {
 
@@ -17,8 +17,10 @@ class Opt {
 	public static $topbar_style = null;
 	public static $footer_style = null;
 	public static $footer_schema = null;
+	public static $banner_style = null;
 	public static $has_banner = null;
 	public static $has_breadcrumb = null;
+	public static $breadcrumb_title = null;
 	public static $banner_image = '';
 	public static $banner_height = '';
 	public static $header_width = null;

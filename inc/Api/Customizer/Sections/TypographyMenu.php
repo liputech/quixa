@@ -2,12 +2,12 @@
 /**
  * Theme Customizer - Menu Typography
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
@@ -15,7 +15,7 @@ use RTFramework\Customize;
  */
 class TypographyMenu extends Customizer {
 
-	protected string $section_id = 'newsfit_menu_typo_section';
+	protected string $section_id = 'quixa_menu_typo_section';
 
 	/**
 	 * Register controls
@@ -24,8 +24,8 @@ class TypographyMenu extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'          => $this->section_id,
-			'title'       => __( 'Menu Typography', 'newsfit' ),
-			'description' => __( 'Newsfit Menu Typography Section', 'newsfit' ),
+			'title'       => __( 'Menu Typography', 'quixa' ),
+			'description' => __( 'Quixa Menu Typography Section', 'quixa' ),
 			'panel'       => 'rt_typography_panel',
 			'priority'    => 3
 		] );
@@ -39,15 +39,15 @@ class TypographyMenu extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_menu_typo_section', [
+		return apply_filters( 'quixa_menu_typo_section', [
 
 			'rt_menu_typo' => [
 				'type'    => 'typography',
-				'label'   => __( 'Menu Typography', 'newsfit' ),
+				'label'   => __( 'Menu Typography', 'quixa' ),
 				'default' => json_encode(
 					[
-						'font'          => 'IBM Plex Sans',
-						'regularweight' => 'normal',
+						'font'          => 'Urbanist',
+						'regularweight' => '600',
 						'size'          => '16',
 						'lineheight'    => '22',
 					]

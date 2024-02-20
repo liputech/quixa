@@ -2,19 +2,19 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
  * Customizer class
  */
 class ColorFooter extends Customizer {
-	protected string $section_footer_color = 'newsfit_footer_color_section';
+	protected string $section_footer_color = 'quixa_footer_color_section';
 
 	/**
 	 * Register controls
@@ -24,8 +24,8 @@ class ColorFooter extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_footer_color,
 			'panel'       => 'rt_color_panel',
-			'title'       => __( 'Footer Colors', 'newsfit' ),
-			'description' => __( 'Newsfit Footer Color Section', 'newsfit' ),
+			'title'       => __( 'Footer Colors', 'quixa' ),
+			'description' => __( 'Quixa Footer Color Section', 'quixa' ),
 			'priority'    => 8
 		] );
 
@@ -38,54 +38,54 @@ class ColorFooter extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_footer_color_controls', [
+		return apply_filters( 'quixa_footer_color_controls', [
 			'rt_footer_color1'           => [
 				'type'  => 'heading',
-				'label' => __( 'Main Footer', 'newsfit' ),
+				'label' => __( 'Main Footer', 'quixa' ),
 			],
 			'rt_footer_bg'               => [
 				'type'  => 'color',
-				'label' => __( 'Footer Background', 'newsfit' ),
+				'label' => __( 'Footer Background', 'quixa' ),
 			],
 			'rt_footer_text_color'             => [
 				'type'  => 'color',
-				'label' => __( 'Footer Text', 'newsfit' ),
+				'label' => __( 'Footer Text', 'quixa' ),
 			],
 			'rt_footer_link_color'             => [
 				'type'  => 'color',
-				'label' => __( 'Footer Link', 'newsfit' ),
+				'label' => __( 'Footer Link', 'quixa' ),
 			],
 			'rt_footer_link_hover_color'       => [
 				'type'  => 'color',
-				'label' => __( 'Footer Link - Hover', 'newsfit' ),
+				'label' => __( 'Footer Link - Hover', 'quixa' ),
 			],
 			'rt_footer_widget_title_color'     => [
 				'type'  => 'color',
-				'label' => __( 'Widget Title', 'newsfit' ),
+				'label' => __( 'Widget Title', 'quixa' ),
 			],
 			'rt_footer_input_border_color'     => [
 				'type'  => 'color',
-				'label' => __( 'Input/List/Table Border Color', 'newsfit' ),
+				'label' => __( 'Input/List/Table Border Color', 'quixa' ),
 			],
 			'rt_footer_copyright_color1' => [
 				'type'  => 'heading',
-				'label' => __( 'Copyright Area', 'newsfit' ),
+				'label' => __( 'Copyright Area', 'quixa' ),
 			],
 			'rt_copyright_bg'            => [
 				'type'  => 'color',
-				'label' => __( 'Copyright Background', 'newsfit' ),
+				'label' => __( 'Copyright Background', 'quixa' ),
 			],
 			'rt_copyright_text_color'          => [
 				'type'  => 'color',
-				'label' => __( 'Copyright Text', 'newsfit' ),
+				'label' => __( 'Copyright Text', 'quixa' ),
 			],
 			'rt_copyright_link_color'          => [
 				'type'  => 'color',
-				'label' => __( 'Copyright Link', 'newsfit' ),
+				'label' => __( 'Copyright Link', 'quixa' ),
 			],
 			'rt_copyright_link_hover_color'    => [
 				'type'  => 'color',
-				'label' => __( 'Copyright Link - Hover', 'newsfit' ),
+				'label' => __( 'Copyright Link - Hover', 'quixa' ),
 			],
 		] );
 

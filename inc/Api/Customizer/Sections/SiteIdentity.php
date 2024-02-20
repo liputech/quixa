@@ -2,12 +2,12 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
@@ -29,33 +29,33 @@ class SiteIdentity extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_title_tagline_controls', [
+		return apply_filters( 'quixa_title_tagline_controls', [
 
 			'rt_logo' => [
 				'type'         => 'image',
-				'label'        => __( 'Main Logo', 'newsfit' ),
-				'description'  => __( 'Upload main logo for your site.', 'newsfit' ),
-				'button_label' => __( 'Logo', 'newsfit' ),
+				'label'        => __( 'Main Logo', 'quixa' ),
+				'description'  => __( 'Upload main logo for your site.', 'quixa' ),
+				'button_label' => __( 'Logo', 'quixa' ),
 			],
 
 			'rt_logo_light' => [
 				'type'         => 'image',
-				'label'        => __( 'Light Logo', 'newsfit' ),
-				'description'  => __( 'Upload light logo for transparent header. It should a white logo', 'newsfit' ),
-				'button_label' => __( 'Light Logo', 'newsfit' ),
+				'label'        => __( 'Light Logo', 'quixa' ),
+				'description'  => __( 'Upload light logo for transparent header. It should a white logo', 'quixa' ),
+				'button_label' => __( 'Light Logo', 'quixa' ),
 			],
 
 			'rt_logo_mobile' => [
 				'type'         => 'image',
-				'label'        => __( 'Mobile Logo', 'newsfit' ),
-				'description'  => __( 'Upload, if you need a different logo for mobile device..', 'newsfit' ),
-				'button_label' => __( 'Mobile Logo', 'newsfit' ),
+				'label'        => __( 'Mobile Logo', 'quixa' ),
+				'description'  => __( 'Upload, if you need a different logo for mobile device..', 'quixa' ),
+				'button_label' => __( 'Mobile Logo', 'quixa' ),
 			],
 
 			'rt_logo_width_height' => [
 				'type'      => 'text',
-				'label'     => __( 'Logo Dimension', 'newsfit' ),
-				'description'     => __( 'Enter the width and height value separate by comma (,). Eg. 180px,45px', 'newsfit' ),
+				'label'     => __( 'Logo Dimension', 'quixa' ),
+				'description'     => __( 'Enter the width and height value separate by comma (,). Eg. 180px,45px', 'quixa' ),
 				'transport' => '',
 			],
 

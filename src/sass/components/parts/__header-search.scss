@@ -1,8 +1,8 @@
 /* Header search
 ***************************/
 
-.newsfit-search-popup {
-	&.show .newsfit-search-form {
+.quixa-search-popup {
+	&.show .quixa-search-form {
 		visibility: visible;
 		opacity: 1;
 		top: 51px;
@@ -10,7 +10,7 @@
 		@include transition_default();
 	}
 
-	.newsfit-search-form {
+	.quixa-search-form {
 		position: absolute;
 		top: 70px;
 		right: -12px;

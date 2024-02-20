@@ -1,8 +1,8 @@
 <?php
 
-namespace RT\Newsfit\Setup;
+namespace RT\Quixa\Setup;
 
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Traits\SingletonTraits;
 
 /**
  * Menus
@@ -23,9 +23,7 @@ class Menus {
 			Register all your menus here
 		*/
 		register_nav_menus( [
-			'primary' => esc_html__( 'Primary', 'newsfit' ),
-			'topbar'  => esc_html__( 'Topbar Menu', 'newsfit' ),
-			'footer'  => esc_html__( 'Footer Menu', 'newsfit' ),
+			'primary' => esc_html__( 'Primary', 'quixa' ),
 		] );
 	}
 }

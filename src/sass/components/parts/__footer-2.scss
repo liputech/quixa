@@ -1,7 +1,7 @@
 
 //Footer Style 2
-.newsfit-footer-2 .site-footer {
-	.newsfit-navigation ul > li:hover > ul {
+.quixa-footer-2 .site-footer {
+	.quixa-navigation ul > li:hover > ul {
 		z-index: 9999;
 	}
 
@@ -9,7 +9,7 @@
 		background-color: $title_color;
 	}
 
-	.newsfit-footer-menu {
+	.quixa-footer-menu {
 		text-align: center;
 
 		@media (min-width: 1200px) {
@@ -18,7 +18,7 @@
 
 		> li > a {
 			font-size: 18px;
-			color: $gray40;
+			color: $gray20;
 			padding: 8px 16px;
 
 			&:hover {
@@ -26,7 +26,7 @@
 			}
 
 			svg {
-				fill: $gray40;
+				fill: $gray20;
 			}
 		}
 	}

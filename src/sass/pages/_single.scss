@@ -1,4 +1,4 @@
-.single-content .newsfit-post-card {
+.single-content .quixa-post-card {
 	font-size: 17px;
 
 	.entry-title {
@@ -30,7 +30,7 @@
 		}
 	}
 
-	.newsfit-post-meta {
+	.quixa-post-meta {
 		font-size: 20px;
 		color: $meta_color;
 		margin-bottom: 20px;
@@ -39,7 +39,7 @@
 }
 
 //Common Style for others
-body:not(.newsfit-single-1) {
+body:not(.quixa-single-1) {
 	.entry-content {
 		ul {
 			list-style: circle inside none;

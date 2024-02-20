@@ -2,14 +2,14 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
-use RT\Newsfit\Traits\LayoutControlsTraits;
+use RT\Quixa\Traits\LayoutControlsTraits;
 
 /**
  * Customizer class
@@ -18,7 +18,7 @@ class LayoutsWooArchive extends Customizer {
 
 	use LayoutControlsTraits;
 
-	protected string $section_woocommerce_archive_layout = 'newsfit_woocommerce_archive_layout_section';
+	protected string $section_woocommerce_archive_layout = 'quixa_woocommerce_archive_layout_section';
 
 	/**
 	 * Register controls
@@ -27,7 +27,7 @@ class LayoutsWooArchive extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'    => $this->section_woocommerce_archive_layout,
-			'title' => __( 'Woocommerce Archive', 'newsfit' ),
+			'title' => __( 'Woocommerce Archive', 'quixa' ),
 			'panel' => 'rt_layouts_panel',
 		] );
 		Customize::add_controls( $this->section_woocommerce_archive_layout, $this->get_controls() );

@@ -1,5 +1,5 @@
 {
-	"name": "radiustheme/newsfit",
+	"name": "radiustheme/quixa",
 	"description": "RadiusTheme WordPress Starter Theme for savvy developers",
 	"keywords": [
 		"WordPress",
@@ -19,7 +19,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"RT\\Newsfit\\": "./inc"
+			"RT\\Quixa\\": "./inc"
 		},
 		"files": [
 			"./inc/template-tags.php"

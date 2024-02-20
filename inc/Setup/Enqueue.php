@@ -1,9 +1,9 @@
 <?php
 
-namespace RT\Newsfit\Setup;
+namespace RT\Quixa\Setup;
 
-use RT\Newsfit\Helpers\Constants;
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Helpers\Constants;
+use RT\Quixa\Traits\SingletonTraits;
 
 /**
  * Enqueue.
@@ -21,7 +21,7 @@ class Enqueue {
 	}
 
 	function register_scripts(){
-		wp_register_style( 'newsfit-gfonts', $this->fonts_url(), [], Constants::get_version() );
+		wp_register_style( 'quixa-gfonts', $this->fonts_url(), [], Constants::get_version() );
 	}
 
 	/**
@@ -30,12 +30,12 @@ class Enqueue {
 	 */
 	public function enqueue_scripts() {
 		// CSS
-		wp_enqueue_style( 'newsfit-gfonts' );
-		wp_enqueue_style( 'newsfit-main', newsfit_get_css( 'style', true ), [], Constants::get_version() );
+		wp_enqueue_style( 'quixa-gfonts' );
+		wp_enqueue_style( 'quixa-main', quixa_get_css( 'style', true ), [], Constants::get_version() );
 
 		// JS
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'newsfit-main', newsfit_get_js( 'scripts' ), [ 'jquery' ], Constants::get_version(), true );
+		wp_enqueue_script( 'quixa-main', quixa_get_js( 'scripts' ), [ 'jquery' ], Constants::get_version(), true );
 
 		// Extra
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -45,18 +45,18 @@ class Enqueue {
 
 	public function fonts_url() {
 
-		if ( 'off' === _x( 'on', 'Google font: on or off', 'newsfit' ) ) {
+		if ( 'off' === _x( 'on', 'Google font: on or off', 'quixa' ) ) {
 			return '';
 		}
 
 		//Default variable.
 		$subsets = '';
 
-		$body_font = json_decode( newsfit_option( 'rt_body_typo' ), true );
-		$menu_font = json_decode( newsfit_option( 'rt_menu_typo' ), true );
-		$h_font    = json_decode( newsfit_option( 'rt_all_heading_typo' ), true );
+		$body_font = json_decode( quixa_option( 'rt_body_typo' ), true );
+		$menu_font = json_decode( quixa_option( 'rt_menu_typo' ), true );
+		$h_font    = json_decode( quixa_option( 'rt_all_heading_typo' ), true );
 
-		$bodyFont = $body_font['font'] ?? 'IBM Plex Sans'; // Body Font
+		$bodyFont = $body_font['font'] ?? 'Urbanist'; // Body Font
 		$menuFont = $menu_font['font'] ?? $bodyFont; // Menu Font
 		$hFont    = $h_font['font'] ?? $body_font; // Heading Font
 		$hFontW   = $h_font['regularweight'];
@@ -64,7 +64,7 @@ class Enqueue {
 		$heading_fonts = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
 
 		foreach ( $heading_fonts as $heading ) {
-			$heading_font         = json_decode( newsfit_option( "rt_heading_{$heading}_typo" ), true );
+			$heading_font         = json_decode( quixa_option( "rt_heading_{$heading}_typo" ), true );
 			${$heading . '_font'} = $heading_font;
 			${$heading . 'Font'}  = ''; //Assign default value if not exist the value
 			if ( ! empty( $heading_font['font'] ) ) {

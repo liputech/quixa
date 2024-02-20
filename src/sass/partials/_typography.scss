@@ -1,12 +1,14 @@
 body {
 	font-family: $base_font;
-	font-weight: 400;
+	font-weight: 500;
 	@include font_size($base_fs);
+	background-color: $body_bg_color;
+	height: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, {
+h1, h2, h3, h4, h5, h6 {
 	font-family: $heading_font;
 	margin: 0 0 15px 0;
 	font-weight: 700;
@@ -16,37 +18,32 @@ h1, h2, h3, h4, h5, h6, {
 // Headings
 h1,
 .h1 {
-	@include font_size(40px, 60px);
-
-	@media (max-width: #{$sm}) {
-		@include font_size(26px, 36);
-	}
+	@include font_size(44px, 54px);
 }
 
 h2,
 .h2 {
-	@include font_size(28px, 40px);
+	@include font_size(36px, 42px);
 }
 
 h3,
 .h3 {
-	@include font_size(24px, 34px);
+	@include font_size(28px, 36px);
 }
 
 h4,
 .h4 {
-	@include font_size(22px);
-
+	@include font_size(22px, 28px);
 }
 
 h5,
 .h5 {
-	@include font_size(20px, 30px);
+	@include font_size(18px, 24px);
 }
 
 h6,
 .h6 {
-	@include font_size(18px, 28px);
+	@include font_size(14px, 18px);
 }
 
 small,

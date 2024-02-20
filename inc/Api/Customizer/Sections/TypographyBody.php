@@ -2,12 +2,12 @@
 /**
  * Theme Customizer - Body Typography
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
@@ -15,7 +15,7 @@ use RTFramework\Customize;
  */
 class TypographyBody extends Customizer {
 
-	protected string $section_id = 'newsfit_body_typo_section';
+	protected string $section_id = 'quixa_body_typo_section';
 
 	/**
 	 * Register controls
@@ -24,8 +24,8 @@ class TypographyBody extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'          => $this->section_id,
-			'title'       => __( 'Body Typography', 'newsfit' ),
-			'description' => __( 'Newsfit Body Typography Section', 'newsfit' ),
+			'title'       => __( 'Body Typography', 'quixa' ),
+			'description' => __( 'Quixa Body Typography Section', 'quixa' ),
 			'panel'       => 'rt_typography_panel',
 			'priority'    => 1
 		] );
@@ -39,16 +39,16 @@ class TypographyBody extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_body_typo_section', [
+		return apply_filters( 'quixa_body_typo_section', [
 
 			'rt_body_typo' => [
 				'type'    => 'typography',
-				'label'   => __( 'Body Typography', 'newsfit' ),
+				'label'   => __( 'Body Typography', 'quixa' ),
 				'default' => json_encode(
 					[
-						'font'          => 'IBM Plex Sans',
-						'regularweight' => 'normal',
-						'size'          => '16',
+						'font'          => 'Urbanist',
+						'regularweight' => '500',
+						'size'          => '17',
 						'lineheight'    => '26',
 					]
 				)

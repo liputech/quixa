@@ -92,7 +92,7 @@ a {
 }
 
 a:hover {
-	color: $primary_dark_color;
+	color: $secondary_color;
 }
 
 //Table CSS
@@ -131,5 +131,5 @@ th {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: $primary_light_color;
+	background: $primary_color;
 }

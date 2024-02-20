@@ -4,10 +4,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package newsfit
+ * @package quixa
  */
 
-$footer_container = 'container' . newsfit_option( 'rt_footer_width' );
+$footer_container = 'container' . quixa_option( 'rt_footer_width' );
 ?>
 
 <?php if ( has_nav_menu( 'footer' ) ) : ?>
@@ -15,16 +15,16 @@ $footer_container = 'container' . newsfit_option( 'rt_footer_width' );
 		<div class="footer-container <?php echo esc_attr( $footer_container ) ?>">
 			<div class="row">
 
-				<?php newsfit_scroll_top(); ?>
+				<?php quixa_scroll_top(); ?>
 
-				<nav id="footer-menu" class="newsfit-navigation col-md-12 <?php echo newsfit_option( 'rt_footer_menu_alignment' ) ?>" role="navigation">
+				<nav id="footer-menu" class="quixa-navigation col-md-12 <?php echo quixa_option( 'rt_footer_menu_alignment' ) ?>" role="navigation">
 					<?php
 					wp_nav_menu( [
 						'theme_location' => 'footer',
-						'menu_class'     => 'newsfit-navbar',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s newsfit-footer-menu">%3$s</ul>',
-						'fallback_cb'    => 'newsfit_custom_menu_cb',
-						'walker'         => has_nav_menu( 'footer' ) ? new RT\Newsfit\Core\WalkerNav() : '',
+						'menu_class'     => 'quixa-navbar',
+						'items_wrap'     => '<ul id="%1$s" class="%2$s quixa-footer-menu">%3$s</ul>',
+						'fallback_cb'    => 'quixa_custom_menu_cb',
+						'walker'         => has_nav_menu( 'footer' ) ? new RT\Quixa\Core\WalkerNav() : '',
 					] );
 					?>
 				</nav><!-- .footer-navigation -->
@@ -33,18 +33,18 @@ $footer_container = 'container' . newsfit_option( 'rt_footer_width' );
 	</div><!-- .footer-fop -->
 <?php endif; ?>
 
-<?php if ( ! empty( newsfit_option( 'rt_footer_copyright' ) ) ) : ?>
+<?php if ( ! empty( quixa_option( 'rt_footer_copyright' ) ) ) : ?>
 	<div class="footer-copyright-wrapper">
 		<div class="footer-container <?php echo esc_attr( $footer_container ) ?>">
 			<div class="row align-items-center">
 				<div class="col-md-6">
 					<div class="footer-copyright-logo text-left">
-						<?php echo newsfit_footer_logo(); ?>
+						<?php echo quixa_footer_logo(); ?>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="copyright-text text-right">
-						<?php echo newsfit_html( str_replace( '[y]', date( 'Y' ), newsfit_option( 'rt_footer_copyright' ) ) ); ?>
+						<?php echo quixa_html( str_replace( '[y]', date( 'Y' ), quixa_option( 'rt_footer_copyright' ) ) ); ?>
 					</div>
 				</div>
 			</div>

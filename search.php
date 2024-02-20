@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package newsfit
+ * @package quixa
  */
 
-use RT\Newsfit\Helpers\Fns;
+use RT\Quixa\Helpers\Fns;
 
 get_header();
 ?>

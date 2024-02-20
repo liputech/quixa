@@ -1,13 +1,13 @@
 <?php
 
-namespace RT\Newsfit\Helpers;
+namespace RT\Quixa\Helpers;
 
 class Constants {
 
-	const NEWSFIT_VERSION = '1.0.0';
+	const QUIXA_VERSION = '1.0.0';
 
 	public static function get_version() {
-		return WP_DEBUG ? time() : self::NEWSFIT_VERSION;
+		return WP_DEBUG ? time() : self::QUIXA_VERSION;
 	}
 }
 

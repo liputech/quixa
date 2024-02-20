@@ -3,7 +3,7 @@
 	flex-direction: row;
 	flex: 0 1 auto;
 	flex-wrap: wrap;
-	border: 1px dashed $gray40;
+	border: 1px dashed $gray20;
 	padding: 36px 40px;
 	position: relative;
 	align-items: flex-start;
@@ -18,7 +18,7 @@
 			top: 50%;
 			position: absolute;
 			transform: translate(-50%, -50%);
-			background-color: $gray40;
+			background-color: $gray20;
 		}
 	}
 

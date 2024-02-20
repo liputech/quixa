@@ -2,14 +2,14 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
-use RT\Newsfit\Traits\LayoutControlsTraits;
+use RT\Quixa\Traits\LayoutControlsTraits;
 
 /**
  * Customizer class
@@ -17,7 +17,7 @@ use RT\Newsfit\Traits\LayoutControlsTraits;
 class LayoutsSingle extends Customizer {
 
 	use LayoutControlsTraits;
-	protected string $section_single_layout = 'newsfit_single_layout_section';
+	protected string $section_single_layout = 'quixa_single_layout_section';
 
 
 	/**
@@ -27,7 +27,7 @@ class LayoutsSingle extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'    => $this->section_single_layout,
-			'title' => __( 'Single Layout', 'newsfit' ),
+			'title' => __( 'Single Layout', 'quixa' ),
 			'panel' => 'rt_layouts_panel',
 		] );
 		Customize::add_controls( $this->section_single_layout, $this->get_controls() );

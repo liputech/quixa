@@ -2,19 +2,19 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
  * Customizer class
  */
 class Contact extends Customizer {
-	protected string $section_contact = 'newsfit_contact_section';
+	protected string $section_contact = 'quixa_contact_section';
 
 	/**
 	 * Register controls
@@ -24,8 +24,8 @@ class Contact extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_contact,
 			'panel'       => 'rt_contact_social_panel',
-			'title'       => __( 'Contact Information', 'newsfit' ),
-			'description' => __( 'Newsfit Contact Address Section', 'newsfit' ),
+			'title'       => __( 'Contact Information', 'quixa' ),
+			'description' => __( 'Quixa Contact Address Section', 'quixa' ),
 			'priority'    => 1
 		] );
 		Customize::add_controls( $this->section_contact, $this->get_controls() );
@@ -37,27 +37,27 @@ class Contact extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_contact_controls', [
+		return apply_filters( 'quixa_contact_controls', [
 
 			'rt_phone' => [
 				'type'  => 'text',
-				'label' => __( 'Phone', 'newsfit' ),
+				'label' => __( 'Phone', 'quixa' ),
 			],
 
 			'rt_email' => [
 				'type'  => 'text',
-				'label' => __( 'Email', 'newsfit' ),
+				'label' => __( 'Email', 'quixa' ),
 			],
 
 			'rt_website' => [
 				'type'  => 'text',
-				'label' => __( 'Website', 'newsfit' ),
+				'label' => __( 'Website', 'quixa' ),
 			],
 
 			'rt_contact_address' => [
 				'type'        => 'textarea',
-				'label'       => __( 'Address', 'newsfit' ),
-				'description' => __( 'Enter company address here.', 'newsfit' ),
+				'label'       => __( 'Address', 'quixa' ),
+				'description' => __( 'Enter company address here.', 'quixa' ),
 			],
 
 		] );

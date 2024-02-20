@@ -1,9 +1,9 @@
 <?php
 
-namespace RT\Newsfit\Core;
+namespace RT\Quixa\Core;
 
-use RT\Newsfit\Helpers\Constants;
-use RT\Newsfit\Traits\SingletonTraits;
+use RT\Quixa\Helpers\Constants;
+use RT\Quixa\Traits\SingletonTraits;
 
 /**
  * Sidebar.
@@ -49,7 +49,7 @@ class Sidebar {
 			];
 		}
 
-		return apply_filters( 'newsfit_sidebar_lists', $sidebar_lists );
+		return apply_filters( 'quixa_sidebar_lists', $sidebar_lists );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Sidebar {
 
 			register_sidebar( [
 				'id'            => $id,
-				'name'          => sprintf( esc_html_x( '%s', 'Widget Name', 'newsfit' ), $sidebar['name'] ),
+				'name'          => sprintf( esc_html_x( '%s', 'Widget Name', 'quixa' ), $sidebar['name'] ),
 				'description'   => $sidebar['description'] ?? '',
 				'before_widget' => '<section id="%1$s" class="widget ' . $classes . ' %2$s">',
 				'after_widget'  => '</section>',

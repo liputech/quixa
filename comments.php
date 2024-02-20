@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package newsfit
+ * @package quixa
  */
 
 /*
@@ -32,7 +32,7 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 				<?php
 				printf(
 				/* translators: 1: Comments count. */
-					esc_html( _n( '%d Comment', '%d Comments', get_comments_number(), 'newsfit' ) ),
+					esc_html( _n( '%d Comment', '%d Comments', get_comments_number(), 'quixa' ) ),
 					absint( get_comments_number() )
 				);
 				?>
@@ -45,7 +45,7 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 						'style'       => 'ol',
 						'avatar_size' => 45,
 						'short_ping'  => true,
-						'callback'    => 'newsfit_comments_cbf',
+						'callback'    => 'quixa_comments_cbf',
 					]
 				);
 				?>
@@ -53,14 +53,14 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 				<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-					<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'newsfit' ); ?></h2>
+					<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'quixa' ); ?></h2>
 					<div class="nav-links">
 						<?php
-						$arrow_next = newsfit_get_svg( 'arrow-right' );
-						$arrow_prev = newsfit_get_svg( 'arrow-right', '180' );
+						$arrow_next = quixa_get_svg( 'arrow-right' );
+						$arrow_prev = quixa_get_svg( 'arrow-right', '180' );
 						?>
-						<div class="nav-previous"><?php previous_comments_link( $arrow_prev . esc_html__( 'Older Comments', 'newsfit' ) ); ?></div>
-						<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'newsfit' ) . $arrow_next ); ?></div>
+						<div class="nav-previous"><?php previous_comments_link( $arrow_prev . esc_html__( 'Older Comments', 'quixa' ) ); ?></div>
+						<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'quixa' ) . $arrow_next ); ?></div>
 
 					</div><!-- .nav-links -->
 				</nav><!-- #comment-nav-below -->
@@ -74,7 +74,7 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'newsfit' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'quixa' ); ?></p>
 	<?php
 	endif;
 

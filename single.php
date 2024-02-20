@@ -4,11 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package newsfit
+ * @package quixa
  */
 
-use RT\Newsfit\Helpers\Fns;
-use RT\Newsfit\Options\Opt;
+use RT\Quixa\Helpers\Fns;
+use RT\Quixa\Options\Opt;
 
 get_header();
 $classes = Fns::class_list( [
@@ -22,7 +22,7 @@ $classes = Fns::class_list( [
 		<?php while ( have_posts() ) :
 			the_post(); ?>
 
-			<?php do_action( 'newsfit_before_single_content', get_the_ID() ); ?>
+			<?php do_action( 'quixa_before_single_content', get_the_ID() ); ?>
 
 			<div class="container">
 				<div class="row content-row">
@@ -51,7 +51,7 @@ $classes = Fns::class_list( [
 				</div><!-- .row -->
 			</div><!-- .container -->
 
-			<?php do_action( 'newsfit_after_single_content' ); ?>
+			<?php do_action( 'quixa_after_single_content' ); ?>
 
 		<?php endwhile; ?>
 

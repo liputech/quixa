@@ -3,13 +3,13 @@
  * Helpers methods
  * List all your static functions you wish to use globally on your theme
  *
- * @package newsfit
+ * @package quixa
  */
 
-use RT\Newsfit\Options\Opt;
-use RT\Newsfit\Helpers\Fns;
+use RT\Quixa\Options\Opt;
+use RT\Quixa\Helpers\Fns;
 
-function newsfit_html( $html, $checked = true ) {
+function quixa_html( $html, $checked = true ) {
 	$allowed_html = [
 		'a'      => [
 			'href'   => [],
@@ -53,7 +53,7 @@ function newsfit_html( $html, $checked = true ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_custom_menu_cb' ) ) {
+if ( ! function_exists( 'quixa_custom_menu_cb' ) ) {
 	/**
 	 * Callback function for the main menu
 	 *
@@ -61,14 +61,14 @@ if ( ! function_exists( 'newsfit_custom_menu_cb' ) ) {
 	 *
 	 * @return string|void
 	 */
-	function newsfit_custom_menu_cb( $args ) {
+	function quixa_custom_menu_cb( $args ) {
 		extract( $args );
 		$add_menu_link = admin_url( 'nav-menus.php' );
-		$menu_text     = sprintf( __( "Add %s Menu", "newsfit" ), $theme_location );
-		__( 'Add a menu', 'newsfit' );
+		$menu_text     = sprintf( __( "Add %s Menu", "quixa" ), $theme_location );
+		__( 'Add a menu', 'quixa' );
 		if ( ! current_user_can( 'manage_options' ) ) {
 			$add_menu_link = home_url();
-			$menu_text     = __( 'Home', 'newsfit' );
+			$menu_text     = __( 'Home', 'quixa' );
 		}
 
 		// see wp-includes/nav-menu-template.php for available arguments
@@ -93,20 +93,20 @@ if ( ! function_exists( 'newsfit_custom_menu_cb' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_menu_icons_group' ) ) {
+if ( ! function_exists( 'quixa_menu_icons_group' ) ) {
 	/**
 	 * Get menu icon group
 	 * @return void
 	 */
-	function newsfit_menu_icons_group( $args = [] ) {
+	function quixa_menu_icons_group( $args = [] ) {
 		$default_args = [
-			'hamburg'       => newsfit_option( 'rt_header_bar' ),
-			'search'        => newsfit_option( 'rt_header_search' ),
-			'login'         => newsfit_option( 'rt_header_login_link' ),
-			'button'        => newsfit_option( 'rt_get_started_button' ),
-			'button_label'  => newsfit_option( 'rt_get_started_label' ),
-			'button_link'   => newsfit_option( 'rt_get_started_button_url' ),
-			'has_separator' => newsfit_option( 'rt_header_separator' )
+			'hamburg'       => quixa_option( 'rt_header_bar' ),
+			'search'        => quixa_option( 'rt_header_search' ),
+			'login'         => quixa_option( 'rt_header_login_link' ),
+			'button'        => quixa_option( 'rt_get_started_button' ),
+			'button_label'  => quixa_option( 'rt_get_started_label' ),
+			'button_link'   => quixa_option( 'rt_get_started_button_url' ),
+			'has_separator' => quixa_option( 'rt_header_separator' )
 		];
 		$args         = wp_parse_args( $args, $default_args );
 		$has_button   = $args['button'] && $args['button_label'];
@@ -123,37 +123,32 @@ if ( ! function_exists( 'newsfit_menu_icons_group' ) ) {
 		<div class="menu-icon-wrapper d-flex pl-15 ml-auto align-items-center gap-15">
 			<ul class="d-flex gap-15 align-items-center <?php echo esc_attr( $menu_classes ) ?>">
 				<?php if ( $args['hamburg'] ) : ?>
-					<li>
-						<a class="menu-bar trigger-off-canvas" href="#">
-							<svg class="ham_burger" viewBox="0 0 100 100" width="180">
-								<path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"/>
-								<path class="line middle" d="m 30,50 h 40"/>
-								<path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"/>
-							</svg>
-						</a>
-					</li>
+					<?php newsfit_hanburger('desktop-hamburg'); ?>
 				<?php endif; ?>
 
+				<?php newsfit_hanburger('mobile-hamburg'); ?>
+
 				<?php if ( $args['search'] ) : ?>
-					<li class="newsfit-search-popup">
-						<a class="menu-search-bar newsfit-search-trigger" href="#">
-							<?php echo newsfit_get_svg( 'search' ); ?>
+					<li class="quixa-search-popup">
+						<a class="menu-search-bar quixa-search-trigger" href="#">
+							<?php echo quixa_get_svg( 'search' ); ?>
 						</a>
 						<?php get_search_form(); ?>
 					</li>
 				<?php endif; ?>
 
 				<?php if ( $args['login'] ) : ?>
-					<li class="newsfit-user-login">
+					<li class="quixa-user-login">
 						<a href="<?php echo esc_url( wp_login_url() ) ?>">
-							<?php echo newsfit_get_svg( 'user' ); ?>
+							<?php //echo quixa_get_svg( 'user' ); ?>
+							<?php if( quixa_option( 'rt_get_login_label' ) ) { ?><?php echo quixa_option( 'rt_get_login_label' ) ?><?php } ?>
 						</a>
 					</li>
 				<?php endif; ?>
 
 				<?php if ( $has_button ) : ?>
-					<li class="newsfit-get-started-btn">
-						<a class="btn btn-primary" href="<?php echo esc_url( $args['button_link'] ) ?>">
+					<li class="quixa-get-started-btn">
+						<a class="btn button-1" href="<?php echo esc_url( $args['button_link'] ) ?>">
 							<?php echo esc_html( $args['button_label'] ); ?>
 						</a>
 					</li>
@@ -161,13 +156,13 @@ if ( ! function_exists( 'newsfit_menu_icons_group' ) ) {
 			</ul>
 		</div>
 		<?php
-		if ( $args['hamburg'] ) {
-			get_template_part( 'views/header/offcanvas', 'drawer' );
-		}
+
+		get_template_part( 'views/header/offcanvas', 'drawer' );
+
 	}
 }
 
-if ( ! function_exists( 'newsfit_require' ) ) {
+if ( ! function_exists( 'quixa_require' ) ) {
 	/**
 	 * Require any file. If the file will available in the child theme, the file will load from the child theme
 	 *
@@ -176,7 +171,7 @@ if ( ! function_exists( 'newsfit_require' ) ) {
 	 *
 	 * @return false|void
 	 */
-	function newsfit_require( $filename, string $dir = 'inc' ) {
+	function quixa_require( $filename, string $dir = 'inc' ) {
 
 		$dir        = trailingslashit( $dir );
 		$child_file = get_stylesheet_directory() . DIRECTORY_SEPARATOR . $dir . $filename;
@@ -195,20 +190,20 @@ if ( ! function_exists( 'newsfit_require' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_readmore_text' ) ) {
+if ( ! function_exists( 'quixa_readmore_text' ) ) {
 	/**
 	 * Creates continue reading text.
 	 * @return string
 	 */
-	function newsfit_readmore_text() {
+	function quixa_readmore_text() {
 		return sprintf(
-			esc_html__( 'Continue reading %s', 'newsfit' ),
+			esc_html__( 'Continue reading %s', 'quixa' ),
 			the_title( '<span class="screen-reader-text">', '</span>', false )
 		);
 	}
 }
 
-if ( ! function_exists( 'newsfit_list_item_separator' ) ) {
+if ( ! function_exists( 'quixa_list_item_separator' ) ) {
 	/**
 	 * Retrieves the list item separator based on the locale.
 	 *
@@ -216,25 +211,25 @@ if ( ! function_exists( 'newsfit_list_item_separator' ) ) {
 	 *
 	 * @since 6.0.0
 	 */
-	function newsfit_list_item_separator() {
+	function quixa_list_item_separator() {
 		/* translators: Used between list items, there is a space after the comma. */
 		return sprintf(
 			"<span class='%s'>%s</span>",
 			'sp',
-			__( ', ', 'newsfit' )
+			__( ', ', 'quixa' )
 		);
 	}
 }
 
-if ( ! function_exists( 'newsfit_posted_in' ) ) {
+if ( ! function_exists( 'quixa_posted_in' ) ) {
 	/**
 	 * Prints HTML with category list information about theme categories.
 	 * @return string
 	 */
-	function newsfit_posted_in( $type = 'category' ) {
-		$categories_list = get_the_category_list( newsfit_list_item_separator() );
+	function quixa_posted_in( $type = 'category' ) {
+		$categories_list = get_the_category_list( quixa_list_item_separator() );
 		if ( 'tag' === $type ) {
-			$categories_list = get_the_tag_list( '', newsfit_list_item_separator() );
+			$categories_list = get_the_tag_list( '', quixa_list_item_separator() );
 		}
 		if ( $categories_list ) {
 			return sprintf(
@@ -248,12 +243,12 @@ if ( ! function_exists( 'newsfit_posted_in' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_posted_on' ) ) {
+if ( ! function_exists( 'quixa_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 * @return string
 	 */
-	function newsfit_posted_on() {
+	function quixa_posted_on() {
 		$time_string = sprintf(
 			'<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
 			esc_attr( get_the_date( DATE_W3C ) ),
@@ -264,21 +259,21 @@ if ( ! function_exists( 'newsfit_posted_on' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_posted_by' ) ) {
+if ( ! function_exists( 'quixa_posted_by' ) ) {
 	/**
 	 * Prints HTML with meta information about theme author.
 	 * @return string
 	 */
-	function newsfit_posted_by( $prefix = '' ) {
+	function quixa_posted_by( $prefix = '' ) {
 		return sprintf(
-			esc_html__( '%s %s', 'newsfit' ),
+			esc_html__( '%s %s', 'quixa' ),
 			$prefix ? '<span class="prefix">' . $prefix . '</span>' : '',
 			'<span class="byline"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_svg' ) ) {
+if ( ! function_exists( 'quixa_get_svg' ) ) {
 	/**
 	 * Get svg icon
 	 *
@@ -286,8 +281,8 @@ if ( ! function_exists( 'newsfit_get_svg' ) ) {
 	 *
 	 * @return string|void
 	 */
-	function newsfit_get_svg( $name, $rotate = '' ) {
-		$svg_list     = apply_filters( 'newsfit_svg_icon_list', [
+	function quixa_get_svg( $name, $rotate = '' ) {
+		$svg_list     = apply_filters( 'quixa_svg_icon_list', [
 			'search'           => '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.06714 1.61988C7.23998 1.13407 8.49703 0.884033 9.7665 0.884033C11.036 0.884033 12.293 1.13407 13.4659 1.61988C14.6387 2.10569 15.7044 2.81775 16.602 3.7154C17.4997 4.61305 18.2117 5.67872 18.6975 6.85156C19.1833 8.02441 19.4334 9.28145 19.4334 10.5509C19.4334 11.8204 19.1833 13.0774 18.6975 14.2503C18.3398 15.114 17.8594 15.9195 17.2725 16.6427L21.3069 20.6771C21.6975 21.0677 21.6975 21.7008 21.3069 22.0914C20.9164 22.4819 20.2833 22.4819 19.8927 22.0914L15.8583 18.0569C14.1437 19.4485 11.9948 20.2178 9.7665 20.2178C7.20268 20.2178 4.74387 19.1993 2.93098 17.3864C1.11808 15.5736 0.0996094 13.1147 0.0996094 10.5509C0.0996094 7.9871 1.11808 5.52829 2.93098 3.7154C3.82863 2.81775 4.8943 2.10569 6.06714 1.61988ZM9.7665 2.88403C8.75967 2.88403 7.7627 3.08234 6.83251 3.46764C5.90232 3.85294 5.05713 4.41768 4.34519 5.12961C2.90737 6.56743 2.09961 8.51754 2.09961 10.5509C2.09961 12.5843 2.90737 14.5344 4.34519 15.9722C5.78301 17.4101 7.73311 18.2178 9.7665 18.2178C11.7999 18.2178 13.75 17.4101 15.1878 15.9722C15.8997 15.2603 16.4645 14.4151 16.8498 13.4849C17.2351 12.5547 17.4334 11.5578 17.4334 10.5509C17.4334 9.54409 17.2351 8.54712 16.8498 7.61693C16.4645 6.68674 15.8997 5.84155 15.1878 5.12961C14.4759 4.41768 13.6307 3.85294 12.7005 3.46764C11.7703 3.08234 10.7733 2.88403 9.7665 2.88403Z"/></svg>',
 			'user'             => '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21"><path d="M21.6032 19.1499C20.0564 16.4758 17.6727 14.5583 14.8909 13.6493C16.2669 12.8301 17.336 11.582 17.9339 10.0964C18.5319 8.61089 18.6257 6.97014 18.2009 5.42614C17.7761 3.88214 16.8562 2.52027 15.5825 1.54967C14.3088 0.579069 12.7517 0.0534058 11.1504 0.0534058C9.54899 0.0534058 7.9919 0.579069 6.7182 1.54967C5.4445 2.52027 4.52462 3.88214 4.09983 5.42614C3.67504 6.97014 3.76883 8.61089 4.36678 10.0964C4.96474 11.582 6.03381 12.8301 7.40981 13.6493C4.62802 14.5573 2.24434 16.4748 0.697548 19.1499C0.640824 19.2424 0.6032 19.3453 0.586894 19.4526C0.570589 19.5599 0.575933 19.6693 0.602612 19.7745C0.62929 19.8796 0.676762 19.9784 0.742227 20.0649C0.807692 20.1515 0.889824 20.224 0.983776 20.2783C1.07773 20.3325 1.1816 20.3674 1.28926 20.3809C1.39692 20.3944 1.50619 20.3862 1.61062 20.3567C1.71505 20.3273 1.81252 20.2772 1.89729 20.2095C1.98206 20.1418 2.05241 20.0578 2.10419 19.9624C4.01763 16.6555 7.39966 14.6812 11.1504 14.6812C14.9011 14.6812 18.2831 16.6555 20.1965 19.9624C20.2483 20.0578 20.3187 20.1418 20.4034 20.2095C20.4882 20.2772 20.5857 20.3273 20.6901 20.3567C20.7945 20.3862 20.9038 20.3944 21.0115 20.3809C21.1191 20.3674 21.223 20.3325 21.3169 20.2783C21.4109 20.224 21.493 20.1515 21.5585 20.0649C21.624 19.9784 21.6714 19.8796 21.6981 19.7745C21.7248 19.6693 21.7301 19.5599 21.7138 19.4526C21.6975 19.3453 21.6599 19.2424 21.6032 19.1499ZM5.46286 7.36867C5.46286 6.24379 5.79643 5.14417 6.42138 4.20886C7.04633 3.27356 7.93459 2.54458 8.97385 2.1141C10.0131 1.68363 11.1567 1.571 12.2599 1.79045C13.3632 2.00991 14.3766 2.55159 15.172 3.347C15.9674 4.14241 16.5091 5.15583 16.7286 6.25909C16.948 7.36236 16.8354 8.50593 16.4049 9.54518C15.9745 10.5844 15.2455 11.4727 14.3102 12.0977C13.3749 12.7226 12.2752 13.0562 11.1504 13.0562C9.64244 13.0546 8.19674 12.4548 7.13047 11.3886C6.06421 10.3223 5.46447 8.87659 5.46286 7.36867Z"/></svg>',
 			'facebook'         => '<svg xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>',
@@ -318,7 +313,11 @@ if ( ! function_exists( 'newsfit_get_svg' ) ) {
 			'scroll-top'       => '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="17" viewBox="0 0 15 17"><path d="M0.493164 9.71216V5.21216L7.49316 0.212158L14.4932 5.21216V9.71216L7.49316 4.71216L0.493164 9.71216Z"/><path d="M0.493164 16.7122V12.2122L7.49316 7.21216L14.4932 12.2122V16.7122L7.49316 11.7122L0.493164 16.7122Z"/></svg>',
 			'arrow-right'      => '<svg width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg"><path d="M19.0443 8.79735L12.2943 15.5474C12.083 15.7587 11.7963 15.8774 11.4974 15.8774C11.1986 15.8774 10.9119 15.7587 10.7006 15.5474C10.4892 15.336 10.3705 15.0494 10.3705 14.7505C10.3705 14.4516 10.4892 14.1649 10.7006 13.9536L15.5296 9.12642H1.74838C1.45001 9.12642 1.16387 9.00789 0.952887 8.79691C0.741909 8.58593 0.623383 8.29978 0.623383 8.00142C0.623383 7.70305 0.741909 7.4169 0.952887 7.20592C1.16387 6.99494 1.45001 6.87642 1.74838 6.87642H15.5296L10.7024 2.04642C10.4911 1.83507 10.3724 1.54843 10.3724 1.24954C10.3724 0.950654 10.4911 0.66401 10.7024 0.452665C10.9138 0.241321 11.2004 0.122589 11.4993 0.122589C11.7982 0.122589 12.0849 0.241321 12.2962 0.452665L19.0462 7.20267C19.1511 7.30732 19.2343 7.43167 19.291 7.56857C19.3477 7.70547 19.3768 7.85222 19.3766 8.0004C19.3764 8.14858 19.347 8.29526 19.29 8.43203C19.2329 8.56879 19.1495 8.69294 19.0443 8.79735Z"/></svg>',
 			'home'             => '<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.38258 1.03781C7.2994 0.972961 7.19695 0.937744 7.09148 0.937744C6.98602 0.937744 6.88357 0.972961 6.80039 1.03781L0.0644531 6.29015L0.647109 7.02703L1.4707 6.38484V12.1875C1.4712 12.436 1.57013 12.6742 1.74584 12.8499C1.92155 13.0256 2.15971 13.1245 2.4082 13.125H11.7832C12.0317 13.1245 12.2699 13.0256 12.4456 12.8499C12.6213 12.6742 12.7202 12.436 12.7207 12.1875V6.38906L13.5443 7.03125L14.127 6.29437L7.38258 1.03781ZM8.0332 12.1875H6.1582V8.4375H8.0332V12.1875ZM8.9707 12.1875V8.4375C8.97045 8.18893 8.8716 7.95062 8.69584 7.77486C8.52008 7.5991 8.28177 7.50025 8.0332 7.5H6.1582C5.90964 7.50025 5.67133 7.5991 5.49556 7.77486C5.3198 7.95062 5.22095 8.18893 5.2207 8.4375V12.1875H2.4082V5.65406L7.0957 2.0025L11.7832 5.65875V12.1875H8.9707Z"/></svg>',
+
 			'share'            => '<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.72904 2.93333V0L0.595703 5.13333L5.72904 10.2667V7.26C9.3957 7.26 11.9624 8.43333 13.7957 11C13.0624 7.33333 10.8624 3.66667 5.72904 2.93333Z"/></svg>',
+
+			'chevron-right'    => '<svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.94039 6.5H6M6 6.5L1 1.5M6 6.5L1 11.5" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+
 			'camera'           => '<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.0843 2.9079H18.489H16.9559V1.90484C16.9559 1.53787 16.8172 1.20352 16.5644 0.942561C16.3116 0.681603 15.9691 0.542969 15.6021 0.542969H13.1149C12.3646 0.542969 11.753 1.15459 11.753 1.90484V2.9079H6.17502C6.15871 2.492 5.99561 2.10872 5.70203 1.80699C5.39214 1.4971 4.9844 1.32584 4.55218 1.32584C3.67145 1.334 2.95381 2.03532 2.92935 2.9079H2.25249C1.24128 2.9079 0.425781 3.7234 0.425781 4.72646V14.7244C0.425781 15.7275 1.24128 16.543 2.24433 16.543H19.0761C20.0792 16.543 20.8947 15.7275 20.8947 14.7244V4.72646C20.9028 3.7234 20.0874 2.9079 19.0843 2.9079ZM12.3728 1.90484C12.3728 1.4971 12.7071 1.16274 13.1149 1.16274H15.6021C15.7 1.16274 15.7979 1.17905 15.8876 1.21983C15.9773 1.2606 16.0588 1.30953 16.124 1.38293C16.2627 1.52156 16.3361 1.70913 16.3361 1.90484V2.9079H12.3728V1.90484ZM4.55218 1.95377C4.8213 1.95377 5.0741 2.05979 5.26166 2.24735C5.44107 2.42676 5.53893 2.6551 5.55524 2.9079H3.54912C3.57359 2.37783 4.01396 1.95377 4.55218 1.95377ZM1.04556 14.7244V4.72646C1.04556 4.0659 1.58378 3.52768 2.24433 3.52768H3.19846C3.20662 3.52768 3.22293 3.52768 3.23108 3.52768H5.86513C5.87328 3.52768 5.88959 3.52768 5.89775 3.52768H18.1791V15.9232H2.24433C1.58378 15.9232 1.04556 15.385 1.04556 14.7244ZM20.2831 14.7244C20.2831 15.385 19.7448 15.9232 19.0843 15.9232H18.7989V3.52768H19.0843C19.7448 3.52768 20.2831 4.0659 20.2831 4.72646V14.7244Z"/><path d="M10.6681 7.77637C9.59167 7.77637 8.71094 8.6571 8.71094 9.73355C8.71094 10.81 9.59167 11.6907 10.6681 11.6907C11.7446 11.6907 12.6253 10.81 12.6253 9.73355C12.6172 8.64895 11.7446 7.77637 10.6681 7.77637ZM10.6681 11.0628C9.93418 11.0628 9.33071 10.4675 9.33071 9.7254C9.33071 8.99145 9.92602 8.38799 10.6681 8.38799C11.4021 8.38799 12.0055 8.9833 12.0055 9.7254C11.9974 10.4593 11.4021 11.0628 10.6681 11.0628Z"/><path d="M10.669 5.14233C8.14098 5.14233 6.08594 7.19738 6.08594 9.72541C6.08594 12.2534 8.14098 14.3085 10.669 14.3085C13.197 14.3085 15.2521 12.2534 15.2521 9.72541C15.2521 7.19738 13.1889 5.14233 10.669 5.14233ZM10.669 13.6887C8.48349 13.6887 6.70571 11.9109 6.70571 9.72541C6.70571 7.53989 8.48349 5.76211 10.669 5.76211C12.8545 5.76211 14.6323 7.53989 14.6323 9.72541C14.6242 11.9109 12.8464 13.6887 10.669 13.6887Z"/></svg>',
 		] );
 		$rotate_style = '';
@@ -334,7 +333,7 @@ if ( ! function_exists( 'newsfit_get_svg' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_file' ) ) {
+if ( ! function_exists( 'quixa_get_file' ) ) {
 	/**
 	 * Get File Path
 	 *
@@ -342,7 +341,7 @@ if ( ! function_exists( 'newsfit_get_file' ) ) {
 	 *
 	 * @return string
 	 */
-	function newsfit_get_file( $path, $return_path = false ): string {
+	function quixa_get_file( $path, $return_path = false ): string {
 		$file = ( $return_path ? get_stylesheet_directory() : get_stylesheet_directory_uri() ) . $path;
 		if ( ! file_exists( $file ) ) {
 			$file = ( $return_path ? get_template_directory() : get_template_directory_uri() ) . $path;
@@ -352,7 +351,7 @@ if ( ! function_exists( 'newsfit_get_file' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_img' ) ) {
+if ( ! function_exists( 'quixa_get_img' ) ) {
 	/**
 	 * Get Image Path
 	 *
@@ -362,13 +361,13 @@ if ( ! function_exists( 'newsfit_get_img' ) ) {
 	 *
 	 * @return string|void
 	 */
-	function newsfit_get_img( $filename, $echo = false, $image_meta = '' ) {
+	function quixa_get_img( $filename, $echo = false, $image_meta = '' ) {
 		$path      = '/assets/images/' . $filename;
-		$image_url = newsfit_get_file( $path );
+		$image_url = quixa_get_file( $path );
 
 		if ( $echo ) {
 			if ( ! strpos( $filename, '.svg' ) ) {
-				$getimagesize = wp_getimagesize( newsfit_get_file( $path, true ) );
+				$getimagesize = wp_getimagesize( quixa_get_file( $path, true ) );
 				$image_meta   = $getimagesize[3] ?? $image_meta;
 			}
 			echo '<img ' . $image_meta . ' src="' . esc_url( $image_url ) . '"/>';
@@ -378,7 +377,7 @@ if ( ! function_exists( 'newsfit_get_img' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_css' ) ) {
+if ( ! function_exists( 'quixa_get_css' ) ) {
 	/**
 	 * Get CSS Path
 	 *
@@ -387,16 +386,16 @@ if ( ! function_exists( 'newsfit_get_css' ) ) {
 	 *
 	 * @return string
 	 */
-	function newsfit_get_css( $filename, $check_rtl = false ) {
+	function quixa_get_css( $filename, $check_rtl = false ) {
 		$min    = WP_DEBUG ? '.css' : '.min.css';
 		$is_rtl = $check_rtl && is_rtl() ? 'css-rtl' : 'css';
 		$path   = "/assets/$is_rtl/" . $filename . $min;
 
-		return newsfit_get_file( $path );
+		return quixa_get_file( $path );
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_js' ) ) {
+if ( ! function_exists( 'quixa_get_js' ) ) {
 	/**
 	 * Get JS Path
 	 *
@@ -404,16 +403,16 @@ if ( ! function_exists( 'newsfit_get_js' ) ) {
 	 *
 	 * @return string
 	 */
-	function newsfit_get_js( $filename ) {
+	function quixa_get_js( $filename ) {
 		$min  = WP_DEBUG ? '.js' : '.min.js';
 		$path = '/assets/js/' . $filename . $min;
 
-		return newsfit_get_file( $path );
+		return quixa_get_file( $path );
 	}
 }
 
 
-if ( ! function_exists( 'newsfit_option' ) ) {
+if ( ! function_exists( 'quixa_option' ) ) {
 	/**
 	 * Get Customize Options value by key
 	 *
@@ -421,7 +420,7 @@ if ( ! function_exists( 'newsfit_option' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function newsfit_option( $key, $default = '', $return_array = false ) {
+	function quixa_option( $key, $default = '', $return_array = false ) {
 		if ( ! empty( Opt::$options[ $key ] ) ) {
 			$opt_val = Opt::$options[ $key ];
 			if ( $return_array && $opt_val ) {
@@ -439,7 +438,7 @@ if ( ! function_exists( 'newsfit_option' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_social_html' ) ) {
+if ( ! function_exists( 'quixa_get_social_html' ) ) {
 	/**
 	 * Get Social markup
 	 *
@@ -448,16 +447,16 @@ if ( ! function_exists( 'newsfit_get_social_html' ) ) {
 	 * @return void
 	 */
 
-	function newsfit_get_social_html( $color = '' ) {
+	function quixa_get_social_html( $color = '' ) {
 		ob_start();
-		$icon_style = newsfit_option( 'rt_social_icon_style' );
+		$icon_style = quixa_option( 'rt_social_icon_style' );
 		foreach ( Fns::get_socials() as $id => $item ) {
 			if ( empty( $item['url'] ) ) {
 				continue;
 			}
 			?>
 			<a target="_blank" href="<?php echo esc_url( $item['url'] ) ?>">
-				<?php echo newsfit_get_svg( $id . $icon_style ); ?>
+				<?php echo quixa_get_svg( $id . $icon_style ); ?>
 			</a>
 			<?php
 		}
@@ -466,15 +465,15 @@ if ( ! function_exists( 'newsfit_get_social_html' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_site_logo' ) ) {
+if ( ! function_exists( 'quixa_site_logo' ) ) {
 	/**
 	 * Newfit Site Logo
 	 *
 	 */
-	function newsfit_site_logo( $with_h1 = false, $custom_title = '' ) {
-		$main_logo       = newsfit_option( 'rt_logo' );
-		$logo_light      = newsfit_option( 'rt_logo_light' );
-		$logo_mobile     = newsfit_option( 'rt_logo_mobile' );
+	function quixa_site_logo( $with_h1 = false, $custom_title = '' ) {
+		$main_logo       = quixa_option( 'rt_logo' );
+		$logo_light      = quixa_option( 'rt_logo_light' );
+		$logo_mobile     = quixa_option( 'rt_logo_mobile' );
 		$site_logo       = Opt::$has_tr_header ? $logo_light : $main_logo;
 		$mobile_logo     = $logo_mobile ?? $site_logo;
 		$has_mobile_logo = ! empty( $logo_mobile ) ? 'has-mobile-logo' : '';
@@ -483,20 +482,21 @@ if ( ! function_exists( 'newsfit_site_logo' ) ) {
 		?>
 		<?php if ( $with_h1 ) : ?>
 			<h1 class="site-title">
-		<?php endif; ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="<?php echo esc_attr( $has_mobile_logo ) ?>">
-			<?php
-			if ( ! empty( $site_logo ) ) {
-				echo wp_get_attachment_image( $site_logo, 'full', null, [ 'id' => 'rt-site-logo' ] );
-				if ( ! empty( $mobile_logo ) ) {
-					echo wp_get_attachment_image( $mobile_logo, 'full', null, [ 'id' => 'rt-mobile-logo' ] );
-				}
-			} else {
-				echo esc_html( $site_title );
-			}
-			?>
-		</a>
-		<?php if ( $with_h1 ) : ?>
+				<?php endif; ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
+				   class="<?php echo esc_attr( $has_mobile_logo ) ?>">
+					<?php
+					if ( ! empty( $site_logo ) ) {
+						echo wp_get_attachment_image( $site_logo, 'full', null, [ 'id' => 'rt-site-logo' ] );
+						if ( ! empty( $mobile_logo ) ) {
+							echo wp_get_attachment_image( $mobile_logo, 'full', null, [ 'id' => 'rt-mobile-logo' ] );
+						}
+					} else {
+						echo esc_html( $site_title );
+					}
+					?>
+				</a>
+				<?php if ( $with_h1 ) : ?>
 			</h1>
 		<?php endif;
 
@@ -504,14 +504,14 @@ if ( ! function_exists( 'newsfit_site_logo' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_footer_logo' ) ) {
+if ( ! function_exists( 'quixa_footer_logo' ) ) {
 	/**
 	 * Newfit Site Logo
 	 *
 	 */
-	function newsfit_footer_logo() {
-		$main_logo  = newsfit_option( 'rt_logo' );
-		$logo_light = newsfit_option( 'rt_logo_light' );
+	function quixa_footer_logo() {
+		$main_logo  = quixa_option( 'rt_logo' );
+		$logo_light = quixa_option( 'rt_logo_light' );
 		$site_logo  = $main_logo;
 
 		if ( 'footer-dark' === Opt::$footer_schema ) {
@@ -538,16 +538,16 @@ if ( ! function_exists( 'newsfit_footer_logo' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_scroll_top' ) ) {
+if ( ! function_exists( 'quixa_scroll_top' ) ) {
 	/**
 	 * Back-to-top button
 	 * @return void
 	 */
-	function newsfit_scroll_top( $class = '', $icon = 'scroll-top' ) {
-		if ( newsfit_option( 'rt_back_to_top' ) ) {
+	function quixa_scroll_top( $class = '', $icon = 'scroll-top' ) {
+		if ( quixa_option( 'rt_back_to_top' ) ) {
 			?>
 			<a href="#" class="scrollToTop <?php echo esc_attr( $class ) ?>">
-				<?php echo newsfit_get_svg( $icon ); ?>
+				<?php echo quixa_get_svg( $icon ); ?>
 			</a>
 			<?php
 		}
@@ -555,38 +555,38 @@ if ( ! function_exists( 'newsfit_scroll_top' ) ) {
 }
 
 
-if ( ! function_exists( 'newsfit_post_meta' ) ) {
+if ( ! function_exists( 'quixa_post_meta' ) ) {
 	/**
 	 * Get post meta
 	 *
 	 * @return string
 	 */
-	function newsfit_post_meta( $args ) {
+	function quixa_post_meta( $args ) {
 		$default_args = [
 			'with_list'     => true,
 			'include'       => [],
 			'class'         => '',
-			'author_prefix' => __( 'By', 'newsfit' )
+			'author_prefix' => __( 'By', 'quixa' )
 		];
 
 		$args = wp_parse_args( $args, $default_args );
 
 		$comments_number = get_comments_number();
-		$comments_text   = sprintf( _n( '%s Comment', '%s Comments', $comments_number, 'newsfit' ), number_format_i18n( $comments_number ) );
+		$comments_text   = sprintf( _n( '%s Comment', '%s Comments', $comments_number, 'quixa' ), number_format_i18n( $comments_number ) );
 
 		$_meta_data = [];
 		$output     = '';
 
-		$_meta_data['author']   = newsfit_posted_by( $args['author_prefix'] );
-		$_meta_data['date']     = newsfit_posted_on();
-		$_meta_data['category'] = newsfit_posted_in();
-		$_meta_data['tag']      = newsfit_posted_in( 'tag' );
+		$_meta_data['author']   = quixa_posted_by( $args['author_prefix'] );
+		$_meta_data['date']     = quixa_posted_on();
+		$_meta_data['category'] = quixa_posted_in();
+		$_meta_data['tag']      = quixa_posted_in( 'tag' );
 		$_meta_data['comment']  = esc_html( $comments_text );
 
 		$meta_list = $args['include'] ?? array_keys( $_meta_data );
 
 		if ( $args['with_list'] ) {
-			$output .= '<div class="newsfit-post-meta ' . $args['class'] . '"><ul class="entry-meta">';
+			$output .= '<div class="quixa-post-meta ' . $args['class'] . '"><ul class="entry-meta">';
 		}
 		foreach ( $meta_list as $key ) {
 			$meta = $_meta_data[ $key ];
@@ -607,12 +607,12 @@ if ( ! function_exists( 'newsfit_post_meta' ) ) {
 }
 
 
-if ( ! function_exists( 'newsfit_post_thumbnail' ) ) {
+if ( ! function_exists( 'quixa_post_thumbnail' ) ) {
 	/**
 	 * Displays post thumbnail.
 	 * @return void
 	 */
-	function newsfit_post_thumbnail() {
+	function quixa_post_thumbnail() {
 		if ( ! Fns::can_show_post_thumbnail() ) {
 			return;
 		}
@@ -620,7 +620,7 @@ if ( ! function_exists( 'newsfit_post_thumbnail' ) ) {
 		<div class="post-thumbnail-wrap">
 			<figure class="post-thumbnail">
 				<a class="post-thumb-link alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail( 'newsfit-500-500', [ 'loading' => 'lazy' ] ); ?>
+					<?php the_post_thumbnail( 'quixa-500-500', [ 'loading' => 'lazy' ] ); ?>
 				</a>
 				<?php edit_post_link( 'Edit' ); ?>
 			</figure><!-- .post-thumbnail -->
@@ -629,12 +629,12 @@ if ( ! function_exists( 'newsfit_post_thumbnail' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_post_single_thumbnail' ) ) {
+if ( ! function_exists( 'quixa_post_single_thumbnail' ) ) {
 	/**
 	 * Display post details thumbnail
 	 * @return void
 	 */
-	function newsfit_post_single_thumbnail() {
+	function quixa_post_single_thumbnail() {
 		if ( ! Fns::can_show_post_thumbnail() ) {
 			return;
 		}
@@ -646,8 +646,8 @@ if ( ! function_exists( 'newsfit_post_single_thumbnail' ) ) {
 			</figure><!-- .post-thumbnail -->
 			<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
 				<figcaption class="wp-caption-text">
-					<?php echo newsfit_get_svg( 'camera' ); ?>
-					<span><?php echo newsfit_html( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></span>
+					<?php echo quixa_get_svg( 'camera' ); ?>
+					<span><?php echo quixa_html( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></span>
 				</figcaption>
 			<?php endif; ?>
 		</div>
@@ -655,29 +655,30 @@ if ( ! function_exists( 'newsfit_post_single_thumbnail' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_entry_footer' ) ) {
+if ( ! function_exists( 'quixa_entry_footer' ) ) {
 	/**
-	 * Newsfit Entry Footer
+	 * Quixa Entry Footer
 	 *
 	 * @return void
 	 *
 	 */
-	function newsfit_entry_footer() {
+	function quixa_entry_footer() {
 
 		if ( ! is_single() ) {
-			if ( newsfit_option( 'rt_blog_footer_visibility' ) ) { ?>
+			if ( quixa_option( 'rt_blog_footer_visibility' ) ) { ?>
 				<footer class="entry-footer">
-				<a class="read-more" href="<?php echo esc_url( get_permalink() ) ?>"><?php echo newsfit_readmore_text() ?></a>
+				<a class="read-more"
+				   href="<?php echo esc_url( get_permalink() ) ?>"><?php echo quixa_readmore_text() ?></a>
 				</footer><?php
 			}
 		} else {
 			if ( 'post' === get_post_type() && has_tag() ) { ?>
 				<footer class="entry-footer">
 					<div class="post-tags">
-						<?php if ( $tags_label = newsfit_option( 'rt_tags' ) ) {
+						<?php if ( $tags_label = quixa_option( 'rt_tags' ) ) {
 							printf( "<span>%s</span>", esc_html( $tags_label ) );
 						} ?>
-						<?php newsfit_separate_meta( 'content-below-meta', [ 'tag' ] ); ?>
+						<?php quixa_separate_meta( 'content-below-meta', [ 'tag' ] ); ?>
 					</div>
 				</footer>
 				<?php
@@ -687,14 +688,14 @@ if ( ! function_exists( 'newsfit_entry_footer' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_entry_content' ) ) {
+if ( ! function_exists( 'quixa_entry_content' ) ) {
 	/**
 	 * Entry Content
 	 * @return void
 	 */
-	function newsfit_entry_content() {
+	function quixa_entry_content() {
 		if ( ! is_single() ) {
-			$length = newsfit_option( 'rt_excerpt_limit' );
+			$length = quixa_option( 'rt_excerpt_limit' );
 			echo wp_trim_words( get_the_excerpt(), $length );
 		} else {
 			the_content();
@@ -702,7 +703,7 @@ if ( ! function_exists( 'newsfit_entry_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_sidebar' ) ) {
+if ( ! function_exists( 'quixa_sidebar' ) ) {
 	/**
 	 * Get Sidebar conditionally
 	 *
@@ -710,7 +711,7 @@ if ( ! function_exists( 'newsfit_sidebar' ) ) {
 	 *
 	 * @return false|void
 	 */
-	function newsfit_sidebar( $sidebar_id ) {
+	function quixa_sidebar( $sidebar_id ) {
 		$sidebar_from_layout = Opt::$sidebar;
 
 
@@ -727,7 +728,7 @@ if ( ! function_exists( 'newsfit_sidebar' ) ) {
 
 		$sidebar_cols = Fns::sidebar_columns();
 		?>
-		<aside id="sidebar" class="newsfit-widget-area <?php echo esc_attr( $sidebar_cols ) ?>" role="complementary">
+		<aside id="sidebar" class="quixa-widget-area <?php echo esc_attr( $sidebar_cols ) ?>" role="complementary">
 			<?php dynamic_sidebar( $sidebar_id ); ?>
 		</aside><!-- #sidebar -->
 		<?php
@@ -735,19 +736,19 @@ if ( ! function_exists( 'newsfit_sidebar' ) ) {
 }
 
 
-if ( ! function_exists( 'newsfit_post_class' ) ) {
+if ( ! function_exists( 'quixa_post_class' ) ) {
 	/**
 	 * Get dynamic article classes
 	 * @return string
 	 */
-	function newsfit_post_class( $default_class = 'newsfit-post-card' ) {
-		$above_meta_style = 'above-' . newsfit_option( 'rt_single_above_meta_style' );
+	function quixa_post_class( $default_class = 'quixa-post-card' ) {
+		$above_meta_style = 'above-' . quixa_option( 'rt_single_above_meta_style' );
 
 		if ( is_single() ) {
-			$meta_style   = newsfit_option( 'rt_single_meta_style' );
+			$meta_style   = quixa_option( 'rt_single_meta_style' );
 			$post_classes = Fns::class_list( [ $meta_style, $above_meta_style ] );
 		} else {
-			$meta_style   = newsfit_option( 'rt_blog_meta_style' );
+			$meta_style   = quixa_option( 'rt_blog_meta_style' );
 			$post_classes = Fns::class_list( [ $meta_style, $above_meta_style, Fns::blog_column() ] );
 		}
 
@@ -759,15 +760,15 @@ if ( ! function_exists( 'newsfit_post_class' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_separate_meta' ) ) {
+if ( ! function_exists( 'quixa_separate_meta' ) ) {
 	/**
 	 * Get above title meta
 	 * @return string
 	 */
-	function newsfit_separate_meta( $class = '', $includes = [ 'category' ] ) {
-		if ( ( ! is_single() && newsfit_option( 'rt_blog_above_cat_visibility' ) ) || ( is_single() && newsfit_option( 'rt_single_above_cat_visibility' ) ) ) : ?>
+	function quixa_separate_meta( $class = '', $includes = [ 'category' ] ) {
+		if ( ( ! is_single() && quixa_option( 'rt_blog_above_cat_visibility' ) ) || ( is_single() && quixa_option( 'rt_single_above_cat_visibility' ) ) ) : ?>
 		<div class="separate-meta <?php echo esc_attr( $class ) ?>">
-			<?php echo newsfit_post_meta( [
+			<?php echo quixa_post_meta( [
 				'with_list' => false,
 				'include'   => $includes,
 			] ); ?>
@@ -776,24 +777,24 @@ if ( ! function_exists( 'newsfit_separate_meta' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_single_entry_header' ) ) {
+if ( ! function_exists( 'quixa_single_entry_header' ) ) {
 	/**
 	 * Get above title meta
 	 * @return string
 	 */
-	function newsfit_single_entry_header() {
+	function quixa_single_entry_header() {
 		?>
 		<header class="entry-header">
 			<?php
-			newsfit_separate_meta( 'title-above-meta' );
+			quixa_separate_meta( 'title-above-meta' );
 
 			the_title( '<h1 class="entry-title default-max-width">', '</h1>' );
 
-			if ( ! empty( Fns::single_meta_lists() ) && newsfit_option( 'rt_single_meta_visibility' ) ) {
-				echo newsfit_post_meta( [
+			if ( ! empty( Fns::single_meta_lists() ) && quixa_option( 'rt_single_meta_visibility' ) ) {
+				echo quixa_post_meta( [
 					'with_list'     => true,
 					'include'       => Fns::single_meta_lists(),
-					'author_prefix' => newsfit_option( 'rt_author_prefix' ),
+					'author_prefix' => quixa_option( 'rt_author_prefix' ),
 				] );
 			}
 			?>
@@ -802,47 +803,46 @@ if ( ! function_exists( 'newsfit_single_entry_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_breadcrumb' ) ) {
+if ( ! function_exists( 'quixa_breadcrumb' ) ) {
 	/**
-	 * Newsfit breadcrumb
+	 * Quixa breadcrumb
 	 * @return void
 	 */
-	function newsfit_breadcrumb() {
+	function quixa_breadcrumb() {
 		?>
 		<nav aria-label="breadcrumb">
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
-					<?php echo newsfit_get_svg( 'home' ); ?>
-					<a href="<?php echo esc_url( site_url() ); ?>"><?php esc_html_e( 'Home', 'newsfit' ) ?></a>
-					<span class="raquo">/</span>
+					<a href="<?php echo esc_url( site_url() ); ?>"><?php esc_html_e( 'Home', 'quixa' ) ?></a>
+					<span class="raquo"><?php echo quixa_get_svg( 'chevron-right' ); ?></span>
 				</li>
 				<li class="breadcrumb-item active" aria-current="page">
 					<?php
 					if ( is_tag() ) {
-						esc_html_e( 'Posts Tagged ', 'newsfit' );
-						?><span class="raquo">/</span>
+						esc_html_e( 'Posts Tagged ', 'quixa' );
+						?><span class="raquo"><?php echo quixa_get_svg( 'chevron-right' ); ?></span>
 						<span class="title"><?php single_tag_title(); ?></span>
 						<?php
 
 					} elseif ( is_day() || is_month() || is_year() ) {
 						echo '<span class="title">';
-						esc_html_e( 'Posts made in', 'newsfit' );
+						esc_html_e( 'Posts made in', 'quixa' );
 						echo esc_html( get_the_time( is_year() ? 'Y' : ( is_month() ? 'F, Y' : 'F jS, Y' ) ) );
 						echo '</span>';
 					} elseif ( is_search() ) {
 						echo '<span class="title">';
-						esc_html_e( 'Search results for', 'newsfit' );
+						esc_html_e( 'Search results for', 'quixa' );
 						the_search_query();
 						echo '</span>';
 					} elseif ( is_404() ) {
 						echo '<span class="title">';
-						esc_html_e( '404', 'newsfit' );
+						esc_html_e( '404', 'quixa' );
 						echo '</span>';
 					} elseif ( is_single() ) {
 						$category = get_the_category();
 						if ( $category ) {
 							$catlink = get_category_link( $category[0]->cat_ID );
-							echo '<a href="' . esc_url( $catlink ) . '">' . esc_html( $category[0]->cat_name ) . '</a> <span class="raquo"> /</span> ';
+							echo '<a href="' . esc_url( $catlink ) . '">' . esc_html( $category[0]->cat_name ) . '</a> <span class="raquo">'. quixa_get_svg( 'chevron-right' ) .' </span> ';
 						}
 						echo '<span class="title">';
 						echo get_the_title();
@@ -875,7 +875,7 @@ if ( ! function_exists( 'newsfit_breadcrumb' ) ) {
 						$current_author = $wp_query->get_queried_object();
 
 						echo '<span class="title">';
-						esc_html_e( 'Posts by: ', 'newsfit' );
+						esc_html_e( 'Posts by: ', 'quixa' );
 						echo ' ', esc_html( $current_author->nickname );
 						echo '</span>';
 					} elseif ( is_page() ) {
@@ -884,11 +884,11 @@ if ( ! function_exists( 'newsfit_breadcrumb' ) ) {
 						echo '</span>';
 					} elseif ( is_home() ) {
 						echo '<span class="title">';
-						esc_html_e( 'Blog', 'newsfit' );
+						esc_html_e( 'Blog', 'quixa' );
 						echo '</span>';
 					} elseif ( class_exists( 'WooCommerce' ) and is_shop() ) {
 						echo '<span class="title">';
-						esc_html_e( 'Shop', 'newsfit' );
+						esc_html_e( 'Shop', 'quixa' );
 						echo '</span>';
 					}
 					?>
@@ -899,8 +899,8 @@ if ( ! function_exists( 'newsfit_breadcrumb' ) ) {
 	}
 }
 
-if ( ! function_exists( 'newsfit_get_avatar_url' ) ) :
-	function newsfit_get_avatar_url( $get_avatar ) {
+if ( ! function_exists( 'quixa_get_avatar_url' ) ) :
+	function quixa_get_avatar_url( $get_avatar ) {
 		preg_match( "/src='(.*?)'/i", $get_avatar, $matches );
 
 		return $matches[1];
@@ -908,7 +908,7 @@ if ( ! function_exists( 'newsfit_get_avatar_url' ) ) :
 endif;
 
 
-function newsfit_comments_cbf( $comment, $args, $depth ) {
+function quixa_comments_cbf( $comment, $args, $depth ) {
 
 	// Get correct tag used for the comments
 	if ( 'div' === $args['style'] ) {
@@ -926,7 +926,9 @@ function newsfit_comments_cbf( $comment, $args, $depth ) {
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' : ?>
-			<div class="pingback-entry"><span class="pingback-heading"><?php esc_html_e( 'Pingback:', 'newsfit' ); ?></span> <?php comment_author_link(); ?></div>
+			<div class="pingback-entry"><span
+					class="pingback-heading"><?php esc_html_e( 'Pingback:', 'quixa' ); ?></span> <?php comment_author_link(); ?>
+			</div>
 			<?php
 			break;
 		default :
@@ -946,18 +948,18 @@ function newsfit_comments_cbf( $comment, $args, $depth ) {
 				<div class="author-info">
 					<?php
 					// Display author name
-					printf( __( '<cite class="fn">%s</cite>', 'newsfit' ), get_comment_author_link() ); ?>
+					printf( __( '<cite class="fn">%s</cite>', 'quixa' ), get_comment_author_link() ); ?>
 
 					<div class="comment-meta commentmetadata">
 						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 							/* translators: 1: date, 2: time */
 							printf(
-								__( '%1$s at %2$s', 'newsfit' ),
+								__( '%1$s at %2$s', 'quixa' ),
 								get_comment_date(),
 								get_comment_time()
 							); ?>
 						</a><?php
-						edit_comment_link( __( 'Edit', 'newsfit' ), '  ', '' ); ?>
+						edit_comment_link( __( 'Edit', 'quixa' ), '  ', '' ); ?>
 					</div><!-- .comment-meta -->
 				</div>
 
@@ -968,17 +970,18 @@ function newsfit_comments_cbf( $comment, $args, $depth ) {
 				<?php
 				// Display comment moderation text
 				if ( $comment->comment_approved == '0' ) { ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'newsfit' ); ?></em><br/><?php
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quixa' ); ?></em>
+					<br/><?php
 				} ?>
 
 				<?php
-				$icon = newsfit_get_svg( 'share' );
+				$icon = quixa_get_svg( 'share' );
 				// Display comment reply link
 				comment_reply_link( array_merge( $args, [
 					'add_below'  => $add_below,
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
-					'reply_text' => $icon . __( 'Reply', 'newsfit' )
+					'reply_text' => $icon . __( 'Reply', 'quixa' )
 				] ) ); ?>
 
 			</div><!-- .comment-details -->
@@ -989,4 +992,31 @@ function newsfit_comments_cbf( $comment, $args, $depth ) {
 			// IMPORTANT: Note that we do NOT close the opening tag, WordPress does this for us
 			break;
 	endswitch; // End comment_type check.
+}
+
+
+if ( ! function_exists( 'newsfit_hanburger' ) ) {
+
+	/**
+	 * Newsfit hanburger
+	 * @param $class
+	 *
+	 * @return void
+	 */
+	function newsfit_hanburger( $class = '' ) {
+		?>
+		<li class="<?php esc_attr_e( $class ) ?>">
+			<a class="menu-bar trigger-off-canvas" href="#">
+				<svg class="ham_burger" viewBox="0 0 100 100" width="180">
+					<path class="line top"
+						  d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"/>
+					<path class="line middle" d="m 30,50 h 40"/>
+					<path class="line bottom"
+						  d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"/>
+				</svg>
+			</a>
+		</li>
+		<?php
+	}
+
 }

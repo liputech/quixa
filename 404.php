@@ -4,10 +4,15 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package newsfit
+ * @package quixa
  */
 
-get_header(); ?>
+use RT\Quixa\Helpers\Fns;
+
+get_header();
+
+
+?>
 
 	<div class="container">
 
@@ -18,12 +23,19 @@ get_header(); ?>
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main error-404" role="main">
 
-						<?php newsfit_get_img( '404.svg', true, 'width="1007" height="530"' ); ?>
+						<?php
+						if ( ! empty( quixa_option( 'rt_error_image' ) ) ) {
+							echo wp_get_attachment_image( quixa_option( 'rt_error_image' ), 'full', true );
+						} else {
+							quixa_get_img( '404.svg', true, 'width="1007" height="530"' ) . "' alt='";
+						}
+						?>
 
 						<div class="error-info">
-						<h2 class="error-title"><?php esc_html_e( 'Error Page!', 'newsfit' ); ?></h2>
-						<p><?php esc_html_e('Sorry! This Page is Not Available!', 'newsfit'); ?></p>
-						<a class="btn btn-primary" href="<?php echo esc_url(home_url()) ?>"><?php esc_html_e('Back to Home', 'newsfit') ?></a>
+							<h2 class="error-title"><?php echo wp_kses( quixa_option( 'rt_error_heading' ), 'allowed_html' ); ?></h2>
+							<p><?php echo wp_kses( quixa_option( 'rt_error_text' ), 'allowed_html' ); ?></p>
+							<a class="btn btn-primary"
+							   href="<?php echo esc_url( home_url() ) ?>"><?php echo wp_kses( quixa_option( 'rt_error_button_text' ), 'allowed_html' ); ?></a>
 						</div>
 					</main><!-- #main -->
 				</div><!-- #primary -->

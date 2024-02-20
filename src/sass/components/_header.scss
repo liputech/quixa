@@ -1,16 +1,18 @@
-/* Newsfit Header Style
+/* Quixa Header Style
 ***************************/
 
 $dropdown_top_bottom_margin: 10px;
 
-@media (min-width: 768px) {
-	#rt-mobile-logo {
+@media (min-width: 1025px) {
+	#rt-mobile-logo,
+	.mobile-hamburg {
 		display: none;
 	}
 }
 
-@media (max-width: 767px) {
-	#rt-site-logo {
+@media (max-width: 1024px) {
+	#rt-site-logo,
+	.desktop-hamburg {
 		display: none;
 	}
 }
@@ -38,7 +40,7 @@ $dropdown_top_bottom_margin: 10px;
 	}
 
 	h1 a:hover {
-		color: $primary_dark_color;
+		color: $secondary_color;
 	}
 }
 
@@ -56,6 +58,15 @@ $dropdown_top_bottom_margin: 10px;
 ***************************/
 
 .menu-icon-wrapper {
+	.quixa-user-login {
+		a {
+			color: $title_color;
+			font-weight: 600;
+			&:hover {
+				color: $primary_color;
+			}
+		}
+	}
 
 	.menu-bar {
 		position: relative;
@@ -63,22 +74,28 @@ $dropdown_top_bottom_margin: 10px;
 		flex-direction: column;
 		justify-content: space-between;
 
-		.ham_burger {
-			width: 47px;
-			height: 47px;
-			margin: 0 -13px;
-			.line {
-				stroke: $meta_color;
-			}
-			&:hover .line {
-				stroke: $primary_color;
-			}
+
+	}
+	.ham_burger {
+		width: 47px;
+		height: 47px;
+		margin: 0 -13px;
+		.line {
+			stroke: $meta_color;
+		}
+		&:hover .line {
+			stroke: $primary_color;
 		}
 	}
 
 	a {
 		display: flex;
 		justify-content: center;
+		&.btn {
+			@media(max-width: 480px) {
+				padding: 10px;
+			}
+		}
 	}
 
 	a:hover svg {
@@ -97,6 +114,11 @@ $dropdown_top_bottom_margin: 10px;
 
 	ul.has-separator {
 		gap: 13px;
+		& {
+			@media(max-width: 480px) {
+				gap: 5px;
+			}
+		}
 	}
 	.has-separator li:not(:last-child){
 		padding-right: 14px;

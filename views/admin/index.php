@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/reference/functions/add_menu_page/
  *
- * @package newsfit
+ * @package quixa
  */
 
 ?>
@@ -14,8 +14,8 @@
 	<?php settings_errors(); ?>
 
 	<form method="post" action="options.php">
-		<?php settings_fields( 'newsfit_options_group' ); ?>
-		<?php do_settings_sections( 'newsfit' ); ?>
+		<?php settings_fields( 'quixa_options_group' ); ?>
+		<?php do_settings_sections( 'quixa' ); ?>
 		<?php submit_button(); ?>
 	</form>
 </div>

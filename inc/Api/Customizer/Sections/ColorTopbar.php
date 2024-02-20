@@ -2,19 +2,19 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
  * Customizer class
  */
 class ColorTopbar extends Customizer {
-	protected string $section_topbar_color = 'newsfit_topbar_color_section';
+	protected string $section_topbar_color = 'quixa_topbar_color_section';
 
 	/**
 	 * Register controls
@@ -24,8 +24,8 @@ class ColorTopbar extends Customizer {
 		Customize::add_section( [
 			'id'          => $this->section_topbar_color,
 			'panel'       => 'rt_color_panel',
-			'title'       => __( 'Topbar Colors', 'newsfit' ),
-			'description' => __( 'Newsfit Topbar Color Section', 'newsfit' ),
+			'title'       => __( 'Topbar Colors', 'quixa' ),
+			'description' => __( 'Quixa Topbar Color Section', 'quixa' ),
 			'priority'    => 3
 		] );
 
@@ -38,35 +38,23 @@ class ColorTopbar extends Customizer {
 	 */
 	public function get_controls() {
 
-		return apply_filters( 'newsfit_header_color_controls', [
+		return apply_filters( 'quixa_header_color_controls', [
 
 
 			'rt_topbar_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Topbar Color', 'newsfit' ),
+				'label' => __( 'Topbar Color', 'quixa' ),
 			],
 
 			'rt_topbar_active_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Hover & Active Color', 'newsfit' ),
+				'label' => __( 'Hover Color', 'quixa' ),
 			],
 
 			'rt_topbar_bg_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Topbar Background', 'newsfit' ),
+				'label' => __( 'Topbar Background', 'quixa' ),
 			],
-
-			/*
-			 * 'rt_topbar_heading4' => [
-				'type'    => 'heading',
-				'label'   => __( 'Others Style', 'newsfit' ),
-			],
-
-			'rt_topbar_border_color' => [
-				'type'    => 'alfa_color',
-				'label'   => __( 'Menu Border Color', 'newsfit' ),
-			],
-			*/
 
 
 		] );

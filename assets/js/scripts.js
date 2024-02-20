@@ -2,25 +2,25 @@
 
     'use strict';
 
-    var Newsfit = {
+    var Quixa = {
 
         _init: function () {
 
             var offCanvas = {
                 menuBar: $('.trigger-off-canvas'),
-                drawer: $('.newsfit-offcanvas-drawer'),
-                drawerClass: '.newsfit-offcanvas-drawer',
+                drawer: $('.quixa-offcanvas-drawer'),
+                drawerClass: '.quixa-offcanvas-drawer',
                 menuDropdown: $('.dropdown-menu.depth_0'),
             };
 
-            Newsfit.readyFunctionality();
-            Newsfit.menuDrawerOpen(offCanvas);
-            Newsfit.offcanvasMenuToggle(offCanvas);
-            Newsfit.headerSearchOpen();
-            Newsfit.backToTop();
-            Newsfit.menuOffset();
-            Newsfit.slickSlider();
-            Newsfit.magnificPopup();
+            Quixa.readyFunctionality();
+            Quixa.menuDrawerOpen(offCanvas);
+            Quixa.offcanvasMenuToggle(offCanvas);
+            Quixa.headerSearchOpen();
+            Quixa.backToTop();
+            Quixa.menuOffset();
+            Quixa.slickSlider();
+            Quixa.magnificPopup();
         },
 
         magnificPopup: function (){
@@ -79,9 +79,9 @@
                 var stickyPlaceHolder = $("#rt-sticky-placeholder");
                 var mainMenu = $(".main-header-section");
                 var menuHeight = mainMenu.outerHeight() || 0;
-                var headerTopbar = $('.newsfit-topbar').outerHeight() || 0;
+                var headerTopbar = $('.quixa-topbar').outerHeight() || 0;
                 var targrtScroll = headerTopbar + menuHeight;
-                if ($('body').hasClass('newsfit-header-2')) {
+                if ($('body').hasClass('quixa-header-2')) {
                     targrtScroll = $(window).height() - menuHeight;
                 }
 
@@ -111,7 +111,7 @@
         readyFunctionality: function () {
             const siteHeader = $('.site-header');
             const paddingTop = siteHeader.height() + siteHeader.position().top + 10;
-            $('.has-trheader .newsfit-breadcrumb-wrapper').css({'paddingTop': paddingTop + 'px', 'opacity': 1})
+            $('.has-trheader .quixa-breadcrumb-wrapper').css({'paddingTop': paddingTop + 'px', 'opacity': 1})
 
             const commentBody = $('.comment-list .comment-body').last().addClass('last-item');
         },
@@ -144,14 +144,14 @@
         },
 
         headerSearchOpen: function () {
-            $('.newsfit-search-trigger').on('click', function (e) {
+            $('.quixa-search-trigger').on('click', function (e) {
                 e.preventDefault();
                 $(this).parent().toggleClass('show');
                 e.stopPropagation()
             })
             $(document).on('click', function (e) {
-                if (!$(e.target).closest('.newsfit-search-form').length) {
-                    $('.newsfit-search-popup.show').removeClass('show')
+                if (!$(e.target).closest('.quixa-search-form').length) {
+                    $('.quixa-search-popup.show').removeClass('show')
                 }
             });
         },
@@ -175,33 +175,33 @@
     };
 
     $(document).ready(function (e) {
-        Newsfit._init();
+        Quixa._init();
     });
 
     $(document).on('load', () => {
-        Newsfit.menuOffset();
+        Quixa.menuOffset();
     })
 
     $(window).on('scroll', (event) => {
-        Newsfit.headerSticky(event);
-        Newsfit.backTopTopScroll(event);
+        Quixa.headerSticky(event);
+        Quixa.backTopTopScroll(event);
     });
 
     $(window).on('resize', () => {
-        Newsfit.menuOffset($);
+        Quixa.menuOffset($);
     });
 
     $(window).on('elementor/frontend/init', () => {
         if (elementorFrontend.isEditMode()) {
             //For all widgets
             elementorFrontend.hooks.addAction('frontend/element_ready/widget', () => {
-                Newsfit.slickSlider($);
-                Newsfit.magnificPopup();
+                Quixa.slickSlider($);
+                Quixa.magnificPopup();
             });
 
         }
     });
 
-    window.Newsfit = Newsfit;
+    window.Quixa = Quixa;
 
 })(jQuery);

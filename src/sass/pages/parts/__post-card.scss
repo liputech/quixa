@@ -1,7 +1,7 @@
 /*Post Block
 ===================================*/
 
-.newsfit-post-card {
+.quixa-post-card {
 
 	margin-bottom: 30px;
 
@@ -76,14 +76,14 @@
 
 
 //List and 1st Big Style
-//.blog-big-first-style .newsfit-post-card:not(:first-child),
+//.blog-big-first-style .quixa-post-card:not(:first-child),
 
-.widget .newsfit-post-card .entry-title {
+.widget .quixa-post-card .entry-title {
 	@include font-size(20px, 26px);
 	margin-bottom: 6px;
 }
 
-.blog-list-style .newsfit-post-card {
+.blog-list-style .quixa-post-card {
 	margin-bottom: 15px;
 	.article-inner-wrapper {
 		display: flex;
@@ -109,7 +109,7 @@
 }
 
 
-.blog-big-first-style.style2 .newsfit-post-card {
+.blog-big-first-style.style2 .quixa-post-card {
 	&:first-child {
 		.post-thumbnail {
 			&::after {
@@ -158,7 +158,7 @@
 			@extend .whiteColor;
 		}
 
-		.newsfit-post-meta ul {
+		.quixa-post-meta ul {
 			justify-content: center;
 		}
 	}

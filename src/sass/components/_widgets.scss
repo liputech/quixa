@@ -246,7 +246,7 @@ ol.wp-block-latest-comments li:last-child {
 	width: 100%;
 	background-color: transparent;
 	outline: none;
-	border: 1px solid $gray40;
+	border: 1px solid $gray20;
 }
 
 /*------ Calender ----------*/
@@ -330,7 +330,7 @@ ol.wp-block-latest-comments li:last-child {
 ***************************/
 
 //About Widget
-.widget_newsfit_about {
+.widget_quixa_about {
 	.about-logo a {
 		font-size: 36px;
 		font-weight: 600;
@@ -339,7 +339,7 @@ ol.wp-block-latest-comments li:last-child {
 
 
 //Contact Widget
-.widget_newsfit_contact {
+.widget_quixa_contact {
 	ul {
 		@include list_default();
 	}

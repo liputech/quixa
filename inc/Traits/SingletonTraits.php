@@ -3,7 +3,7 @@
  *
  */
 
-namespace RT\Newsfit\Traits;
+namespace RT\Quixa\Traits;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {

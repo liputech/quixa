@@ -1,7 +1,11 @@
 /* Off canvas drawer
 ***************************/
 
-.newsfit-offcanvas-drawer {
+.quixa-offcanvas-drawer {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: space-around;
 	padding: 40px;
 	width: $nav_drawer_width;
 	margin-left: - $nav_drawer_width;
@@ -21,10 +25,12 @@
 		margin-left: 0;
 	}
 
-	ul li a {
+	ul.menu li a {
 		padding: 8px 40px 8px 0;
 		display: block;
 		position: relative;
+		font-size: 16px;
+		font-weight: 600;
 		color: $title_color;
 
 		&:hover {
@@ -65,7 +71,7 @@
 	}
 }
 
-.newsfit-body-overlay {
+.quixa-body-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -79,7 +85,34 @@
 	visibility: hidden;
 }
 
-.newsfit-offcanvas-drawer.is-open + .newsfit-body-overlay {
+.quixa-offcanvas-drawer.is-open + .quixa-body-overlay {
 	opacity: 1;
 	visibility: visible;
+}
+.offcanvas-address {
+	.offcanvas-info {
+		li {
+			display: flex;
+			align-items: baseline;
+			column-gap: 8px;
+			margin-bottom: 10px;
+		}
+		a {
+			color: $body_color;
+		}
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+	}
+	.offcan-social-icon {
+		label {
+			color: $title_color;
+			font-weight: 600;
+		}
+		svg {
+			width: 15px;
+			height: 15px;
+		}
+	}
 }

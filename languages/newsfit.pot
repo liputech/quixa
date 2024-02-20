@@ -1,8 +1,8 @@
-# Copyright (C) 2024 Newsfit Theme
-# This file is distributed under the same license as the Newsfit Theme package.
+# Copyright (C) 2024 Quixa Theme
+# This file is distributed under the same license as the Quixa Theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newsfit Theme\n"
+"Project-Id-Version: Quixa Theme\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,7 +129,7 @@ msgid "Header - Topbar - Menu"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:110
-msgid "Newsfit Header"
+msgid "Quixa Header"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:116
@@ -137,7 +137,7 @@ msgid "Contact & Socials"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:117
-msgid "Newsfit Contact & Socials"
+msgid "Quixa Contact & Socials"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:123
@@ -145,7 +145,7 @@ msgid "Colors"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:124
-msgid "Newsfit Color Settings"
+msgid "Quixa Color Settings"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:130
@@ -153,7 +153,7 @@ msgid "Layout Settings"
 msgstr ""
 
 #: ../inc/Api/Customizer.php:131
-msgid "Newsfit Layout Settings"
+msgid "Quixa Layout Settings"
 msgstr ""
 
 #: ../inc/Api/Gutenberg.php:46
@@ -379,7 +379,7 @@ msgid "Banner - Breadcrumb"
 msgstr ""
 
 #: ../inc/Api/Customizer/Banner.php:29
-msgid "Newsfit Banner Section"
+msgid "Quixa Banner Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/Banner.php:46
@@ -419,7 +419,7 @@ msgid "Blog Archive"
 msgstr ""
 
 #: ../inc/Api/Customizer/Blog.php:30
-msgid "Newsfit Blog Section"
+msgid "Quixa Blog Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/Blog.php:46
@@ -503,7 +503,7 @@ msgid "Single Blog"
 msgstr ""
 
 #: ../inc/Api/Customizer/BlogSingle.php:28
-msgid "Newsfit Blog Single Section"
+msgid "Quixa Blog Single Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/BlogSingle.php:44
@@ -519,7 +519,7 @@ msgid "Banner / Breadcrumb Colors"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorBanner.php:29
-msgid "Newsfit Banner Color Section"
+msgid "Quixa Banner Color Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorBanner.php:46
@@ -539,7 +539,7 @@ msgid "Footer Colors"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorFooter.php:28
-msgid "Newsfit Footer Color Section"
+msgid "Quixa Footer Color Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorFooter.php:44
@@ -595,7 +595,7 @@ msgid "Header Colors"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorHeader.php:29
-msgid "Newsfit Header Color Section"
+msgid "Quixa Header Color Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorHeader.php:46
@@ -639,7 +639,7 @@ msgid "Site Colors"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorSite.php:28
-msgid "Newsfit Site Color Section"
+msgid "Quixa Site Color Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorSite.php:44
@@ -695,7 +695,7 @@ msgid "Topbar Colors"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorTopbar.php:28
-msgid "Newsfit Topbar Color Section"
+msgid "Quixa Topbar Color Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/ColorTopbar.php:46
@@ -715,7 +715,7 @@ msgid "Contact Information"
 msgstr ""
 
 #: ../inc/Api/Customizer/Contact.php:28
-msgid "Newsfit Contact Address Section"
+msgid "Quixa Contact Address Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/Contact.php:44
@@ -743,7 +743,7 @@ msgid "Footer"
 msgstr ""
 
 #: ../inc/Api/Customizer/Footer.php:28
-msgid "Newsfit Footer Section"
+msgid "Quixa Footer Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/Footer.php:52
@@ -783,7 +783,7 @@ msgid "Footer Copyright Text"
 msgstr ""
 
 #: ../inc/Api/Customizer/Footer.php:87
-msgid "Copyright© [y] Newsfit by <a href=\"https://radiustheme.com/\">RadiusTheme</a>"
+msgid "Copyright© [y] Quixa by <a href=\"https://radiustheme.com/\">RadiusTheme</a>"
 msgstr ""
 
 #: ../inc/Api/Customizer/Footer.php:88
@@ -819,7 +819,7 @@ msgid "General"
 msgstr ""
 
 #: ../inc/Api/Customizer/General.php:27
-msgid "Newsfit General Section"
+msgid "Quixa General Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/General.php:43
@@ -855,7 +855,7 @@ msgid "Header Menu"
 msgstr ""
 
 #: ../inc/Api/Customizer/Header.php:29
-msgid "Newsfit Header Section"
+msgid "Quixa Header Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/Header.php:52
@@ -931,7 +931,7 @@ msgid "Header Topbar"
 msgstr ""
 
 #: ../inc/Api/Customizer/HeaderTopbar.php:29
-msgid "Newsfit Topbar Section"
+msgid "Quixa Topbar Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/HeaderTopbar.php:46
@@ -1055,7 +1055,7 @@ msgid "Socials Information"
 msgstr ""
 
 #: ../inc/Api/Customizer/Socials.php:30
-msgid "Newsfit Socials Section"
+msgid "Quixa Socials Section"
 msgstr ""
 
 #: ../inc/Api/Customizer/ZControllerExample.php:27
@@ -1131,7 +1131,7 @@ msgid "Choose radio"
 msgstr ""
 
 #: ../inc/Api/Customizer/ZControllerExample.php:143
-msgid "newsfit_radio Textarea2 - menu-center"
+msgid "quixa_radio Textarea2 - menu-center"
 msgstr ""
 
 #: ../inc/Api/Customizer/ZControllerExample.php:156

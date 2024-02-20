@@ -1,9 +1,9 @@
 <?php
 
-namespace RT\Newsfit\Helpers;
+namespace RT\Quixa\Helpers;
 
-use RT\Newsfit\Core\Sidebar;
-use RT\Newsfit\Options\Opt;
+use RT\Quixa\Core\Sidebar;
+use RT\Quixa\Options\Opt;
 
 /**
  * Extras.
@@ -18,7 +18,7 @@ class Fns {
 	 */
 	public static function can_show_post_thumbnail() {
 		return apply_filters(
-			'newsfit_can_show_post_thumbnail',
+			'quixa_can_show_post_thumbnail',
 			! post_password_required() && ! is_attachment() && has_post_thumbnail()
 		);
 	}
@@ -28,34 +28,38 @@ class Fns {
 	 * @return mixed|null
 	 */
 	public static function get_socials() {
-		return apply_filters( 'newsfit_socials_icon', [
+		return apply_filters( 'quixa_socials_icon', [
 			'facebook'  => [
-				'title' => __( 'Facebook', 'newsfit' ),
-				'url'   => newsfit_option( 'facebook' ),
+				'title' => __( 'Facebook', 'quixa' ),
+				'url'   => quixa_option( 'facebook' ),
 			],
 			'twitter'   => [
-				'title' => __( 'Twitter', 'newsfit' ),
-				'url'   => newsfit_option( 'twitter' ),
+				'title' => __( 'Twitter', 'quixa' ),
+				'url'   => quixa_option( 'twitter' ),
 			],
 			'linkedin'  => [
-				'title' => __( 'Linkedin', 'newsfit' ),
-				'url'   => newsfit_option( 'linkedin' ),
+				'title' => __( 'Linkedin', 'quixa' ),
+				'url'   => quixa_option( 'linkedin' ),
 			],
 			'youtube'   => [
-				'title' => __( 'Youtube', 'newsfit' ),
-				'url'   => newsfit_option( 'youtube' ),
+				'title' => __( 'Youtube', 'quixa' ),
+				'url'   => quixa_option( 'youtube' ),
 			],
 			'pinterest' => [
-				'title' => __( 'Pinterest', 'newsfit' ),
-				'url'   => newsfit_option( 'pinterest' ),
+				'title' => __( 'Pinterest', 'quixa' ),
+				'url'   => quixa_option( 'pinterest' ),
 			],
 			'instagram' => [
-				'title' => __( 'Instagram', 'newsfit' ),
-				'url'   => newsfit_option( 'instagram' ),
+				'title' => __( 'Instagram', 'quixa' ),
+				'url'   => quixa_option( 'instagram' ),
 			],
 			'skype'     => [
-				'title' => __( 'Skype', 'newsfit' ),
-				'url'   => newsfit_option( 'skype' ),
+				'title' => __( 'Skype', 'quixa' ),
+				'url'   => quixa_option( 'skype' ),
+			],
+			'tiktok'     => [
+				'title' => __( 'TikTok', 'quixa' ),
+				'url'   => quixa_option( 'tiktok' ),
 			],
 		] );
 
@@ -67,7 +71,7 @@ class Fns {
 	 */
 	public static function sidebar_lists() {
 		$sidebar_fields            = [];
-		$sidebar_fields['default'] = esc_html__( 'Choose Sidebar', 'newsfit' );
+		$sidebar_fields['default'] = esc_html__( 'Choose Sidebar', 'quixa' );
 		if ( ! empty( Sidebar::sidebar_lists() ) ) {
 			foreach ( Sidebar::sidebar_lists() as $id => $sidebar ) {
 				$sidebar_fields[ $id ] = $sidebar['name'];
@@ -91,12 +95,12 @@ class Fns {
 		for ( $i = 1; $i <= $total; $i ++ ) {
 			$image_name    = "$name-$i.$type";
 			$presets[ $i ] = [
-				'image' => newsfit_get_img( $image_name ),
-				'name'  => __( 'Style', 'newsfit' ) . ' ' . $i,
+				'image' => quixa_get_img( $image_name ),
+				'name'  => __( 'Style', 'quixa' ) . ' ' . $i,
 			];
 		}
 
-		return apply_filters( 'newsfit_image_placeholder', $presets );
+		return apply_filters( 'quixa_image_placeholder', $presets );
 	}
 
 
@@ -199,7 +203,7 @@ class Fns {
 		if ( ! empty( $_REQUEST['column'] ) ) {
 			return sanitize_text_field( $_REQUEST['column'] );
 		}
-		$blog_colum_opt = newsfit_option( 'rt_blog_column' ) !== 'default' ? newsfit_option( 'rt_blog_column' ) : '';
+		$blog_colum_opt = quixa_option( 'rt_blog_column' ) !== 'default' ? quixa_option( 'rt_blog_column' ) : '';
 		$blog_sidebar   = Opt::$sidebar === 'default' ? 'rt-sidebar' : Opt::$sidebar;
 		$blog_layout    = Opt::$layout ?? 'right-sidebar';
 
@@ -226,7 +230,7 @@ class Fns {
 		);
 		$post_types = wp_list_pluck( $post_types, 'label', 'name' );
 
-		$exclude = apply_filters( 'newsfit_exclude_post_type', [ 'attachment', 'revision', 'nav_menu_item', 'elementor_library', 'tpg_builder', 'e-landing-page', 'elementor-newsfit' ] );
+		$exclude = apply_filters( 'quixa_exclude_post_type', [ 'attachment', 'revision', 'nav_menu_item', 'elementor_library', 'tpg_builder', 'e-landing-page', 'elementor-quixa' ] );
 
 		foreach ( $exclude as $ex ) {
 			unset( $post_types[ $ex ] );
@@ -241,11 +245,11 @@ class Fns {
 	 */
 	public static function meta_style( $exclude = [] ) {
 		$meta_style = [
-			'meta-style-default' => __( 'Default From Theme', 'newsfit' ),
-			'meta-style-border'  => __( 'Border Style', 'newsfit' ),
-			'meta-style-dash'    => __( 'Before Dash ( — )', 'newsfit' ),
-			'meta-style-dash-bg' => __( 'Before Dash with BG ( — )', 'newsfit' ),
-			'meta-style-pipe'    => __( 'After Pipe ( | )', 'newsfit' ),
+			'meta-style-default' => __( 'Default From Theme', 'quixa' ),
+			'meta-style-border'  => __( 'Border Style', 'quixa' ),
+			'meta-style-dash'    => __( 'Before Dash ( — )', 'quixa' ),
+			'meta-style-dash-bg' => __( 'Before Dash with BG ( — )', 'quixa' ),
+			'meta-style-pipe'    => __( 'After Pipe ( | )', 'quixa' ),
 		];
 
 		if ( ! empty( $exclude ) && is_array( $exclude ) ) {
@@ -263,10 +267,10 @@ class Fns {
 	 */
 	public static function single_post_style( $exclude = [] ) {
 		$meta_style = [
-			'1' => __( 'Style 1 (Default From Theme)', 'newsfit' ),
-			'2' => __( 'Style 2 (Full-width Thumbnail)', 'newsfit' ),
-			'3' => __( 'Style 3 (Transparent Menu)', 'newsfit' ),
-			'4' => __( 'Style 4 (Content over on Thumb)', 'newsfit' ),
+			'1' => __( 'Style 1 (Default From Theme)', 'quixa' ),
+			'2' => __( 'Style 2 (Full-width Thumbnail)', 'quixa' ),
+			'3' => __( 'Style 3 (Transparent Menu)', 'quixa' ),
+			'4' => __( 'Style 4 (Content over on Thumb)', 'quixa' ),
 		];
 
 		if ( ! empty( $exclude ) && is_array( $exclude ) ) {
@@ -302,8 +306,8 @@ class Fns {
 
 
 	public static function single_meta_lists() {
-		$meta_list = newsfit_option( 'rt_single_meta', '', true );
-		if ( newsfit_option( 'rt_single_above_cat_visibility' ) ) {
+		$meta_list = quixa_option( 'rt_single_meta', '', true );
+		if ( quixa_option( 'rt_single_above_cat_visibility' ) ) {
 			$category_index = array_search( 'category', $meta_list );
 			unset( $meta_list[ $category_index ] );
 		}

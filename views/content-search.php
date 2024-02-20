@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package newsfit
+ * @package quixa
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php RT\Newsfit\Core\Tags::posted_on(); ?>
+				<?php RT\Quixa\Core\Tags::posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
@@ -27,7 +27,7 @@
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. */
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'newsfit' ),
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'quixa' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -40,7 +40,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'newsfit' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'quixa' ),
 				'after'  => '</div>',
 			)
 		);

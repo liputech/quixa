@@ -2,12 +2,12 @@
 /**
  * Theme Customizer - Header
  *
- * @package newsfit
+ * @package quixa
  */
 
-namespace RT\Newsfit\Api\Customizer\Sections;
+namespace RT\Quixa\Api\Customizer\Sections;
 
-use RT\Newsfit\Api\Customizer;
+use RT\Quixa\Api\Customizer;
 use RTFramework\Customize;
 
 /**
@@ -24,8 +24,8 @@ class ZControllerExample extends Customizer {
 	public function register() {
 		Customize::add_section( [
 			'id'          => $this->section_test,
-			'title'       => __( 'Test Controls', 'newsfit' ),
-			'description' => __( 'Customize the Test', 'newsfit' ),
+			'title'       => __( 'Test Controls', 'quixa' ),
+			'description' => __( 'Customize the Test', 'quixa' ),
 			'priority'    => 9999
 		] );
 		Customize::add_controls( $this->section_test, $this->get_controls() );
@@ -47,19 +47,19 @@ class ZControllerExample extends Customizer {
 
 			'rt_test_heading1' => [
 				'type'        => 'heading',
-				'label'       => __( 'All controls', 'newsfit' ),
-				'description' => __( 'All controls are here', 'newsfit' ),
+				'label'       => __( 'All controls', 'quixa' ),
+				'description' => __( 'All controls are here', 'quixa' ),
 			],
 
 			'rt_test_switch' => [
 				'type'  => 'switch',
-				'label' => __( 'Choose switch', 'newsfit' ),
+				'label' => __( 'Choose switch', 'quixa' ),
 			],
 
 			'rt_test_text' => [
 				'type'      => 'text',
-				'label'     => __( 'Text Default', 'newsfit' ),
-				'default'   => __( 'Text Default', 'newsfit' ),
+				'label'     => __( 'Text Default', 'quixa' ),
+				'default'   => __( 'Text Default', 'quixa' ),
 				'transport' => '',
 				'condition' => [ 'rt_test_switch' ]
 			],
@@ -67,62 +67,62 @@ class ZControllerExample extends Customizer {
 
 			'rt_test_switch2' => [
 				'type'  => 'switch',
-				'label' => __( 'Choose switch2', 'newsfit' ),
+				'label' => __( 'Choose switch2', 'quixa' ),
 			],
 			'rt_test_url'     => [
 				'type'      => 'url',
-				'label'     => __( 'url', 'newsfit' ),
-				'default'   => __( 'url Default', 'newsfit' ),
+				'label'     => __( 'url', 'quixa' ),
+				'default'   => __( 'url Default', 'quixa' ),
 				'transport' => '',
 				'condition' => [ 'rt_test_switch2', '!==', 1 ]
 			],
 
 			'rt_test_select'   => [
 				'type'        => 'select',
-				'label'       => __( 'Select a Val', 'newsfit' ),
-				'description' => __( 'Select Discription', 'newsfit' ),
+				'label'       => __( 'Select a Val', 'quixa' ),
+				'description' => __( 'Select Discription', 'quixa' ),
 				'default'     => 'menu-left',
 				'choices'     => [
-					'menu-left'   => __( 'Left Alignment', 'newsfit' ),
-					'menu-center' => __( 'Center Alignment', 'newsfit' ),
-					'menu-right'  => __( 'Right Alignment', 'newsfit' ),
+					'menu-left'   => __( 'Left Alignment', 'quixa' ),
+					'menu-center' => __( 'Center Alignment', 'quixa' ),
+					'menu-right'  => __( 'Right Alignment', 'quixa' ),
 				]
 			],
 			'rt_test_textarea' => [
 				'type'      => 'textarea',
-				'label'     => __( 'Textarea', 'newsfit' ),
-				'default'   => __( 'Textarea Default', 'newsfit' ),
+				'label'     => __( 'Textarea', 'quixa' ),
+				'default'   => __( 'Textarea Default', 'quixa' ),
 				'transport' => '',
 			],
 
 			'rt_test_select5' => [
 				'type'        => 'select',
-				'label'       => __( 'Select a Val2', 'newsfit' ),
-				'description' => __( 'Select Discription', 'newsfit' ),
+				'label'       => __( 'Select a Val2', 'quixa' ),
+				'description' => __( 'Select Discription', 'quixa' ),
 				'default'     => 'menu-center',
 				'choices'     => [
-					'menu-left'   => __( 'Left Alignment', 'newsfit' ),
-					'menu-center' => __( 'Center Alignment', 'newsfit' ),
-					'menu-right'  => __( 'Right Alignment', 'newsfit' ),
+					'menu-left'   => __( 'Left Alignment', 'quixa' ),
+					'menu-center' => __( 'Center Alignment', 'quixa' ),
+					'menu-right'  => __( 'Right Alignment', 'quixa' ),
 				]
 			],
 
 			'rt_test_textarea2' => [
 				'type'      => 'textarea',
-				'label'     => __( 'Textarea2', 'newsfit' ),
-				'default'   => __( 'Textarea Default', 'newsfit' ),
+				'label'     => __( 'Textarea2', 'quixa' ),
+				'default'   => __( 'Textarea Default', 'quixa' ),
 				'transport' => '',
 			],
 
 
 			'rt_test_checkbox' => [
 				'type'  => 'checkbox',
-				'label' => __( 'Choose checkbox', 'newsfit' ),
+				'label' => __( 'Choose checkbox', 'quixa' ),
 			],
 
 			'rt_test_textarea22' => [
 				'type'      => 'textarea',
-				'label'     => __( 'Checkbox Textarea2', 'newsfit' ),
+				'label'     => __( 'Checkbox Textarea2', 'quixa' ),
 				'transport' => '',
 				'condition' => [ 'rt_test_checkbox', '==', '1' ]
 			],
@@ -130,31 +130,31 @@ class ZControllerExample extends Customizer {
 
 			'rt_test_radio' => [
 				'type'    => 'radio',
-				'label'   => __( 'Choose radio', 'newsfit' ),
+				'label'   => __( 'Choose radio', 'quixa' ),
 				'choices' => [
-					'menu-left'   => __( 'Left Alignment', 'newsfit' ),
-					'menu-center' => __( 'Center Alignment', 'newsfit' ),
-					'menu-right'  => __( 'Right Alignment', 'newsfit' ),
+					'menu-left'   => __( 'Left Alignment', 'quixa' ),
+					'menu-center' => __( 'Center Alignment', 'quixa' ),
+					'menu-right'  => __( 'Right Alignment', 'quixa' ),
 				]
 			],
 
 			'rt_test_textarea222' => [
 				'type'      => 'textarea',
-				'label'     => __( 'rt_test_radio Textarea2 - menu-center', 'newsfit' ),
+				'label'     => __( 'rt_test_radio Textarea2 - menu-center', 'quixa' ),
 				'transport' => '',
 			],
 
 			'rt_test_image_choose' => [
 				'type'    => 'image_select',
-				'label'   => __( 'Choose Layout', 'newsfit' ),
+				'label'   => __( 'Choose Layout', 'quixa' ),
 				'default' => '1',
 				'choices' => $this->get_header_presets()
 			],
 
 			'rt_test_image' => [
 				'type'         => 'image',
-				'label'        => __( 'Choose Image', 'newsfit' ),
-				'button_label' => __( 'Logo', 'newsfit' ),
+				'label'        => __( 'Choose Image', 'quixa' ),
+				'button_label' => __( 'Logo', 'quixa' ),
 			],
 
 			'rt_test_image_attr' => [
@@ -172,35 +172,35 @@ class ZControllerExample extends Customizer {
 
 			'rt_test_number' => [
 				'type'        => 'number',
-				'label'       => __( 'Select a Number', 'newsfit' ),
-				'description' => __( 'Select Number', 'newsfit' ),
+				'label'       => __( 'Select a Number', 'quixa' ),
+				'description' => __( 'Select Number', 'quixa' ),
 				'default'     => '5',
 			],
 
 			'rt_test_pages' => [
 				'type'  => 'pages',
-				'label' => __( 'Choose page', 'newsfit' ),
+				'label' => __( 'Choose page', 'quixa' ),
 			],
 
 
 			'rt_test_color'      => [
 				'type'  => 'color',
-				'label' => __( 'Choose color', 'newsfit' ),
+				'label' => __( 'Choose color', 'quixa' ),
 			],
 			'rt_test_alfa_color' => [
 				'type'  => 'alfa_color',
-				'label' => __( 'Choose alfa_color', 'newsfit' ),
+				'label' => __( 'Choose alfa_color', 'quixa' ),
 			],
 			'rt_test_datetime'   => [
 				'type'  => 'datetime',
-				'label' => __( 'Choose datetime', 'newsfit' ),
+				'label' => __( 'Choose datetime', 'quixa' ),
 			],
 
 
 			'rt_test_select2' => [
 				'type'        => 'select2',
-				'label'       => __( 'Choose Meta', 'newsfit' ),
-				'placeholder' => __( 'Choose Meta', 'newsfit' ),
+				'label'       => __( 'Choose Meta', 'quixa' ),
+				'placeholder' => __( 'Choose Meta', 'quixa' ),
 				'multiselect' => true,
 				'choices'     => [
 					'author'   => __( 'Author', 'skyrocket' ),
@@ -213,26 +213,26 @@ class ZControllerExample extends Customizer {
 
 			'rt_test_repeater' => [
 				'type'  => 'repeater',
-				'label' => __( 'Choose repeater', 'newsfit' ),
+				'label' => __( 'Choose repeater', 'quixa' ),
 			],
 
 			'rt_test_blog_meta_order1' => [
 				'type'    => 'repeater',
-				'label'   => __( 'Meta Order', 'newsfit' ),
+				'label'   => __( 'Meta Order', 'quixa' ),
 				'default' => 'one, two, three, four',
 				'use_as'  => 'sort', //'sort','repeater'
 			],
 
 			'rt_test_blog_meta_order2' => [
 				'type'    => 'repeater',
-				'label'   => __( 'Meta Order', 'newsfit' ),
+				'label'   => __( 'Meta Order', 'quixa' ),
 				'default' => 'one, two, three, four',
 //				'use_as'  => 'repeater', //'sort','repeater'
 			],
 
 			'rt_test_typography2' => [
 				'type'    => 'typography',
-				'label'   => __( 'Typography', 'newsfit' ),
+				'label'   => __( 'Typography', 'quixa' ),
 				'default' => json_encode(
 					[
 						'font'          => 'Open Sans',
@@ -245,7 +245,7 @@ class ZControllerExample extends Customizer {
 
 			'rt_test_typography3' => [
 				'type'    => 'typography',
-				'label'   => __( 'Typography', 'newsfit' ),
+				'label'   => __( 'Typography', 'quixa' ),
 				'default' => json_encode(
 					[
 						'font'          => 'Open Sans',
@@ -270,15 +270,15 @@ class ZControllerExample extends Customizer {
 		return [
 			'1' => [
 				'image' => RT_FRAMEWORK_DIR_URL . '/assets/images/header-1.png',
-				'name'  => __( 'Style 1', 'newsfit' ),
+				'name'  => __( 'Style 1', 'quixa' ),
 			],
 			'2' => [
 				'image' => RT_FRAMEWORK_DIR_URL . '/assets/images/header-1.png',
-				'name'  => __( 'Style 2', 'newsfit' ),
+				'name'  => __( 'Style 2', 'quixa' ),
 			],
 			'3' => [
 				'image' => RT_FRAMEWORK_DIR_URL . '/assets/images/header-1.png',
-				'name'  => __( 'Style 3', 'newsfit' ),
+				'name'  => __( 'Style 3', 'quixa' ),
 			],
 		];
 	}

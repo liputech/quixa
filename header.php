@@ -6,9 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package newsfit
+ * @package quixa
  */
-use RT\Newsfit\Options\Opt;
+use RT\Quixa\Options\Opt;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -29,4 +29,4 @@ use RT\Newsfit\Options\Opt;
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<?php get_template_part( 'views/content', 'banner' ); ?>
+		<?php get_template_part( 'views/content-banner', Opt::$banner_style ); ?>

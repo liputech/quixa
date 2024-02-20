@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/
  *
- * @package newsfit
+ * @package quixa
  */
 
 get_header();
