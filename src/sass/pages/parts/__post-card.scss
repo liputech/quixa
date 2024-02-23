@@ -61,15 +61,34 @@
 	}
 }
 .blog-grid-2 {
+	.entry-wrapper {
+		padding-top: 20px;
+	}
+	.post-thumb-link {
+		display: flex;
+	}
 	.post-thumbnail {
-		overflow: hidden;
-		border-radius: 15px;
+		img {
+			border-radius: 15px;
+			@include clip-path-style5;
+		}
 	}
 	.title-above-meta-date {
 		position: absolute;
 		left: 0;
 		bottom: 0;
 		margin-bottom: 0;
+	}
+	.posted-on {
+		display: inline-block;
+		width: 66px;
+		background-color: var(--rt-primary-color);
+		border-radius: 15px;
+		color: $white_color;
+		text-align: center;
+		padding: 10px 5px;
+		font-size: 14px;
+		line-height: 1.4;
 	}
 }
 

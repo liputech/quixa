@@ -20,6 +20,7 @@ class Hooks {
 		add_action( 'admin_enqueue_scripts', [ __CLASS__, 'meta_css' ] );
 		add_action( 'quixa_before_single_content', [ __CLASS__, 'before_single_content' ] );
 		add_action( 'wp_footer', [ __CLASS__, 'wp_footer_hook' ] );
+
 	}
 
 	public static function wp_footer_hook() {

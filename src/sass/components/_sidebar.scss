@@ -1,11 +1,18 @@
 .quixa-widget-area {
 	position: relative;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.widget-title {
+		font-size: 22px;
+	}
 
-	.widget {
+	.rt-sidebar {
 		width: 100%;
 		max-width: 100%;
 		flex: 0 0 100%;
 		background: $white_color;
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
 	}
 }
