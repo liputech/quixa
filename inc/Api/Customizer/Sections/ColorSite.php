@@ -76,6 +76,11 @@ class ColorSite extends Customizer {
 				'label'   => __( 'Title Color', 'quixa' ),
 			],
 
+			'rt_rating_color' => [
+				'type'    => 'color',
+				'label'   => __( 'Rating Color', 'quixa' ),
+			],
+
 			'rt_meta_color' => [
 				'type'    => 'color',
 				'label'   => __( 'Meta Color', 'quixa' ),

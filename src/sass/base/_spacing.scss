@@ -78,10 +78,10 @@
 		gap: #{$space}px;
 	}
 	.column-gap-#{$space} {
-		gap: #{$space}px;
+		column-gap: #{$space}px;
 	}
 	.row-gap-#{$space} {
-		gap: #{$space}px;
+		row-gap: #{$space}px;
 	}
 }
 

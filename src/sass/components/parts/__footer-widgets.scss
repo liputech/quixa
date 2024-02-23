@@ -12,8 +12,8 @@
 		flex-direction: row;
 
 		.widget-title {
-			margin-bottom: 30px;
-			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 20px;
 		}
 
 		> .widget {
@@ -21,10 +21,54 @@
 		}
 
 		ul {
+			list-style: none;
 			padding-left: 0;
 
 			ul {
 				padding-left: 20px;
+			}
+		}
+	}
+}
+.footer-widgets {
+	.frm-fluent-form {
+		.ff-t-container {
+			position: relative;
+		}
+		.ff-el-form-control {
+			background-color: transparent;
+			color: $white_color;
+			border-radius: 100px;
+			border: 1px solid $border_color;
+			margin-bottom: 12px;
+			padding: 15px 40px 15px 15px;
+			height: 60px;
+		}
+		.ff-btn-submit {
+			position: relative;
+			background-color: $primary_color;
+			border-radius: 50%;
+			color: $white_color;
+			font-size: 12px;
+			font-weight: 600;
+			width: 50px;
+			height: 50px;
+			padding: 0;
+			margin-bottom: 0 !important;
+			line-height: 1;
+			overflow: hidden;
+			transform: perspective(1px) translateZ(0);
+			z-index: 1;
+		}
+		.ff-t-cell {
+			&:first-of-type {
+				flex-basis: 100% !important;
+			}
+			&:last-of-type {
+				position: absolute;
+				top: 6px;
+				right: 6px;
+				width: auto;
 			}
 		}
 	}

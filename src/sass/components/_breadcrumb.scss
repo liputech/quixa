@@ -1,7 +1,7 @@
 .quixa-breadcrumb-wrapper {
 	display: flex;
 	align-items: center;
-	padding: 30px 0;
+	padding: 60px 0;
 	background-color: $white_color;
 	border-bottom: 1px solid rgba($black_color, 0.1);
 
@@ -61,6 +61,7 @@
 
 	}
 	.entry-title {
+		font-size: 50px;
 		margin-bottom: 0;
 	}
 
@@ -136,6 +137,36 @@
 							color: $title_color;
 						}
 					}
+				}
+			}
+			.menu-icon-wrapper {
+				svg {
+					fill: $title_color;
+				}
+				.ham_burger {
+					.line {
+						stroke: $title_color;
+					}
+				}
+				.quixa-user-login {
+					a {
+						color: $title_color;
+					}
+				}
+			}
+		}
+		.menu-icon-wrapper {
+			svg {
+				fill: $white_color;
+			}
+			.ham_burger {
+				.line {
+					stroke: $white_color;
+				}
+			}
+			.quixa-user-login {
+				a {
+					color: $white_color;
 				}
 			}
 		}

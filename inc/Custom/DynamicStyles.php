@@ -39,6 +39,7 @@ class DynamicStyles {
 		$body_color          = quixa_option( 'rt_body_color', '#575757' );
 		$body_bg_color       = quixa_option( 'rt_body_bg_color', '#ffffff' );
 		$title_color         = quixa_option( 'rt_title_color', '#101010' );
+		$rating_color        = quixa_option( 'rt_rating_color', '#F9BA19' );
 		$meta_color          = quixa_option( 'rt_meta_color', '#7F838C' );
 		$meta_light          = quixa_option( 'rt_meta_light', '#d3d9e1' );
 		$gray10              = quixa_option( 'rt_gray10_color', '#f8f8f8' );
@@ -52,6 +53,7 @@ class DynamicStyles {
 		--rt-body-color: <?php echo esc_html( $body_color ); ?>;
 		--rt-body-bg-color: <?php echo esc_html( $body_bg_color ); ?>;
 		--rt-title-color: <?php echo esc_html( $title_color ); ?>;
+		--rt-rating-color: <?php echo esc_html( $rating_color ); ?>;
 		--rt-meta-color: <?php echo esc_html( $meta_color ); ?>;
 		--rt-meta-light: <?php echo esc_html( $meta_light ); ?>;
 		--rt-gray10: <?php echo esc_html( $gray10 ); ?>;
@@ -297,12 +299,12 @@ class DynamicStyles {
 		}
 
 		echo self::css( 'body .site-footer *:not(a)', 'color', 'rt_footer_text_color' );
-		echo self::css( 'body .site-footer a', 'color', 'rt_footer_link_color' );
-		echo self::css( 'body .site-footer a:hover', 'color', 'rt_footer_link_hover_color' );
-		echo self::css( 'body .site-footer, body .site-footer select option', 'background-color', 'rt_footer_bg' );
+		echo self::css( 'body .site-footer a, .quixa-footer-2 .site-footer .widget a', 'color', 'rt_footer_link_color' );
+		echo self::css( 'body .site-footer a:hover, .quixa-footer-2 .footer-sidebar a:hover', 'color', 'rt_footer_link_hover_color' );
+		echo self::css( 'body .site-footer, .quixa-footer-2 .site-footer, body .site-footer select option', 'background-color', 'rt_footer_bg' );
 		echo self::css( '.site-footer .widget :is(td, th, select, .search-box)', 'border-color', 'rt_footer_input_border_color' );
-		echo self::css( 'body .site-footer .widget-title', 'color', 'rt_footer_widget_title_color' );
-		echo self::css( 'body .site-footer .footer-copyright-wrapper', 'color', 'rt_copyright_text_color' );
+		echo self::css( 'body .site-footer .widget-title, .quixa-footer-2 .footer-widgets .widget-title', 'color', 'rt_footer_widget_title_color' );
+		echo self::css( 'body .footer-copyright-wrapper .copyright-text', 'color', 'rt_copyright_text_color' );
 		echo self::css( 'body .site-footer .footer-copyright-wrapper a', 'color', 'rt_copyright_link_color' );
 		echo self::css( 'body .site-footer .footer-copyright-wrapper a:hover', 'color', 'rt_copyright_link_hover_color' );
 		echo self::css( 'body .site-footer .footer-copyright-wrapper', 'background-color', 'rt_copyright_bg' );

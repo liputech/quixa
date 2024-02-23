@@ -49,6 +49,7 @@ class Blog extends Customizer {
 				'choices'     => [
 					'default' => __( 'Default From Theme', 'quixa' ),
 					'list'    => __( 'List', 'quixa' ),
+					'grid-2'    => __( 'Grid 2', 'quixa' ),
 				]
 			],
 
@@ -98,7 +99,7 @@ class Blog extends Customizer {
 				'description' => __( 'You can sort meta by drag and drop', 'quixa' ),
 				'placeholder' => __( 'Choose Meta', 'quixa' ),
 				'multiselect' => true,
-				'default'     => 'author,date,category,tag,comment',
+				'default'     => 'author,date,category',
 				'choices'     => Fns::blog_meta_list(),
 			],
 
@@ -113,9 +114,9 @@ class Blog extends Customizer {
 				'default' => 1
 			],
 
-			'rt_blog_above_cat_visibility' => [
+			'rt_blog_above_meta_visibility' => [
 				'type'  => 'switch',
-				'label' => __( 'Title Above Category Visibility', 'quixa' ),
+				'label' => __( 'Title Above Meta Visibility', 'quixa' ),
 			],
 
 			'rt_blog_content_visibility' => [

@@ -10,11 +10,10 @@
 
 $meta_list = quixa_option( 'rt_blog_meta', '', true );
 if ( quixa_option( 'rt_blog_above_meta_visibility' ) ) {
-	$meta_index = array_search( 'category', $meta_list );
+	$meta_index = array_search( 'date', $meta_list );
 	unset( $meta_list[ $meta_index ] );
 }
 ?>
-
 <article data-post-id="<?php the_ID(); ?>" <?php post_class( quixa_post_class() ); ?>>
 	<div class="article-inner-wrapper">
 
@@ -24,7 +23,6 @@ if ( quixa_option( 'rt_blog_above_meta_visibility' ) ) {
 			<header class="entry-header">
 
 				<?php
-				quixa_separate_meta( 'title-above-meta' );
 
 				if ( ! is_single() ) {
 					the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' );

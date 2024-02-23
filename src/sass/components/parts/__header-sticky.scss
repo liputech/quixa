@@ -37,10 +37,10 @@ body.admin-bar .rt-sticky {
 			display: block;
 		}
 		.menu-icon-wrapper {
-			.ham_burger {
-				.line {
-					stroke: $white_color;
-				}
+			.btn {
+				background-color: $primary_color;
+				color: $white_color;
+				border: unset;
 			}
 		}
 	}

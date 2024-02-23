@@ -55,6 +55,16 @@ class Banner extends Customizer {
 				'condition' => [ 'rt_banner' ]
 			],
 
+			'rt_breadcrumb_alignment' => [
+				'type'    => 'select',
+				'label'   => __( 'Breadcrumb Alignment', 'quixa' ),
+				'default' => 'align-items-center',
+				'choices' => [
+					''                       => __( 'Breadcrumb Alignment', 'quixa' ),
+					'align-items-center'  => __( 'Alignment Center', 'quixa' ),
+				]
+			],
+
 			'rt_banner_image' => [
 				'type'         => 'image',
 				'label'        => __( 'Banner Image', 'quixa' ),

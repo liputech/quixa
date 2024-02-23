@@ -22,7 +22,7 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 <?php endif; ?>
 
 <?php if ( ! empty( quixa_option( 'rt_footer_copyright' ) ) ) : ?>
-	<div class="footer-copyright-wrapper">
+	<div class="footer-copyright-wrapper text-center">
 		<div class="footer-container <?php echo esc_attr( $footer_width ) ?>">
 			<div class="d-flex align-items-center <?php echo esc_attr($copyright_center); ?>">
 				<div class="copyright-text">
@@ -38,7 +38,7 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 				<?php } ?>
 			</div>
 		</div>
-
 	</div>
 <?php endif; ?>
+
 <?php quixa_scroll_top(); ?>

@@ -2,7 +2,6 @@
 	color: $meta_color;
 	margin-bottom: 15px;
 	font-size: $base_fs - 1;
-
 	ul {
 		list-style: none;
 		padding: 0;
@@ -11,22 +10,23 @@
 		flex-wrap: wrap;
 		row-gap: 2px;
 		column-gap: 10px;
+		font-size: 15px;
 	}
-
 	ul li {
 		position: relative;
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
 		line-height: 1.5;
-
 		.prefix {
 			margin-right: 4px;
 		}
-
 		&.edit-link {
 			opacity: 0;
 			visibility: hidden;
+		}
+		i {
+			padding-right: 6px;
 		}
 	}
 
@@ -59,17 +59,6 @@
 		ul li:not(:last-child) {
 			margin-right: 16px;
 		}
-
-		ul li::before {
-			content: "";
-			width: 5px;
-			height: 5px;
-			background-color: $meta_color;
-			border-radius: 50%;
-			display: inline-block;
-			margin-right: 5px;
-			transform: translateY(-2px);
-		}
 	}
 
 	.meta-style-border & {
@@ -78,8 +67,11 @@
 		}
 
 		ul li:not(.category, .tag) {
-			border: 1px solid $primary_color;
-			padding: 0 10px;
+			color: var(--rt-primary-color);
+			border: 1px solid $border_color;
+			border-radius: 6px;
+			min-height: 32px;
+			padding: 0 12px;
 			@extend .primaryColor;
 
 			a {
@@ -106,11 +98,12 @@
 			}
 
 			a {
-				display: inline-block;
-				height: 100%;
-				border: 1px solid $primary_color;
-				padding: 4px 10px;
-				line-height: 1.2;
+				color: var(--rt-primary-color);
+				border: 1px solid $border_color;
+				border-radius: 6px;
+				font-size: 14px;
+				font-weight: 500;
+				padding: 4px 12px;
 				@extend .primaryColor;
 
 				&:hover {
@@ -156,11 +149,12 @@
 		}
 
 		li:not(.category, .tag) {
-			background: $meta_light;
+			background: $gray10;
+			border-radius: 6px;
 			display: inline-flex;
 			justify-content: center;
 			align-items: center;
-			padding: 3px 10px;
+			padding: 4px 12px;
 			margin: 0;
 			@include transition_default();
 			@extend .primaryColor;
@@ -186,10 +180,11 @@
 			a {
 				display: inline-block;
 				height: 100%;
-				padding: 5.5px 10px;
-				line-height: 1.2;
+				padding: 7px 12px;
+				line-height: 1;
 				position: relative;
-				background-color: $meta_light;
+				background-color: $gray10;
+				border-radius: 6px;
 				@extend .primaryColor;
 
 				&:hover {

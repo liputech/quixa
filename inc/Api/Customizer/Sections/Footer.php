@@ -70,6 +70,13 @@ class Footer extends Customizer {
 				'description' => __( 'Show footer at the top when scrolling down', 'quixa' ),
 			],
 
+			'rt_social_footer' => [
+				'type'        => 'switch',
+				'label'       => __( 'Social Icon', 'quixa' ),
+				'description' => __( 'Show footer at the social icon', 'quixa' ),
+				'default' => 1,
+			],
+
 			'rt_footer_copyright' => [
 				'type'        => 'tinymce',
 				'label'       => __( 'Footer Copyright Text', 'quixa' ),

@@ -34,11 +34,12 @@ mix.sass('src/sass/style.scss', `assets/css/style${min}.css`)
 	.sass('src/sass/admin.scss', `assets/css/admin${min}.css`)
 	.sass('src/sass/rtl.scss', 'build/temp/')
 	.sourceMaps(true, 'source-map')
-	.options({
+	.options( {
 		terser: {
-			extractComments: false,
-		}
-	})
+			extractComments: false
+		},
+		processCssUrls: false
+	} )
 
 	.postCss('assets/css/style.css', 'build/temp/style.css', [
 		require('rtlcss'),

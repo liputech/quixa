@@ -35,8 +35,9 @@ class Setup {
 	 */
 	private function add_image_size() {
 		$sizes = [
-			'rdtheme-1200-650' => [ 1200, 650, true ],
-			'quixa-500-500'  => [ 500, 500, true ],
+			'quixa-size1' => [ 1344, 625, true ],
+			'quixa-size2'  => [ 960, 520, true ],
+			'quixa-size3'  => [ 450, 322, true ],
 		];
 
 		$sizes = apply_filters( 'quixa_image_size', $sizes );

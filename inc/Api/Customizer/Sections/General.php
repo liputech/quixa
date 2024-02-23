@@ -74,7 +74,7 @@ class General extends Customizer {
 				'default' => '1240px',
 				'choices' => [
 					'1554' => esc_html__( '1554px', 'quixa' ),
-					'1320' => esc_html__( '1320px', 'quixa' ),
+					'1340' => esc_html__( '1340px', 'quixa' ),
 					'1240' => esc_html__( '1240px', 'quixa' ),
 					'1200' => esc_html__( '1200px', 'quixa' ),
 					'1140' => esc_html__( '1140px', 'quixa' ),

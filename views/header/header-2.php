@@ -19,6 +19,10 @@ $_fullwidth = Opt::$header_width == 'full' ? '-fluid' : '';
 
 			<div class="row align-middle m-0">
 
+				<div class="site-branding">
+					<?php echo quixa_site_logo( $logo_h1 ); ?>
+				</div><!-- .site-branding -->
+
 				<nav id="site-navigation" class="quixa-navigation pl-15 pr-15 <?php echo esc_attr( $menu_classes ) ?>" role="navigation">
 					<?php
 					wp_nav_menu( [
@@ -31,10 +35,6 @@ $_fullwidth = Opt::$header_width == 'full' ? '-fluid' : '';
 					] );
 					?>
 				</nav><!-- .quixa-navigation -->
-
-				<div class="site-branding">
-					<?php echo quixa_site_logo( $logo_h1 ); ?>
-				</div><!-- .site-branding -->
 
 				<?php quixa_menu_icons_group(); ?>
 

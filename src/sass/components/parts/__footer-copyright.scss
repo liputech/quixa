@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: $gray20;
+	color: $meta_color;
 	font-size: 14px;
 	background: rgba($title_rgb, 0.9);
 
@@ -15,6 +15,9 @@
 	}
 
 	a {
-		color: $gray20;
+		color: $meta_color;
+		&:hover {
+			color: $white_color;
+		}
 	}
 }

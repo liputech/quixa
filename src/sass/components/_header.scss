@@ -141,6 +141,23 @@ $dropdown_top_bottom_margin: 10px;
 		content: none;
 	}
 }
+/* Header style
+***************************/
+.quixa-header-2 {
+	.menu-icon-wrapper {
+		.btn {
+			background-color: $white_color;
+			border: 1px solid $border_color;
+			color: $title_color;
+			border-radius: 30px;
+			&:hover {
+				background-color: transparent;
+				border-color: $white_color;
+				color: $white_color;
+			}
+		}
+	}
+}
 
 //Main Navigation
 @import "navigation";

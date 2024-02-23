@@ -14,11 +14,10 @@ if ( quixa_option( 'rt_blog_above_meta_visibility' ) ) {
 	unset( $meta_list[ $meta_index ] );
 }
 ?>
-
 <article data-post-id="<?php the_ID(); ?>" <?php post_class( quixa_post_class() ); ?>>
 	<div class="article-inner-wrapper">
 
-		<?php quixa_post_thumbnail('quixa-size3'); ?>
+		<?php quixa_post_thumbnail('quixa-size2'); ?>
 
 		<div class="entry-wrapper">
 			<header class="entry-header">

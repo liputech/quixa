@@ -3,11 +3,8 @@ $widget_li_space: 8px;
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	@include font_size(15px);
-	font-size: 15px;
 	margin: 0 0 30px;
 	color: $body_color;
-	padding: 24px 30px;
 }
 
 .widget a {
@@ -24,12 +21,6 @@ $widget_li_space: 8px;
 		ul, ol {
 			padding-left: 20px;
 		}
-	}
-}
-
-@media (min-width: 767px) {
-	.widget {
-		margin: 0 0 30px;
 	}
 }
 
@@ -341,12 +332,14 @@ ol.wp-block-latest-comments li:last-child {
 //Contact Widget
 .widget_quixa_contact {
 	ul {
-		@include list_default();
+		padding: 0 30px;
 	}
 	ul li {
 		display: flex;
 		align-items: flex-start;
-		margin-bottom: 16px;
+		&.phone-no {
+			font-size: 20px;
+		}
 	}
 	li [class*=rticon-] {
 		flex: 0 0 30px;
@@ -359,4 +352,5 @@ ol.wp-block-latest-comments li:last-child {
 	li p {
 		margin: 0;
 	}
+
 }

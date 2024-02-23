@@ -83,22 +83,23 @@ elseif (is_post_type_archive('quixa_team')) {
 } else {
 	$quixa_title = get_the_title();
 }
+
+$breadcrumb_classes = quixa_option( 'rt_breadcrumb_alignment' );
 ?>
 
 <div class="<?php echo esc_attr( $classes ) ?>" style="<?php echo esc_attr( $banner_image_css ) ?>">
-		<div class="container d-flex gap-10 flex-column">
-			<?php if ( Opt::$breadcrumb_title ) { ?>
-				<?php if ( is_single() ) { ?>
-					<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
-				<?php } else if ( is_page() ) { ?>
-					<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
-				<?php } else { ?>
-					<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
-				<?php } ?>
+	<div class="container d-flex row-gap-15 flex-column <?php echo esc_attr( $breadcrumb_classes ) ?>">
+		<?php if ( Opt::$breadcrumb_title ) { ?>
+			<?php if ( is_single() ) { ?>
+				<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
+			<?php } else if ( is_page() ) { ?>
+				<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
+			<?php } else { ?>
+				<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
 			<?php } ?>
-			<?php if ( Opt::$has_breadcrumb ) { ?>
-				<?php quixa_breadcrumb(); ?>
-			<?php } ?>
-
-		</div>
+		<?php } ?>
+		<?php if ( Opt::$has_breadcrumb ) { ?>
+			<?php quixa_breadcrumb(); ?>
+		<?php } ?>
+	</div>
 </div>

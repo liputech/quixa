@@ -22,6 +22,7 @@ class Enqueue {
 
 	function register_scripts(){
 		wp_register_style( 'quixa-gfonts', $this->fonts_url(), [], Constants::get_version() );
+
 	}
 
 	/**

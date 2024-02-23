@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*--------------------------------------------------------------
 # Import Modules
 --------------------------------------------------------------*/
@@ -2484,11 +2485,12 @@ th {
 }
 
 .column-gap-0 {
-  gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
 }
 
 .row-gap-0 {
-  gap: 0px;
+  row-gap: 0px;
 }
 
 .gap-5 {
@@ -2496,11 +2498,12 @@ th {
 }
 
 .column-gap-5 {
-  gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }
 
 .row-gap-5 {
-  gap: 5px;
+  row-gap: 5px;
 }
 
 .gap-8 {
@@ -2508,11 +2511,12 @@ th {
 }
 
 .column-gap-8 {
-  gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 
 .row-gap-8 {
-  gap: 8px;
+  row-gap: 8px;
 }
 
 .gap-10 {
@@ -2520,11 +2524,12 @@ th {
 }
 
 .column-gap-10 {
-  gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 
 .row-gap-10 {
-  gap: 10px;
+  row-gap: 10px;
 }
 
 .gap-15 {
@@ -2532,11 +2537,12 @@ th {
 }
 
 .column-gap-15 {
-  gap: 15px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 
 .row-gap-15 {
-  gap: 15px;
+  row-gap: 15px;
 }
 
 .gap-16 {
@@ -2544,11 +2550,12 @@ th {
 }
 
 .column-gap-16 {
-  gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
 }
 
 .row-gap-16 {
-  gap: 16px;
+  row-gap: 16px;
 }
 
 .gap-20 {
@@ -2556,11 +2563,12 @@ th {
 }
 
 .column-gap-20 {
-  gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 
 .row-gap-20 {
-  gap: 20px;
+  row-gap: 20px;
 }
 
 .gap-30 {
@@ -2568,11 +2576,12 @@ th {
 }
 
 .column-gap-30 {
-  gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 
 .row-gap-30 {
-  gap: 30px;
+  row-gap: 30px;
 }
 
 .gap-40 {
@@ -2580,11 +2589,12 @@ th {
 }
 
 .column-gap-40 {
-  gap: 40px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }
 
 .row-gap-40 {
-  gap: 40px;
+  row-gap: 40px;
 }
 
 .gap-50 {
@@ -2592,11 +2602,12 @@ th {
 }
 
 .column-gap-50 {
-  gap: 50px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
 }
 
 .row-gap-50 {
-  gap: 50px;
+  row-gap: 50px;
 }
 
 .gap-60 {
@@ -2604,11 +2615,12 @@ th {
 }
 
 .column-gap-60 {
-  gap: 60px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
 }
 
 .row-gap-60 {
-  gap: 60px;
+  row-gap: 60px;
 }
 
 .gap-80 {
@@ -2616,11 +2628,12 @@ th {
 }
 
 .column-gap-80 {
-  gap: 80px;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
 }
 
 .row-gap-80 {
-  gap: 80px;
+  row-gap: 80px;
 }
 
 .gap-100 {
@@ -2628,11 +2641,12 @@ th {
 }
 
 .column-gap-100 {
-  gap: 100px;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
 }
 
 .row-gap-100 {
-  gap: 100px;
+  row-gap: 100px;
 }
 
 .gap-120 {
@@ -2640,11 +2654,12 @@ th {
 }
 
 .column-gap-120 {
-  gap: 120px;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
 }
 
 .row-gap-120 {
-  gap: 120px;
+  row-gap: 120px;
 }
 
 .gap-150 {
@@ -2652,11 +2667,12 @@ th {
 }
 
 .column-gap-150 {
-  gap: 150px;
+  -moz-column-gap: 150px;
+       column-gap: 150px;
 }
 
 .row-gap-150 {
-  gap: 150px;
+  row-gap: 150px;
 }
 
 .gap-180 {
@@ -2664,11 +2680,12 @@ th {
 }
 
 .column-gap-180 {
-  gap: 180px;
+  -moz-column-gap: 180px;
+       column-gap: 180px;
 }
 
 .row-gap-180 {
-  gap: 180px;
+  row-gap: 180px;
 }
 
 .gap-200 {
@@ -2676,11 +2693,12 @@ th {
 }
 
 .column-gap-200 {
-  gap: 200px;
+  -moz-column-gap: 200px;
+       column-gap: 200px;
 }
 
 .row-gap-200 {
-  gap: 200px;
+  row-gap: 200px;
 }
 
 /* WordPress Core
@@ -3176,7 +3194,7 @@ textarea {
   visibility: visible;
 }
 
-.metaStyleDash, .quixa-post-card.meta-style-dash .read-more::before, .above-meta-style-dash .separate-meta a::before, .meta-style-dash .separate-meta a::before, .meta-style-dash-bg .quixa-post-meta li:is(.category, .tag) a::before, .meta-style-dash-bg .quixa-post-meta li::before, .meta-style-dash .quixa-post-meta li::before {
+.metaStyleDash, .meta-style-dash-bg .quixa-post-meta li:is(.category, .tag) a::before, .meta-style-dash-bg .quixa-post-meta li::before, .meta-style-dash .quixa-post-meta li::before {
   content: "-----";
   margin-left: 7px;
   letter-spacing: -4px;
@@ -3187,7 +3205,7 @@ textarea {
 }
 
 .primaryColor, .single-post-pagination .nav-title:hover,
-.single-post-pagination .link:hover, .quixa-post-card .entry-title a:hover, .meta-style-dash .separate-meta a::before, .above-meta-style-border .separate-meta a, .separate-meta a, .meta-style-dash-bg .quixa-post-meta li:is(.category, .tag) a, .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag) a, .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag):before, .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag), .meta-style-border .quixa-post-meta ul li:is(.category, .tag) a, .meta-style-border .quixa-post-meta ul li:not(.category, .tag) a, .meta-style-border .quixa-post-meta ul li:not(.category, .tag), .widget_tag_cloud .tagcloud a, .widget a:hover, .quixa-breadcrumb-wrapper .breadcrumb li.active .title, .quixa-offcanvas-drawer ul li.current-menu-item > a,
+.single-post-pagination .link:hover, .quixa-post-card .entry-title a:hover, .above-meta-style-border .separate-meta a, .meta-style-dash-bg .quixa-post-meta li:is(.category, .tag) a, .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag) a, .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag):before, .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag), .meta-style-border .quixa-post-meta ul li:is(.category, .tag) a, .meta-style-border .quixa-post-meta ul li:not(.category, .tag) a, .meta-style-border .quixa-post-meta ul li:not(.category, .tag), .widget_tag_cloud .tagcloud a, .widget a:hover, .quixa-breadcrumb-wrapper .breadcrumb li.active .title, .quixa-offcanvas-drawer ul li.current-menu-item > a,
 .quixa-offcanvas-drawer ul li.current-menu-ancestor > a, .quixa-offcanvas-drawer ul.menu li a:hover, .quixa-navigation ul.menu li ul.dropdown-menu li a:hover, .quixa-navigation ul li ul li:hover > a, .quixa-navigation ul.menu li.current-menu-item > a,
 .quixa-navigation ul.menu li.current > a, .quixa-navigation ul.menu > li > a:hover, .quixa-navigation ul li a:hover, .quixa-navigation ul li.current-menu-item > a,
 .quixa-navigation ul li.current-menu-ancestor > a, .site-branding h1 a {
@@ -3232,6 +3250,348 @@ input[type=submit]:active {
   background-color: #000000;
 }
 
+@font-face {
+  font-family: "quixa";
+  src: url("../fonts/fontello-icon/quixa.eot?2065372");
+  src: url("../fonts/fontello-icon/quixa.eot?2065372#iefix") format("embedded-opentype"), url("../fonts/fontello-icon/quixa.woff2?2065372") format("woff2"), url("../fonts/fontello-icon/quixa.woff?2065372") format("woff"), url("../fonts/fontello-icon/quixa.ttf?2065372") format("truetype"), url("../fonts/fontello-icon/quixa.svg?2065372#quixa") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'quixa';
+    src: url('../font/quixa.svg?2065372#quixa') format('svg');
+  }
+}
+*/
+[class^=icon-]:before, [class*=" icon-"]:before {
+  font-family: "quixa";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-left: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-right: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-quixa-warning-empty:before {
+  content: "\e800";
+} /* '' */
+.icon-quixa-tag:before {
+  content: "\e801";
+} /* '' */
+.icon-quixa-filter:before {
+  content: "\e802";
+} /* '' */
+.icon-quixa-tags:before {
+  content: "\e803";
+} /* '' */
+.icon-quixa-flower:before {
+  content: "\e804";
+} /* '' */
+.icon-quixa-grid:before {
+  content: "\e805";
+} /* '' */
+.icon-quixa-minus:before {
+  content: "\e806";
+} /* '' */
+.icon-quixa-paper-plane-1:before {
+  content: "\e807";
+} /* '' */
+.icon-quixa-paper-plane:before {
+  content: "\e808";
+} /* '' */
+.icon-quixa-plus:before {
+  content: "\e809";
+} /* '' */
+.icon-quixa-quote:before {
+  content: "\e80a";
+} /* '' */
+.icon-quixa-reply:before {
+  content: "\e80b";
+} /* '' */
+.icon-quixa-search:before {
+  content: "\e80c";
+} /* '' */
+.icon-quixa-list:before {
+  content: "\e80d";
+} /* '' */
+.icon-quixa-calendar:before {
+  content: "\e80e";
+} /* '' */
+.icon-quixa-chevron-left:before {
+  content: "\e80f";
+} /* '' */
+.icon-quixa-location:before {
+  content: "\e810";
+} /* '' */
+.icon-quixa-user-1:before {
+  content: "\e811";
+} /* '' */
+.icon-quixa-user:before {
+  content: "\e812";
+} /* '' */
+.icon-quixa-down-arrow:before {
+  content: "\e813";
+} /* '' */
+.icon-quixa-tree:before {
+  content: "\e814";
+} /* '' */
+.icon-quixa-email:before {
+  content: "\e815";
+} /* '' */
+.icon-quixa-play:before {
+  content: "\e816";
+} /* '' */
+.icon-quixa-cart:before {
+  content: "\e817";
+} /* '' */
+.icon-quixa-clock:before {
+  content: "\e818";
+} /* '' */
+.icon-quixa-arrow-circle:before {
+  content: "\e819";
+} /* '' */
+.icon-quixa-phone:before {
+  content: "\e81a";
+} /* '' */
+.icon-quixa-user-2:before {
+  content: "\e81b";
+} /* '' */
+.icon-quixa-comment:before {
+  content: "\e81c";
+} /* '' */
+.icon-quixa-medicine:before {
+  content: "\e81d";
+} /* '' */
+.icon-quixa-ei_user:before {
+  content: "\e81e";
+} /* '' */
+.icon-quixa-nimbus_marketing:before {
+  content: "\e81f";
+} /* '' */
+.icon-quixa-education:before {
+  content: "\e820";
+} /* '' */
+.icon-quixa-round-border-tick:before {
+  content: "\e821";
+} /* '' */
+.icon-quixa-award:before {
+  content: "\e822";
+} /* '' */
+.icon-quixa-image:before {
+  content: "\e823";
+} /* '' */
+.icon-quixa-video:before {
+  content: "\e824";
+} /* '' */
+.icon-quixa-check:before {
+  content: "\e825";
+} /* '' */
+.icon-quixa-share:before {
+  content: "\e826";
+} /* '' */
+.icon-iquixa-con-location-2:before {
+  content: "\e827";
+} /* '' */
+.icon-quixa-location-3:before {
+  content: "\e828";
+} /* '' */
+.icon-quixa-carbon_forum:before {
+  content: "\e829";
+} /* '' */
+.icon-quixa-comment-2:before {
+  content: "\e82a";
+} /* '' */
+.icon-quixa-check-2:before {
+  content: "\e82b";
+} /* '' */
+.icon-quixa-codicon_feedback:before {
+  content: "\e82c";
+} /* '' */
+.icon-quixa-chevron-down:before {
+  content: "\e82d";
+} /* '' */
+.icon-quixa-eye:before {
+  content: "\e82e";
+} /* '' */
+.icon-quixa-grid-2:before {
+  content: "\e82f";
+} /* '' */
+.icon-quixa-i:before {
+  content: "\e830";
+} /* '' */
+.icon-quixa-location-1:before {
+  content: "\e831";
+} /* '' */
+.icon-quixa-location-pointer:before {
+  content: "\e832";
+} /* '' */
+.icon-quixa-location-pointer-2:before {
+  content: "\e833";
+} /* '' */
+.icon-quixa-lock:before {
+  content: "\e834";
+} /* '' */
+.icon-quixa-surgeon:before {
+  content: "\e835";
+} /* '' */
+.icon-quixa-phone-2:before {
+  content: "\e836";
+} /* '' */
+.icon-quixa-round-tick:before {
+  content: "\e837";
+} /* '' */
+.icon-quixa-star:before {
+  content: "\e838";
+} /* '' */
+.icon-quixa-subscibe-email:before {
+  content: "\e839";
+} /* '' */
+.icon-quixa-user-3:before {
+  content: "\e83a";
+} /* '' */
+.icon-quixa-arrow-double:before {
+  content: "\e83b";
+} /* '' */
+.icon-quixa-neurology:before {
+  content: "\e83c";
+} /* '' */
+.icon-quixa-article:before {
+  content: "\e83d";
+} /* '' */
+.icon-quixa-available-location:before {
+  content: "\e83e";
+} /* '' */
+.icon-quixa-calender-2:before {
+  content: "\e83f";
+} /* '' */
+.icon-quixa-calender-3:before {
+  content: "\e840";
+} /* '' */
+.icon-quixa-calender-4:before {
+  content: "\e841";
+} /* '' */
+.icon-quixa-plus-1:before {
+  content: "\e842";
+} /* '' */
+.icon-quixa-select-category:before {
+  content: "\e843";
+} /* '' */
+.icon-quixa-registration:before {
+  content: "\e844";
+} /* '' */
+.icon-quixa-pdf:before {
+  content: "\e845";
+} /* '' */
+.icon-arrow-right-1:before {
+  content: "\e846";
+} /* '' */
+.icon-quixa-like:before {
+  content: "\e847";
+} /* '' */
+.icon-quixa-heart:before {
+  content: "\e848";
+} /* '' */
+.icon-quixa-paediatrician:before {
+  content: "\e849";
+} /* '' */
+.icon-quixa-cardiology:before {
+  content: "\e84a";
+} /* '' */
+.icon-quixa-medicine-1:before {
+  content: "\e84b";
+} /* '' */
+.icon-quixa-orthopaedist:before {
+  content: "\e84c";
+} /* '' */
+.icon-quixa-heart-1:before {
+  content: "\e84d";
+} /* '' */
+.icon-quixa-doctor:before {
+  content: "\e84e";
+} /* '' */
+.icon-quixa-trust-badge:before {
+  content: "\e84f";
+} /* '' */
+.icon-quixa-lab-equipment:before {
+  content: "\e850";
+} /* '' */
+.icon-quixa-doctor-2:before {
+  content: "\e851";
+} /* '' */
+.icon-quixa-find-doctor:before {
+  content: "\e852";
+} /* '' */
+.icon-quixa-appointment:before {
+  content: "\e853";
+} /* '' */
+.icon-quixa-create-account:before {
+  content: "\e854";
+} /* '' */
+.icon-quixa-dollar-1:before {
+  content: "\e855";
+} /* '' */
+.icon-quixa-dr-file:before {
+  content: "\e856";
+} /* '' */
+.icon-quixa-location-4:before {
+  content: "\e857";
+} /* '' */
+.icon-quixa-oncologist:before {
+  content: "\e858";
+} /* '' */
+.icon-quixa-solar_star-fall:before {
+  content: "\e859";
+} /* '' */
+.icon-quixa-stethoscope-2:before {
+  content: "\e85a";
+} /* '' */
+.icon-quixa-stethoscope-1:before {
+  content: "\e85b";
+} /* '' */
+.icon-quixa-social-likes:before {
+  content: "\e85c";
+} /* '' */
+.icon-quixa-arrow-curve-1:before {
+  content: "\e85d";
+} /* '' */
+.icon-quixa-arrow-curve-2:before {
+  content: "\e85e";
+} /* '' */
+.icon-quixa-chevron-right:before {
+  content: "\e863";
+} /* '' */
+.icon-quixa-urology:before {
+  content: "\e881";
+} /* '' */
+.icon-quixa-dermatologist:before {
+  content: "\e882";
+} /* '' */
+.icon-quixa-youtube:before {
+  content: "\f315";
+} /* '' */
 body {
   font-family: var(--rt-body-font, "Urbanist"), sans-serif;
   font-weight: 500;
@@ -3369,15 +3729,15 @@ button {
   line-height: 11px;
 }
 
-.btn-primary {
+.btn-primary, .quixa-post-card .read-more {
   color: #FFFFFF;
   background-color: var(--rt-primary-color);
   border-color: var(--rt-primary-color);
 }
-.btn-primary:hover {
+.btn-primary:hover, .quixa-post-card .read-more:hover {
   color: #FFFFFF;
-  background-color: var(--rt-secondary-color);
-  border-color: var(--rt-secondary-color);
+  background-color: var(--rt-rating-color);
+  border-color: var(--rt-rating-color);
 }
 
 .btn-secondary {
@@ -3391,12 +3751,12 @@ button {
   border-color: rgba(var(--rt-secondary-rgb), 0.8);
 }
 
-.btn-light, .quixa-post-card .read-more {
+.btn-light {
   color: #FFFFFF;
   background-color: var(--rt-meta-color);
   border-color: var(--rt-meta-color);
 }
-.btn-light:hover, .quixa-post-card .read-more:hover {
+.btn-light:hover {
   color: #FFFFFF;
   background-color: var(--rt-primary-color);
   border-color: var(--rt-primary-color);
@@ -3418,7 +3778,7 @@ button {
   color: #FFFFFF;
 }
 .button-1:hover {
-  background-color: var(--rt-secondary-color);
+  background-color: var(--rt-rating-color);
   color: var(--rt-title-color);
 }
 
@@ -3808,14 +4168,6 @@ body .rtrs-review-form {
   visibility: visible;
   bottom: 15px;
 }
-.quixa-footer-2 .scrollToTop {
-  position: absolute;
-  top: -58px;
-  bottom: auto;
-  left: 18px;
-  opacity: 1;
-  visibility: visible;
-}
 .scrollToTop svg {
   fill: var(--rt-primary-color);
 }
@@ -3944,6 +4296,20 @@ body .rtrs-review-form {
 }
 .menu-icon-wrapper .has-button li:nth-last-child(2)::after {
   content: none;
+}
+
+/* Header style
+***************************/
+.quixa-header-2 .menu-icon-wrapper .btn, .quixa-header-2 .menu-icon-wrapper .quixa-post-card .read-more, .quixa-post-card .quixa-header-2 .menu-icon-wrapper .read-more {
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  color: var(--rt-title-color);
+  border-radius: 30px;
+}
+.quixa-header-2 .menu-icon-wrapper .btn:hover, .quixa-header-2 .menu-icon-wrapper .quixa-post-card .read-more:hover, .quixa-post-card .quixa-header-2 .menu-icon-wrapper .read-more:hover {
+  background-color: transparent;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 /* Main Navigation
@@ -4506,8 +4872,10 @@ body.admin-bar .rt-sticky {
 .has-sticky-header .rt-sticky #rt-mobile-logo {
   display: block;
 }
-.has-sticky-header .rt-sticky .menu-icon-wrapper .ham_burger .line {
-  stroke: #FFFFFF;
+.has-sticky-header .rt-sticky .menu-icon-wrapper .btn, .has-sticky-header .rt-sticky .menu-icon-wrapper .quixa-post-card .read-more, .quixa-post-card .has-sticky-header .rt-sticky .menu-icon-wrapper .read-more {
+  background-color: var(--rt-primary-color);
+  color: #FFFFFF;
+  border: unset;
 }
 
 /* Transparent Header
@@ -4549,9 +4917,6 @@ body.admin-bar .rt-sticky {
 }
 .has-trheader .site-header .quixa-navigation ul > li > ul li > a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-}
-.has-trheader .site-header .menu-icon-wrapper svg {
-  fill: rgba(255, 255, 255, 0.9);
 }
 .has-trheader .site-header .menu-icon-wrapper .has-separator li::after {
   background: rgba(255, 255, 255, 0.9);
@@ -4608,7 +4973,7 @@ body.admin-bar .rt-sticky {
 .quixa-breadcrumb-wrapper {
   display: flex;
   align-items: center;
-  padding: 30px 0;
+  padding: 60px 0;
   background-color: #FFFFFF;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -4657,6 +5022,7 @@ body.admin-bar .rt-sticky {
   stroke: var(--rt-body-color);
 }
 .quixa-breadcrumb-wrapper .entry-title {
+  font-size: 50px;
   margin-bottom: 0;
 }
 
@@ -4708,17 +5074,27 @@ body.admin-bar .rt-sticky {
 .quixa-banner-2.has-trheader .rt-sticky .quixa-navigation ul li a {
   color: var(--rt-title-color);
 }
+.quixa-banner-2.has-trheader .rt-sticky .menu-icon-wrapper svg {
+  fill: var(--rt-title-color);
+}
+.quixa-banner-2.has-trheader .rt-sticky .menu-icon-wrapper .ham_burger .line {
+  stroke: var(--rt-title-color);
+}
+.quixa-banner-2.has-trheader .rt-sticky .menu-icon-wrapper .quixa-user-login a {
+  color: var(--rt-title-color);
+}
+.quixa-banner-2.has-trheader .menu-icon-wrapper svg {
+  fill: #FFFFFF;
+}
+.quixa-banner-2.has-trheader .menu-icon-wrapper .ham_burger .line {
+  stroke: #FFFFFF;
+}
+.quixa-banner-2.has-trheader .menu-icon-wrapper .quixa-user-login a {
+  color: #FFFFFF;
+}
 
 .quixa-widget-area {
   position: relative;
-  /*@media (min-width: 768px) {
-  	.layout-right-sidebar & {
-  		padding-left: 30px;
-  	}
-  	.layout-left-sidebar & {
-  		padding-right: 30px;
-  	}
-  }*/
 }
 .quixa-widget-area .widget {
   width: 100%;
@@ -4732,12 +5108,8 @@ body.admin-bar .rt-sticky {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  font-size: 15px;
-  line-height: 1.6;
-  font-size: 15px;
   margin: 0 0 30px;
   color: var(--rt-body-color);
-  padding: 24px 30px;
 }
 
 .widget a {
@@ -4751,11 +5123,6 @@ body.admin-bar .rt-sticky {
   padding-right: 20px;
 }
 
-@media (min-width: 767px) {
-  .widget {
-    margin: 0 0 30px;
-  }
-}
 /* Make sure select elements fit in widgets. */
 .widget select {
   max-width: 100%;
@@ -5038,14 +5405,14 @@ ol.wp-block-latest-comments li:last-child {
 }
 
 .widget_quixa_contact ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 30px;
 }
 .widget_quixa_contact ul li {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 16px;
+}
+.widget_quixa_contact ul li.phone-no {
+  font-size: 20px;
 }
 .widget_quixa_contact li [class*=rticon-] {
   flex: 0 0 30px;
@@ -5063,7 +5430,7 @@ ol.wp-block-latest-comments li:last-child {
 ***************************/
 .site-footer {
   position: relative;
-  background: #F7F7F7;
+  background: var(--rt-gray10);
 }
 .site-footer .footer-container {
   position: relative;
@@ -5104,17 +5471,56 @@ ol.wp-block-latest-comments li:last-child {
   flex-direction: row;
 }
 .footer-widgets-wrapper .footer-widgets .widget-title {
-  margin-bottom: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 .footer-widgets-wrapper .footer-widgets > .widget {
   flex-grow: 25;
 }
 .footer-widgets-wrapper .footer-widgets ul {
+  list-style: none;
   padding-right: 0;
 }
 .footer-widgets-wrapper .footer-widgets ul ul {
   padding-right: 20px;
+}
+
+.footer-widgets .frm-fluent-form .ff-t-container {
+  position: relative;
+}
+.footer-widgets .frm-fluent-form .ff-el-form-control {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-radius: 100px;
+  border: 1px solid #DDDDDD;
+  margin-bottom: 12px;
+  padding: 15px 15px 15px 40px;
+  height: 60px;
+}
+.footer-widgets .frm-fluent-form .ff-btn-submit {
+  position: relative;
+  background-color: var(--rt-primary-color);
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 600;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin-bottom: 0 !important;
+  line-height: 1;
+  overflow: hidden;
+  transform: perspective(1px) translateZ(0);
+  z-index: 1;
+}
+.footer-widgets .frm-fluent-form .ff-t-cell:first-of-type {
+  flex-basis: 100% !important;
+}
+.footer-widgets .frm-fluent-form .ff-t-cell:last-of-type {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: auto;
 }
 
 /* Footer Copyright
@@ -5124,7 +5530,7 @@ ol.wp-block-latest-comments li:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--rt-gray20);
+  color: var(--rt-meta-color);
   font-size: 14px;
   background: rgba(var(--rt-title-rgb), 0.9);
 }
@@ -5132,66 +5538,42 @@ ol.wp-block-latest-comments li:last-child {
   text-align: center;
 }
 .footer-copyright-wrapper a {
-  color: var(--rt-gray20);
+  color: var(--rt-meta-color);
 }
-
-.quixa-footer-2 .site-footer .quixa-navigation ul > li:hover > ul {
-  z-index: 9999;
-}
-.quixa-footer-2 .site-footer.schema-default {
-  background-color: var(--rt-title-color);
-}
-.quixa-footer-2 .site-footer .quixa-footer-menu {
-  text-align: center;
-}
-@media (min-width: 1200px) {
-  .quixa-footer-2 .site-footer .quixa-footer-menu {
-    margin: 0 -15px;
-  }
-}
-.quixa-footer-2 .site-footer .quixa-footer-menu > li > a {
-  font-size: 18px;
-  color: var(--rt-gray20);
-  padding: 8px 16px;
-}
-.quixa-footer-2 .site-footer .quixa-footer-menu > li > a:hover {
+.footer-copyright-wrapper a:hover {
   color: #FFFFFF;
 }
-.quixa-footer-2 .site-footer .quixa-footer-menu > li > a svg {
-  fill: var(--rt-gray20);
+
+.quixa-footer-2 .site-footer {
+  background-color: var(--rt-title-color);
 }
-.quixa-footer-2 .site-footer .footer-menu-wrapper {
-  padding: 30px 0;
-  border-top: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.quixa-footer-2 .quixa-navigation ul > li:hover > ul {
+  z-index: 9999;
 }
-@media (min-width: 1200px) {
-  .quixa-footer-2 .site-footer .footer-menu-wrapper {
-    padding: 32px 0;
-  }
+.quixa-footer-2 .footer-widgets .widget-title {
+  color: #FFFFFF;
 }
-.quixa-footer-2 .site-footer .footer-menu-wrapper .align-default {
-  justify-content: end;
+.quixa-footer-2 .footer-sidebar {
+  color: var(--rt-meta-color);
 }
-.quixa-footer-2 .site-footer .footer-copyright-logo {
-  padding-top: 7px;
+.quixa-footer-2 .footer-sidebar a {
+  color: var(--rt-meta-color);
 }
-@media (max-width: 767px) {
-  .quixa-footer-2 .site-footer .footer-copyright-logo {
-    text-align: center;
-  }
+.quixa-footer-2 .footer-sidebar a:hover {
+  color: #FFFFFF;
 }
-.quixa-footer-2 .site-footer .footer-copyright-logo img {
-  max-width: 300px;
-  max-height: 100px;
-  transform: scale(0.84);
-  -o-object-fit: contain;
-     object-fit: contain;
+.quixa-footer-2 .footer-sidebar .phone-no a {
+  color: #FFFFFF;
 }
-@media (min-width: 768px) {
-  .quixa-footer-2 .site-footer .footer-copyright-wrapper .copyright-text {
-    text-align: left;
-  }
+.quixa-footer-2 .social-icon svg {
+  width: 14px;
+  height: 14px;
+}
+.quixa-footer-2 .social-icon a:hover svg {
+  fill: #FFFFFF;
+}
+.quixa-footer-2 .footer-copyright-wrapper {
+  border-top: 1px solid #232323;
 }
 
 .quixa-search-form .search-box {
@@ -5483,6 +5865,7 @@ p.comment-form-cookies-consent * {
   row-gap: 2px;
   -moz-column-gap: 10px;
        column-gap: 10px;
+  font-size: 15px;
 }
 .quixa-post-meta ul li {
   position: relative;
@@ -5497,6 +5880,9 @@ p.comment-form-cookies-consent * {
 .quixa-post-meta ul li.edit-link {
   opacity: 0;
   visibility: hidden;
+}
+.quixa-post-meta ul li i {
+  padding-left: 6px;
 }
 article:hover .quixa-post-meta ul li.edit-link {
   opacity: 1;
@@ -5523,22 +5909,15 @@ article:hover .quixa-post-meta ul li.edit-link {
 .meta-style-default .quixa-post-meta ul li:not(:last-child) {
   margin-left: 16px;
 }
-.meta-style-default .quixa-post-meta ul li::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  background-color: var(--rt-meta-color);
-  border-radius: 50%;
-  display: inline-block;
-  margin-left: 5px;
-  transform: translateY(-2px);
-}
 .meta-style-border .quixa-post-meta ul {
   gap: 5px;
 }
 .meta-style-border .quixa-post-meta ul li:not(.category, .tag) {
-  border: 1px solid var(--rt-primary-color);
-  padding: 0 10px;
+  color: var(--rt-primary-color);
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  min-height: 32px;
+  padding: 0 12px;
 }
 .meta-style-border .quixa-post-meta ul li:is(.category, .tag) {
   padding: 0;
@@ -5553,11 +5932,12 @@ article:hover .quixa-post-meta ul li.edit-link {
   display: none;
 }
 .meta-style-border .quixa-post-meta ul li:is(.category, .tag) a {
-  display: inline-block;
-  height: 100%;
-  border: 1px solid var(--rt-primary-color);
-  padding: 4px 10px;
-  line-height: 1.2;
+  color: var(--rt-primary-color);
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
 }
 .meta-style-pipe .quixa-post-meta li:not(:last-child)::after {
   content: " | ";
@@ -5577,11 +5957,12 @@ article:hover .quixa-post-meta ul li.edit-link {
   gap: 5px;
 }
 .meta-style-dash-bg .quixa-post-meta li:not(.category, .tag) {
-  background: var(--rt-meta-light);
+  background: var(--rt-gray10);
+  border-radius: 6px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 3px 10px;
+  padding: 4px 12px;
   margin: 0;
   transition: all 320ms ease;
 }
@@ -5594,10 +5975,11 @@ article:hover .quixa-post-meta ul li.edit-link {
 .meta-style-dash-bg .quixa-post-meta li:is(.category, .tag) a {
   display: inline-block;
   height: 100%;
-  padding: 5.5px 10px;
-  line-height: 1.2;
+  padding: 7px 12px;
+  line-height: 1;
   position: relative;
-  background-color: var(--rt-meta-light);
+  background-color: var(--rt-gray10);
+  border-radius: 6px;
 }
 .meta-style-dash-bg .quixa-post-meta li:is(.category, .tag)::before {
   content: none;
@@ -5611,12 +5993,12 @@ article:hover .quixa-post-meta ul li.edit-link {
   margin-bottom: 5px;
 }
 .separate-meta a {
-  font-style: normal;
-  font-weight: 500;
-  background: var(--rt-meta-light);
+  color: var(--rt-primary-color);
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
   font-size: 14px;
-  min-height: 30px;
-  padding: 0 10px;
+  min-height: 32px;
+  padding: 0 12px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -5626,6 +6008,7 @@ article:hover .quixa-post-meta ul li.edit-link {
 .separate-meta a:hover {
   background: var(--rt-primary-color);
   color: #FFFFFF;
+  border: 1px solid transparent;
 }
 .separate-meta .sp {
   display: none;
@@ -5637,28 +6020,18 @@ article:hover .quixa-post-meta ul li.edit-link {
   line-height: 1.2;
   background: #FFFFFF;
 }
-.meta-style-dash .separate-meta a:hover::before {
-  color: #FFFFFF;
-}
 /*Post Block
 ===================================*/
 .quixa-post-card {
   margin-bottom: 30px;
 }
-.quixa-post-card .article-inner-wrapper {
-  position: relative;
-}
 .quixa-post-card .entry-title {
   font-size: 24px;
-  line-height: 1.5;
-  font-weight: 600;
-  margin-bottom: 8px;
+  line-height: 1.4;
+  margin-bottom: 12px;
 }
 .quixa-post-card .entry-title a {
   color: var(--rt-title-color);
-}
-.quixa-post-card .entry-title a:hover {
-  text-decoration: underline;
 }
 .quixa-post-card .entry-content {
   margin-bottom: 20px;
@@ -5668,35 +6041,42 @@ article:hover .quixa-post-meta ul li.edit-link {
   position: relative;
 }
 .quixa-post-card .read-more:hover {
-  background: var(--rt-primary-color);
-  color: #FFFFFF;
-}
-.quixa-post-card.meta-style-dash .read-more::before {
-  color: #FFFFFF;
+  color: var(--rt-title-color);
 }
 
 .post-thumbnail-wrap {
   position: relative;
-  margin-bottom: 20px;
 }
 .post-thumbnail-wrap .post-thumbnail {
   margin-bottom: 0;
 }
-.post-thumbnail-wrap .post-thumb-link {
-  position: relative;
-  padding-top: 68%;
-  display: block;
-}
-.post-thumbnail-wrap .post-thumb-link img {
-  position: absolute;
-  top: 0;
-  right: 0;
+.post-thumbnail-wrap .post-thumbnail img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.blog-default .entry-wrapper, .blog-list .entry-wrapper {
+  padding: 24px;
+}
+.blog-default .article-inner-wrapper, .blog-list .article-inner-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid #DDDDDD;
+}
+
+.blog-grid-2 .post-thumbnail {
+  overflow: hidden;
+  border-radius: 15px;
+}
+.blog-grid-2 .title-above-meta-date {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 0;
 }
 
 .widget .quixa-post-card .entry-title {
@@ -5777,27 +6157,35 @@ article:hover .quixa-post-meta ul li.edit-link {
   margin-bottom: 0;
 }
 
-.entry-content .page-links {
+.pagination-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.pagination-list li i {
+  font-size: 15px;
+}
+.pagination-list li:first-child i {
+  transform: rotate(180deg);
+}
+.pagination-list li.active a {
+  background-color: var(--rt-rating-color);
+}
+.pagination-list a {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding-top: 20px;
-}
-.entry-content .page-links span, .entry-content .page-links a {
-  background: var(--rt-gray20);
-  color: var(--rt-title-color);
-  padding: 3px 10px;
-  font-weight: 500;
-  border-radius: 3px;
-  min-width: 32px;
   justify-content: center;
-  align-items: center;
-  display: flex;
+  height: 50px;
+  width: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rt-title-color);
+  background-color: var(--rt-gray10);
+  border-radius: 50%;
 }
-.entry-content .page-links .current,
-.entry-content .page-links a:hover {
-  background: var(--rt-primary-color);
-  color: #FFFFFF;
+.pagination-list a:hover {
+  background-color: var(--rt-rating-color);
 }
 
 .single-content .quixa-post-card {

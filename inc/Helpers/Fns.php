@@ -210,6 +210,8 @@ class Fns {
 		$output = 'col-lg-4';
 		if ( $blog_colum_opt ) {
 			$output = $blog_colum_opt;
+		} elseif(quixa_option( 'rt_blog_style' ) === 'list'){
+			$output = 'col-lg-12';
 		} elseif ( in_array( $blog_layout, [ 'left-sidebar', 'right-sidebar' ] ) && is_active_sidebar( $blog_sidebar ) ) {
 			$output = 'col-lg-6';
 		}
@@ -293,6 +295,7 @@ class Fns {
 			'category' => __( 'Category', 'skyrocket' ),
 			'tag'      => __( 'Tag', 'skyrocket' ),
 			'comment'  => __( 'Comment', 'skyrocket' ),
+			'reading'  => __( 'Reading', 'skyrocket' ),
 		];
 	}
 

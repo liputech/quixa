@@ -22,11 +22,11 @@ $_fullwidth = Opt::$header_width == 'full' ? '-fluid' : '';
 			<?php if( $topinfo ) { ?>
 			<ul class="topbar-left d-flex gap-20 align-items-center">
 				<?php if( quixa_option( 'rt_topbar_address' ) ) { ?>
-				<li> <?php echo quixa_get_svg( 'map-pin' ); ?><?php echo wp_kses( quixa_option( 'rt_contact_address' ) , '$allowed_html' );?> </li>
+				<li> <?php echo quixa_get_svg( 'map-pin' ); ?><?php echo wp_kses( quixa_option( 'rt_contact_address' ) , 'allowed_html' );?> </li>
 				<?php } if( quixa_option( 'rt_topbar_phone' ) ) { ?>
-				<li> <?php echo quixa_get_svg( 'phone' ); ?><a href="tel:<?php echo esc_attr( quixa_option( 'rt_phone' ) );?>"><?php echo wp_kses( quixa_option( 'rt_phone' ) , '$allowed_html' );?></a> </li>
+				<li> <?php echo quixa_get_svg( 'phone' ); ?><a href="tel:<?php echo esc_attr( quixa_option( 'rt_phone' ) );?>"><?php echo wp_kses( quixa_option( 'rt_phone' ) , 'allowed_html' );?></a> </li>
 				<?php } if( quixa_option( 'rt_topbar_email' ) ) { ?>
-				<li> <?php echo quixa_get_svg( 'email' ); ?><a href="mailto:<?php echo esc_attr( quixa_option( 'rt_email' ) );?>"><?php echo wp_kses( quixa_option( 'rt_email' ) , '$allowed_html' );?></a> </li>
+				<li> <?php echo quixa_get_svg( 'email' ); ?><a href="mailto:<?php echo esc_attr( quixa_option( 'rt_email' ) );?>"><?php echo wp_kses( quixa_option( 'rt_email' ) , 'allowed_html' );?></a> </li>
 				<?php } ?>
 			</ul>
 			<?php } ?>

@@ -27,19 +27,21 @@ $secondary_color: var(--rt-secondary-color);
 $body_color: var(--rt-body-color);
 $body_bg_color: var(--rt-body-bg-color);
 $title_color: var(--rt-title-color);
+$rating_color: var(--rt-rating-color);
 $meta_color: var(--rt-meta-color);
 $meta_light: var(--rt-meta-light);
 $gray10: var(--rt-gray10);
 $gray20: var(--rt-gray20);
-$footer_bg: #F7F7F7;
-
-$white_color: #FFFFFF;
-$black_color: #000000;
 
 $body_rgb: var(--rt-body-rgb);
 $title_rgb: var(--rt-title-rgb);
 $primary_rgb: var(--rt-primary-rgb);
 $secondary_rgb: var(--rt-secondary-rgb);
+
+
+$white_color: #FFFFFF;
+$black_color: #000000;
+$border_color: #DDDDDD;
 
 //Headers
 $dropdown_width: 210px;

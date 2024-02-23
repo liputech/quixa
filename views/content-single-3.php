@@ -8,7 +8,7 @@
  */
 
 $meta_list = quixa_option( 'rt_single_meta', '', true );
-$meta      = quixa_option( 'rt_blog_above_cat_visibility' );
+$meta      = quixa_option( 'rt_blog_above_meta_visibility' );
 $meta      = quixa_option( 'rt_single_above_meta_style' );
 if ( quixa_option( 'rt_single_above_cat_visibility' ) ) {
 	$category_index = array_search( 'category', $meta_list );
