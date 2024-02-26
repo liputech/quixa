@@ -668,7 +668,7 @@ if ( ! function_exists( 'quixa_post_thumbnail' ) ) {
 	 * Displays post thumbnail.
 	 * @return void
 	 */
-	function quixa_post_thumbnail( $size ) {
+	function quixa_post_thumbnail( $size = 'full' ) {
 		if ( ! Fns::can_show_post_thumbnail() ) {
 			return;
 		}
@@ -678,7 +678,7 @@ if ( ! function_exists( 'quixa_post_thumbnail' ) ) {
 				<a class="post-thumb-link alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php the_post_thumbnail( $size, [ 'loading' => 'lazy' ] ); ?>
 				</a>
-				<?php edit_post_link( 'Edit' ); ?>
+				<?php //edit_post_link( 'Edit' ); ?>
 			</figure><!-- .post-thumbnail -->
 
 			<?php

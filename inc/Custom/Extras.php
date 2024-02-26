@@ -20,7 +20,6 @@ class Extras {
 		add_action( 'wp_nav_menu_item_custom_fields', [ $this, 'menu_customize' ], 10, 2 );
 		add_action( 'wp_update_nav_menu_item', [ $this, 'menu_update' ], 10, 2 );
 		add_filter( 'wp_get_nav_menu_items', [ $this, 'menu_modify' ], 11, 3 );
-		add_filter( 'get_search_form', [ $this, 'search_form' ] );
 		add_action( 'after_switch_theme', [ $this, 'rewrite_flush' ] );
 	}
 
@@ -181,25 +180,7 @@ class Extras {
 		return $items;
 	}
 
-	/**
-	 * Search form modify
-	 * @return string
-	 */
-	public function search_form() {
-		$output = '
-		<form method="get" class="quixa-search-form" action="' . esc_url( home_url( '/' ) ) . '">
-            <div class="search-box">
-				<input type="text" class="form-control" placeholder="' . esc_attr__( 'Search here...', 'quixa' ) . '" value="' . get_search_query() . '" name="s" />
-				<button class="item-btn" type="submit">
-					' . quixa_get_svg( 'search' ) . '
-					<span class="btn-label">' . esc_html__( "Search", "quixa" ) . '</span>
-				</button>
-            </div>
-		</form>
-		';
 
-		return $output;
-	}
 
 	/**
 	 * Flush Rewrite on CPT activation

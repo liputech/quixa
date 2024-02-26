@@ -36,9 +36,9 @@ class DynamicStyles {
 
 		$primary_color       = quixa_option( 'rt_primary_color', '#004BFF' );
 		$secondary_color     = quixa_option( 'rt_secondary_color', '#fef4f0' );
-		$body_color          = quixa_option( 'rt_body_color', '#575757' );
+		$body_color          = quixa_option( 'rt_body_color', '#343C4D' );
 		$body_bg_color       = quixa_option( 'rt_body_bg_color', '#ffffff' );
-		$title_color         = quixa_option( 'rt_title_color', '#101010' );
+		$title_color         = quixa_option( 'rt_title_color', '#00030C' );
 		$rating_color        = quixa_option( 'rt_rating_color', '#F9BA19' );
 		$meta_color          = quixa_option( 'rt_meta_color', '#7F838C' );
 		$meta_light          = quixa_option( 'rt_meta_light', '#d3d9e1' );

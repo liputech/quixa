@@ -112,23 +112,6 @@ $widget_li_space: 8px;
 
 /*------ List ----------*/
 
-
-.widget ul li {
-	padding-bottom: $widget_li_space;
-}
-
-.widget ul li ul li:last-child {
-	padding-bottom: 0;
-}
-
-.widget ul li ul li:first-child {
-	padding-top: calc($widget_li_space / 2);
-}
-
-.widget ul li a {
-	line-height: 1;
-}
-
 .widget_block .wp-block-group__inner-container > ul,
 .widget > ul {
 	margin-top: 0;
@@ -145,10 +128,20 @@ $widget_li_space: 8px;
 	line-height: 1.9;
 }
 
-.wp-block-latest-posts.wp-block-latest-posts__list li {
-	margin-bottom: 0;
+.wp-block-latest-posts__featured-image img {
+	float: left;
+	width: 100px;
+	margin-right: 12px;
+	border-radius: 8px;
+	display: inline-block;
 }
-
+.wp-block-latest-posts__list {
+	.wp-block-latest-posts__post-title {
+		color: $title_color;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+}
 ol.wp-block-latest-comments {
 	margin-left: 0;
 	padding-left: 0;
@@ -198,37 +191,6 @@ ol.wp-block-latest-comments li:last-child {
 
 .widget_text select {
 	margin-top: 0;
-}
-
-/*------- Tag Cloud ----------*/
-.widget_tag_cloud .tagcloud {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.widget_tag_cloud .tagcloud a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
-	margin: 0 3px 6px;
-	line-height: 1.5;
-	background-color: $meta_light;
-	@extend .primaryColor;
-	border-radius: 3px;
-	padding: 10px 13px;
-	-webkit-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-	border: 1px solid $meta_light;
-	text-align: center;
-	text-transform: lowercase;
-	font-weight: 500;
-}
-
-.widget_tag_cloud .tagcloud a:hover {
-	@extend .primaryBG;
-	border-color: $primary_color;
-	color: $white_color;
 }
 
 /*------ Select ----------*/

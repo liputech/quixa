@@ -1,12 +1,16 @@
 .quixa-search-form .search-box {
 	position: relative;
-	border: 1px solid $gray20;
+	border: 1px solid $border_color;
+	border-radius: 6px;
 	overflow: hidden;
 	input {
+		font-size: 16px;
+		font-weight: 500;
 		height: 50px;
 		padding: 0 15px;
 		border: none;
 		width: 100%;
+		border-radius: 6px;
 		background: transparent;
 
 	}
@@ -16,13 +20,12 @@
 		top: 0;
 		height: 100%;
 		border: none;
-		border-radius: 0;
 		color: $meta_color;
 		background: transparent;
 		padding: 0 12px;
 
 		svg {
-			fill: $meta_color;
+			fill: $primary_color;
 			width: 22px;
 			height: 22px;
 			margin-top: 1.5px;

@@ -9,6 +9,17 @@
 	}
 }
 
+.footer-sidebar {
+	ul {
+		li {
+			padding-bottom: 8px;
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
 @import 'parts/_footer-nav';
 @import 'parts/_footer-widgets';
 @import "parts/_footer-copyright";

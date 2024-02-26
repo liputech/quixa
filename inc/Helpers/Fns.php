@@ -67,15 +67,15 @@ class Fns {
 
 	/**
 	 * Get Sidebar lists
+	 *
 	 * @return array
 	 */
-	public static function sidebar_lists() {
+	public static function sidebar_lists( $default_title = '' ) {
 		$sidebar_fields            = [];
-		$sidebar_fields['default'] = esc_html__( 'Choose Sidebar', 'quixa' );
-		if ( ! empty( Sidebar::sidebar_lists() ) ) {
-			foreach ( Sidebar::sidebar_lists() as $id => $sidebar ) {
-				$sidebar_fields[ $id ] = $sidebar['name'];
-			}
+		$sidebar_fields['default'] = $default_title ?? esc_html__( 'Choose Sidebar', 'newsfit' );
+
+		foreach ( self::default_sidebar() as $id => $sidebar ) {
+			$sidebar_fields[ $id ] = $sidebar['name'];
 		}
 
 		return $sidebar_fields;
@@ -329,4 +329,51 @@ class Fns {
 		return implode( ' ', $clsses );
 	}
 
+	/**
+	 * Get all default sidebar args for theme
+	 *
+	 * @param $id
+	 *
+	 * @return array|mixed|null
+	 */
+	public static function default_sidebar( $id = '' ) {
+		$sidebar_lists = [
+			'main'   => [
+				'id'    => 'rt-sidebar',
+				'name'  => __( 'Main Sidebar', 'newsfit' ),
+				'class' => 'rt-sidebar',
+			],
+			'single' => [
+				'id'    => 'rt-single-sidebar',
+				'name'  => __( 'Single Sidebar', 'newsfit' ),
+				'class' => 'rt-single-sidebar',
+			],
+			'footer' => [
+				'id'    => 'rt-footer-sidebar',
+				'name'  => 'Footer Sidebar',
+				'class' => 'footer-sidebar col-lg-3 col-md-6',
+			],
+		];
+		if ( class_exists( 'WooCommerce' ) ) {
+			$sidebar_lists['woo-archive'] = [
+				'id'    => 'rt-woo-archive-sidebar',
+				'name'  => __( 'WooCommerce Archive Sidebar', 'newsfit' ),
+				'class' => 'woo-archive-sidebar',
+			];
+			$sidebar_lists['woo-single']  = [
+				'id'    => 'rt-woo-single-sidebar',
+				'name'  => __( 'WooCommerce Single Sidebar', 'newsfit' ),
+				'class' => 'woo-single-sidebar',
+			];
+		}
+		$sidebar_lists = apply_filters( 'newsfit_sidebar_lists', $sidebar_lists );
+		if ( ! $id ) {
+			return $sidebar_lists;
+		}
+		if ( isset( $sidebar_lists[ $id ] ) ) {
+			return $sidebar_lists[ $id ]['id'];
+		}
+
+		return [];
+	}
 }
