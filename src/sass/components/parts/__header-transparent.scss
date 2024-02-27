@@ -37,21 +37,6 @@
 			background-color: $transparent_menu_color !important;
 		}
 
-		.quixa-topbar .caret svg,
-		.main-header-section .caret svg {
-			fill: $white_color;
-			width: 9px;
-			height: 9px;
-		}
-
-		.quixa-navigation ul > li > ul {
-			background-color: rgba($title_rgb, 0.9);
-		}
-
-		.quixa-navigation ul > li > ul li > a:hover {
-			background-color: rgba(255, 255, 255, .2);
-		}
-
 		.menu-icon-wrapper .has-separator li::after {
 			background: $transparent_menu_color;
 		}

@@ -13,6 +13,12 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 
 <?php if ( is_active_sidebar( 'rt-footer-sidebar' ) ) : ?>
 	<div class="footer-widgets-wrapper">
+		<div class="footer-blur-shape">
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 		<div class="footer-container <?php echo esc_attr($footer_width) ?>">
 			<div class="footer-widgets row">
 				<?php dynamic_sidebar( 'rt-footer-sidebar' ); ?>

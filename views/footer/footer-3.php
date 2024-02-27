@@ -8,7 +8,7 @@
  */
 
 $footer_width = 'container'.quixa_option('rt_footer_width');
-$copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between' : 'justify-content-center';
+$copyright_center = quixa_option('rt_contact_footer') ? 'justify-content-between' : 'justify-content-center';
 ?>
 
 <?php if ( is_active_sidebar( 'rt-footer-sidebar' ) ) : ?>
@@ -36,13 +36,19 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 				<div class="copyright-text">
 					<?php echo quixa_html( str_replace( '[y]', date( 'Y' ), quixa_option( 'rt_footer_copyright' ) ) ); ?>
 				</div>
-				<?php if( quixa_option('rt_social_footer') ) { ?>
-				<div class="social-icon d-flex gap-20 align-items-center">
-					<div class="social-icon d-flex column-gap-10">
-						<?php if( quixa_option( 'rt_follow_us_label' ) ) { ?><label><?php echo quixa_option( 'rt_follow_us_label' ) ?></label><?php } ?>
-						<?php quixa_get_social_html( '#555' ); ?>
+				<?php if( quixa_option('rt_contact_footer') ) { ?>
+
+					<div class="rt-cta-box d-flex column-gap-8 align-items-center">
+						<div class="cta-title"><?php echo wp_kses( quixa_option( 'rt_ready_label' ) , 'allowed_html' );?></div>
+						<div class="quixa-button">
+							<a href="<?php echo esc_url( quixa_option( 'rt_contact_button_url' ) ) ?>" class="quixa-btn style-2">
+								<span class="btn-wrap">
+									<span class="btn-text1"><?php echo wp_kses( quixa_option( 'rt_contact_button_text' ) , 'allowed_html' );?></span>
+									<span class="btn-text2"><?php echo wp_kses( quixa_option( 'rt_contact_button_text' ) , 'allowed_html' );?></span>
+								</span>
+							</a>
+						</div>
 					</div>
-				</div>
 				<?php } ?>
 			</div>
 		</div>

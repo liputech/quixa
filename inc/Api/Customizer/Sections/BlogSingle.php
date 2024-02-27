@@ -74,9 +74,9 @@ class BlogSingle extends Customizer {
 				'default' => 1
 			],
 
-			'rt_single_above_cat_visibility' => [
+			'rt_single_above_meta_visibility' => [
 				'type'  => 'switch',
-				'label' => __( 'Title Above Category Visibility', 'quixa' ),
+				'label' => __( 'Above Meta Visibility', 'quixa' ),
 			],
 
 		] );

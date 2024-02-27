@@ -70,8 +70,8 @@ class General extends Customizer {
 			],
 			'container_width' => [
 				'type'    => 'select',
-				'label'   => __( 'Social Icon Style', 'quixa' ),
-				'default' => '1240px',
+				'label'   => __( 'Container Width', 'quixa' ),
+				'default' => '1240',
 				'choices' => [
 					'1554' => esc_html__( '1554px', 'quixa' ),
 					'1340' => esc_html__( '1340px', 'quixa' ),

@@ -1,0 +1,31 @@
+.quixa-footer-1 {
+	.site-footer {
+		position: relative;
+		overflow: hidden;
+	}
+	.footer-blur-shape {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				z-index: 1;
+				border-radius: 322px;
+				width: 322px;
+				height: 322px;
+				filter: blur(100px);
+				background: #231435;
+				position: absolute;
+				&:nth-child(1){
+					background-color: #EEFDE8;
+				}
+				&:nth-child(2){
+					background-color: #FFFBE8;
+					top: 0;
+					right: 0;
+					left: auto;
+				}
+			}
+		}
+	}
+}

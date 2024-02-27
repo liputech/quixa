@@ -50,6 +50,7 @@ class Blog extends Customizer {
 					'default' => __( 'Default From Theme', 'quixa' ),
 					'list'    => __( 'List', 'quixa' ),
 					'grid-2'    => __( 'Grid 2', 'quixa' ),
+					'grid-3'    => __( 'Grid 3', 'quixa' ),
 				]
 			],
 

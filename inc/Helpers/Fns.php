@@ -70,12 +70,12 @@ class Fns {
 	 *
 	 * @return array
 	 */
-	public static function sidebar_lists( $default_title = '' ) {
+	public static function sidebar_lists( $default_title = null ) {
 		$sidebar_fields            = [];
 		$sidebar_fields['default'] = $default_title ?? esc_html__( 'Choose Sidebar', 'newsfit' );
 
 		foreach ( self::default_sidebar() as $id => $sidebar ) {
-			$sidebar_fields[ $id ] = $sidebar['name'];
+			$sidebar_fields[ $sidebar['id'] ] = $sidebar['name'];
 		}
 
 		return $sidebar_fields;
@@ -310,7 +310,7 @@ class Fns {
 
 	public static function single_meta_lists() {
 		$meta_list = quixa_option( 'rt_single_meta', '', true );
-		if ( quixa_option( 'rt_single_above_cat_visibility' ) ) {
+		if ( quixa_option( 'rt_single_above_meta_visibility' ) ) {
 			$category_index = array_search( 'category', $meta_list );
 			unset( $meta_list[ $category_index ] );
 		}

@@ -60,7 +60,7 @@ class Enqueue {
 		$bodyFont = $body_font['font'] ?? 'Urbanist'; // Body Font
 		$menuFont = $menu_font['font'] ?? $bodyFont; // Menu Font
 		$hFont    = $h_font['font'] ?? $body_font; // Heading Font
-		$hFontW   = $h_font['regularweight'];
+		$hFontW   = $h_font['regularweight'] ?? null;
 
 		$heading_fonts = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
 

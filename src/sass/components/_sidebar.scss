@@ -6,28 +6,30 @@
 		margin: 0;
 		padding: 0;
 		> li {
+			position: relative;
 			margin-bottom: 5px;
 			font-size: 16px;
 			&:last-child {
 				margin-bottom: 0;
 			}
 			> a {
+				position: relative;
 				border: 1px solid $border_color;
 				border-radius: 6px;
 				padding: 12px 15px;
 				display: block;
+
 			}
 		}
 		&.sub-menu {
 			margin-top: 5px;
 		}
 	}
-	.widget-title {
+	.widget-title, .wp-block-heading {
 		font-size: 22px;
 	}
 
 	.rt-sidebar {
-		overflow: hidden;
 		width: 100%;
 		max-width: 100%;
 		flex: 0 0 100%;
@@ -37,11 +39,35 @@
 	.wp-block-categories, .wp-block-archives {
 
 			li {
+				border: 1px solid $border_color;
+				border-radius: 6px;
+				padding: 12px 15px;
 				width: 100%;
 				float: left;
 				text-align: right;
 				a {
 					float: left;
+					border: none;
+					padding: 0;
+					&:before {
+						position: absolute;
+						content: '';
+						left: 0;
+						top: 12px;
+						width: 4px;
+						height: 4px;
+						opacity: 0;
+						visibility: hidden;
+						background-color: $primary_color;
+						transition: all .21s ease-in-out;
+					}
+					&:hover {
+						padding-left: 12px;
+						&:before {
+							opacity: 1;
+							visibility: visible;
+						}
+					}
 				}
 			}
 

@@ -8,8 +8,10 @@
  */
 
 
-if ( is_singular() && is_active_sidebar( 'rt-single-sidebar' ) ) {
-	quixa_sidebar( 'rt-single-sidebar' );
+use RT\Quixa\Helpers\Fns;
+
+if ( is_singular() && is_active_sidebar( Fns::default_sidebar('single') ) ) {
+	quixa_sidebar( Fns::default_sidebar('single')  );
 } else {
-	quixa_sidebar( 'rt-sidebar' );
+	quixa_sidebar( Fns::default_sidebar('main') );
 }

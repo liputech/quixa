@@ -20,12 +20,9 @@ use RT\Quixa\Options\Opt;
 
 		<div class="entry-wrapper">
 			<?php quixa_single_entry_header(); ?>
-
-			<?php if ( quixa_option( 'rt_blog_content_visibility' ) ) : ?>
 				<div class="entry-content">
 					<?php quixa_entry_content() ?>
 				</div>
-			<?php endif; ?>
 
 
 			<?php quixa_entry_footer(); ?>

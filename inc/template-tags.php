@@ -682,11 +682,12 @@ if ( ! function_exists( 'quixa_post_thumbnail' ) ) {
 			</figure><!-- .post-thumbnail -->
 
 			<?php
-			if ( quixa_option( 'rt_blog_style' ) == 'grid-2' ) {
-				quixa_separate_meta( 'title-above-meta-date', [ 'date' ] );
-			}
-
-			?>
+			if ( quixa_option( 'rt_blog_style' ) == 'grid-2' && quixa_option( 'rt_blog_above_meta_visibility' ) ) { ?>
+				<div class="posted-on">
+				<span class="day"><?php echo get_the_date( 'j' ); ?></span>
+				<span class="month"><?php echo get_the_date( 'M' ); ?></span>
+				</div>
+			<?php } ?>
 
 		</div>
 		<?php
@@ -786,7 +787,7 @@ if ( ! function_exists( 'quixa_sidebar' ) ) {
 			return false;
 		}
 
-		if ( Opt::$layout == 'full-width' || Opt::$single_style == '4' ) {
+		if ( Opt::$layout == 'full-width' || in_array( Opt::$single_style, [ '4' ] ) ) {
 			return false;
 		}
 
@@ -808,13 +809,23 @@ if ( ! function_exists( 'quixa_post_class' ) ) {
 	function quixa_post_class( $default_class = 'quixa-post-card' ) {
 		$above_meta_style = 'above-' . quixa_option( 'rt_single_above_meta_style' );
 
+
+		$common_clsss = '';
 		if ( is_single() ) {
+			$common_clsss .= quixa_option( 'rt_single_above_meta_visibility' ) ? 'is-above-meta' : 'no-above-meta';
 			$meta_style   = quixa_option( 'rt_single_meta_style' );
-			$post_classes = Fns::class_list( [ $meta_style, $above_meta_style ] );
+			$post_classes = Fns::class_list( [ $common_clsss, $meta_style, $above_meta_style ] );
 		} else {
+			$common_clsss .= quixa_option( 'rt_blog_above_meta_visibility' ) ? 'is-above-meta' : 'no-above-meta';
 			$meta_style   = quixa_option( 'rt_blog_meta_style' );
 			$blog_style   = 'blog-' . quixa_option( 'rt_blog_style' );
-			$post_classes = Fns::class_list( [ $meta_style, $blog_style, $above_meta_style, Fns::blog_column() ] );
+			$post_classes = Fns::class_list( [
+				$common_clsss,
+				$meta_style,
+				$blog_style,
+				$above_meta_style,
+				Fns::blog_column()
+			] );
 		}
 
 		if ( $default_class ) {
@@ -831,7 +842,7 @@ if ( ! function_exists( 'quixa_separate_meta' ) ) {
 	 * @return string
 	 */
 	function quixa_separate_meta( $class = '', $includes = [ 'category' ] ) {
-		if ( ( ! is_single() && quixa_option( 'rt_blog_above_meta_visibility' ) ) || ( is_single() && quixa_option( 'rt_single_above_cat_visibility' ) ) ) : ?>
+		if ( ( ! is_single() && quixa_option( 'rt_blog_above_meta_visibility' ) ) || ( is_single() && quixa_option( 'rt_single_above_meta_visibility' ) ) ) : ?>
 		<div class="separate-meta <?php echo esc_attr( $class ) ?>">
 			<?php echo quixa_post_meta( [
 				'with_list' => false,

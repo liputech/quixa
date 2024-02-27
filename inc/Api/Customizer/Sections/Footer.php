@@ -44,7 +44,7 @@ class Footer extends Customizer {
 				'type'    => 'image_select',
 				'label'   => __( 'Choose Layout', 'quixa' ),
 				'default' => '1',
-				'choices' => Fns::image_placeholder( 'footer', 2 )
+				'choices' => Fns::image_placeholder( 'footer', 4 )
 			],
 
 			'rt_footer_width' => [
@@ -75,6 +75,18 @@ class Footer extends Customizer {
 				'label'       => __( 'Social Icon', 'quixa' ),
 				'description' => __( 'Show footer at the social icon', 'quixa' ),
 				'default' => 1,
+			],
+
+			'rt_contact_footer' => [
+				'type'        => 'switch',
+				'label'       => __( 'Contact', 'quixa' ),
+				'description' => __( 'Show footer at contact button', 'quixa' ),
+				'default' => 1,
+			],
+			'rt_contact_button_url' => [
+				'type'    => 'text',
+				'label'   => __( 'Contact Link', 'quixa' ),
+				'condition' => [ 'rt_contact_footer' ]
 			],
 
 			'rt_footer_copyright' => [

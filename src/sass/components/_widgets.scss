@@ -5,6 +5,7 @@ $widget_li_space: 8px;
 .widget {
 	margin: 0 0 30px;
 	color: $body_color;
+	overflow: hidden;
 }
 
 .widget a {
@@ -123,9 +124,15 @@ $widget_li_space: 8px;
 	border-bottom: none;
 	padding-bottom: 0;
 }
-
-.widget_block .wp-block-latest-comments .wp-block-latest-comments__comment {
-	line-height: 1.9;
+.wp-block-latest-comments {
+	.wp-block-latest-comments__comment-meta {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+	.wp-block-latest-comments__comment {
+		line-height: 1.6;
+	}
 }
 
 .wp-block-latest-posts__featured-image img {

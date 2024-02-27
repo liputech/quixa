@@ -39,6 +39,7 @@ class Setup {
 			'quixa-size2'  => [ 960, 520, true ],
 			'quixa-size3'  => [ 450, 322, true ],
 			'quixa-size4'  => [ 450, 450, true ],
+			'quixa-size5'  => [ 432, 490, true ],
 		];
 
 		$sizes = apply_filters( 'quixa_image_size', $sizes );

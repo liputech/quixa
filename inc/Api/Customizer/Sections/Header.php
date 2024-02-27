@@ -87,6 +87,7 @@ class Header extends Customizer {
 			'rt_tr_header' => [
 				'type'  => 'switch',
 				'label' => __( 'Transparent Header', 'quixa' ),
+				'default' => 1
 			],
 
 			'rt_tr_header_shadow' => [

@@ -77,11 +77,10 @@ class Extras {
 	 * Menu Customize
 	 */
 	function menu_customize( $item_id, $item ) {
-		//Mega menu
+		// Mega menu
 		$_mega_menu = get_post_meta( $item_id, 'quixa_mega_menu', true );
-		//Query string
-		$menu_query_string_key = get_post_meta( $item_id, 'quixa_menu_qs_key', true );
-		$menu_query_string     = get_post_meta( $item_id, 'quixa_menu_qs', true );
+		// Query string
+		$menu_query_string = get_post_meta( $item_id, 'quixa_menu_qs', true );
 		?>
 
 		<?php if ( $item->menu_item_parent < 1 ) : ?>
@@ -89,22 +88,22 @@ class Extras {
 				<label for="quixa_mega_menu-<?php echo $item_id; ?>" class="widefat">
 					<?php _e( 'Make as Mega Menu', 'quixa' ); ?><br>
 					<select class="widefat" id="quixa_mega_menu-<?php echo $item_id; ?>" name="quixa_mega_menu[<?php echo $item_id; ?>]">
-						<option value=""><?php _e( "Choose Mega Menu", "quixa" ) ?></option>
+						<option value=""><?php _e( 'Choose Mega Menu', 'quixa' ); ?></option>
 						<?php
-						for ( $item = 2; $item < 12; $item ++ ) {
+						for ( $item = 2; $item < 12; $item++ ) {
 							$menu_item  = $item;
 							$class_hide = null;
 							$label_hide = '';
 							if ( $item > 6 ) {
-								$menu_item  -= 5;
+								$menu_item -= 5;
 								$class_hide = ' hide-header';
 								$label_hide = ' — Hide Col Title';
 							}
-							$class    = "mega-menu mega-menu-col-{$menu_item}" . $class_hide ?? "";
+							$class    = "mega-menu mega-menu-col-{$menu_item}" . $class_hide ?? '';
 							$selected = ( $_mega_menu == $class ) ? ' selected="selected" ' : null;
 							?>
-							<option <?php echo esc_attr( $selected ) ?> value="<?php echo esc_attr( $class ) ?>">
-								<?php printf( __( 'Mega menu - %s Col %s', 'quixa' ), $menu_item, $label_hide ); ?>
+							<option <?php echo esc_attr( $selected ); ?> value="<?php echo esc_attr( $class ); ?>">
+								<?php printf( __( 'Mega menu - %1$s Col %2$s', 'quixa' ), $menu_item, $label_hide ); ?>
 							</option>
 							<?php
 						}
@@ -114,31 +113,20 @@ class Extras {
 			</p>
 		<?php endif; ?>
 
-		<div class="menu-query-string" style="width:100%">
-			<p class="description description-thin">
-				<label for="quixa-menu-qs-key-<?php echo $item_id; ?>">
-					<?php echo esc_html__( 'Query String Key', 'quixa' ); ?><br>
-					<input type="text"
-						   id="quixa-menu-qs-key-<?php echo $item_id; ?>"
-						   name="quixa-menu-qs-key[<?php echo $item_id; ?>]"
-						   value="<?php echo esc_html( $menu_query_string_key ); ?>"
-					/>
-				</label>
-			</p>
-			<p class="description description-thin">
-				<label for="quixa-menu-qs-<?php echo $item_id; ?>">
-					<?php echo esc_html__( 'Query String Value', 'quixa' ); ?><br>
-					<input type="text"
-						   id="quixa-menu-qs-<?php echo $item_id; ?>"
-						   name="quixa-menu-qs[<?php echo $item_id; ?>]"
-						   value="<?php echo esc_html( $menu_query_string ); ?>"
-					/>
-				</label>
-			</p>
-		</div>
+		<p class="description widefat">
+			<label class="widefat" for="quixa-menu-qs-<?php echo $item_id; ?>">
+				<?php echo esc_html__( 'Query String', 'quixa' ); ?><br>
+				<input type="text"
+					   class="widefat"
+					   id="quixa-menu-qs-<?php echo $item_id; ?>"
+					   name="quixa-menu-qs[<?php echo $item_id; ?>]"
+					   value="<?php echo esc_html( $menu_query_string ); ?>"
+				/>
+			</label>
+		</p>
+
 
 		<?php
-
 	}
 
 	/**
@@ -151,11 +139,9 @@ class Extras {
 	 */
 	function menu_update( $menu_id, $menu_item_db_id ) {
 		$_mega_menu         = $_POST['quixa_mega_menu'][ $menu_item_db_id ] ?? '';
-		$query_string_key   = $_POST['quixa-menu-qs-key'][ $menu_item_db_id ] ?? '';
 		$query_string_value = $_POST['quixa-menu-qs'][ $menu_item_db_id ] ?? '';
 
 		update_post_meta( $menu_item_db_id, 'quixa_mega_menu', $_mega_menu );
-		update_post_meta( $menu_item_db_id, 'quixa_menu_qs_key', $query_string_key );
 		update_post_meta( $menu_item_db_id, 'quixa_menu_qs', $query_string_value );
 	}
 
@@ -170,20 +156,39 @@ class Extras {
 	 */
 	function menu_modify( $items, $menu, $args ) {
 		foreach ( $items as $item ) {
-			$menu_query_string_key = get_post_meta( $item->ID, 'quixa_menu_qs_key', true );
-			$menu_query_string     = get_post_meta( $item->ID, 'quixa_menu_qs', true );
+			$menu_query_string = get_post_meta( $item->ID, 'quixa_menu_qs', true );
 			if ( $menu_query_string ) {
-				$item->url = add_query_arg( $menu_query_string_key, $menu_query_string, $item->url );
+				$item->url = add_query_arg( $menu_query_string, '', $item->url );
 			}
 		}
 
 		return $items;
 	}
 
+	/**
+	 * Search form modify
+	 *
+	 * @return string
+	 */
+	public function search_form() {
+		$output = '
+		<form method="get" class="quixa-search-form" action="' . esc_url( home_url( '/' ) ) . '">
+            <div class="search-box">
+				<input type="text" class="form-control" placeholder="' . esc_attr__( 'Search here...', 'quixa' ) . '" value="' . get_search_query() . '" name="s" />
+				<button class="item-btn" type="submit">
+					' . quixa_get_svg( 'search', false ) . '
+					<span class="btn-label">' . esc_html__( 'Search', 'quixa' ) . '</span>
+				</button>
+            </div>
+		</form>
+		';
 
+		return $output;
+	}
 
 	/**
 	 * Flush Rewrite on CPT activation
+	 *
 	 * @return empty
 	 */
 	public function rewrite_flush() {

@@ -1,6 +1,6 @@
 
-//Footer Style 2
-.quixa-footer-2 {
+//Footer Style 3
+.quixa-footer-3 {
 	.site-footer {
 		background-color: $title_color;
 		overflow: hidden;
@@ -76,6 +76,17 @@
 					background-color: #130B31;
 				}
 			}
+		}
+	}
+	.rt-cta-box {
+		.cta-title {
+			background: linear-gradient(90deg, #FFF -2.1%, #8B7AF5 53.56%, #FFF 83.46%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-size: 40px;
+			font-weight: 700;
+			line-height: 48px;
 		}
 	}
 }

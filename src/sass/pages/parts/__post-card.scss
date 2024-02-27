@@ -2,10 +2,7 @@
 ===================================*/
 
 .quixa-post-card {
-
 	margin-bottom: 30px;
-
-
 	//Post Title
 	.entry-title {
 		@include font_size(24px, 1.4);
@@ -42,6 +39,7 @@
 
 	.post-thumbnail {
 		margin-bottom: 0;
+
 		img {
 			width: 100%;
 			object-fit: cover;
@@ -49,10 +47,12 @@
 		}
 	}
 }
+
 .blog-default, .blog-list {
 	.entry-wrapper {
 		padding: 24px;
 	}
+
 	.article-inner-wrapper {
 		position: relative;
 		overflow: hidden;
@@ -60,35 +60,102 @@
 		border: 1px solid $border_color;
 	}
 }
+
 .blog-grid-2 {
 	.entry-wrapper {
 		padding-top: 20px;
 	}
+
 	.post-thumb-link {
 		display: flex;
 	}
-	.post-thumbnail {
+
+	.post-thumbnail-wrap {
 		img {
 			border-radius: 15px;
-			@include clip-path-style5;
+		}
+
+		.posted-on {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-color: $primary_color;
+			border-radius: 15px;
+			color: $white_color;
+			text-align: center;
+			width: 65px;
+			height: 60px;
+			font-size: 14px;
+			line-height: 1.1;
+			.day {
+				display: block;
+				font-size: 30px;
+				font-weight: 700;
+			}
 		}
 	}
-	.title-above-meta-date {
+
+}
+
+.blog-grid-2.is-above-meta {
+	img {
+		@include clip-path-style5;
+	}
+}
+
+.blog-grid-3 {
+	.article-inner-wrapper {
+		position: relative;
+		overflow: hidden;
+		border-radius: 15px;
+		&:before {
+			content: '';
+			position: absolute;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.90) 100%);
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+	}
+	.entry-wrapper {
 		position: absolute;
 		left: 0;
 		bottom: 0;
-		margin-bottom: 0;
-	}
-	.posted-on {
-		display: inline-block;
-		width: 66px;
-		background-color: var(--rt-primary-color);
-		border-radius: 15px;
+		padding: 0 30px 20px;
 		color: $white_color;
-		text-align: center;
-		padding: 10px 5px;
-		font-size: 14px;
-		line-height: 1.4;
+		z-index: 1;
+		.entry-title {
+			a {
+				color: $white_color;
+				&:hover {
+					color: $rating_color;
+				}
+			}
+		}
+	}
+	.separate-meta a {
+		border: none;
+		background-color: $primary_color;
+		color: $white_color;
+		border-radius: 50px;
+		&:hover {
+			background-color: $rating_color;
+			color: $title_color;
+		}
+	}
+	.quixa-post-meta {
+		color: $meta_overlay_color;
+		a {
+			color: $meta_overlay_color;
+			&:hover {
+				color: $white_color;
+			}
+		}
 	}
 }
 

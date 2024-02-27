@@ -10,7 +10,7 @@
 $meta_list = quixa_option( 'rt_single_meta', '', true );
 $meta      = quixa_option( 'rt_blog_above_meta_visibility' );
 $meta      = quixa_option( 'rt_single_above_meta_style' );
-if ( quixa_option( 'rt_single_above_cat_visibility' ) ) {
+if ( quixa_option( 'rt_single_above_meta_visibility' ) ) {
 	$category_index = array_search( 'category', $meta_list );
 	unset( $meta_list[ $category_index ] );
 }
@@ -19,11 +19,9 @@ if ( quixa_option( 'rt_single_above_cat_visibility' ) ) {
 	<div class="article-inner-wrapper">
 
 		<div class="entry-wrapper">
-			<?php if ( quixa_option( 'rt_blog_content_visibility' ) ) : ?>
-				<div class="entry-content">
-					<?php quixa_entry_content() ?>
-				</div>
-			<?php endif; ?>
+			<div class="entry-content">
+				<?php quixa_entry_content() ?>
+			</div>
 
 			<?php quixa_entry_footer(); ?>
 		</div>

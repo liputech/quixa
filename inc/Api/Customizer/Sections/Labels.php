@@ -64,6 +64,25 @@ class Labels extends Customizer {
 				'description' => __( 'Context: Topbar icon label', 'quixa' ),
 			],
 
+			'rt_footer_labels' => [
+				'type'  => 'heading',
+				'label' => __( 'Footer Labels', 'quixa' ),
+			],
+
+			'rt_ready_label' => [
+				'type'        => 'text',
+				'label'       => __( 'Are You Ready', 'quixa' ),
+				'default'     => __( 'ARE YOU READY TO GET STARTED?', 'quixa' ),
+				'description' => __( 'Context: Footer Are You Ready', 'quixa' ),
+			],
+
+			'rt_contact_button_text' => [
+				'type'        => 'text',
+				'label'       => __( 'Contact Us', 'quixa' ),
+				'default'     => __( 'Contact Us', 'quixa' ),
+				'description' => __( 'Context: Footer contact button', 'quixa' ),
+			],
+
 			'rt_blog_labels'          => [
 				'type'  => 'heading',
 				'label' => __( 'Blog Labels', 'quixa' ),
