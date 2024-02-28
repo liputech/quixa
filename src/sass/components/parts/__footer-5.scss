@@ -1,6 +1,6 @@
 
-//Footer Style 3
-.quixa-footer-3 {
+//Footer Style 5
+.quixa-footer-5 {
 	.site-footer {
 		background-color: $footer_bg_color;
 		overflow: hidden;
@@ -29,57 +29,23 @@
 	}
 
 	.footer-copyright-wrapper {
-		.copyright-wrap {
+		.copyright-text-wrap {
+			position: relative;
 			border-top: 1px solid $footer_border_color;
-			padding: 60px 0 40px;
+			padding: 40px 0 20px;
 		}
-		.copyright-text {
-			img {
-				display: block;
-				margin-bottom: 15px;
-			}
-		}
-	}
-	.footer-blur-shape {
-		ul {
+		.rt-footer-star-shape {
 			li {
-				width: 431px;
-				height: 431px;
-				border-radius: 431px;
-				background: #141C35;
-				filter: blur(100px);
 				position: absolute;
-				&:nth-child(1){
-					bottom: -36%;
+				&:nth-child(1) {
+					top: -23px;
+					right: 0;
+				}
+				&:nth-child(2) {
+					top: -23px;
 					left: 0;
 				}
-				&:nth-child(2){
-					top: -40%;
-					left: 17%;
-					background-color: #141C35;
-				}
-				&:nth-child(3){
-					top: -35%;
-					right: -10%;
-					background-color: #141C35;
-				}
-				&:nth-child(4){
-					bottom: -35%;
-					right: 5%;
-					background-color: #130B31;
-				}
 			}
-		}
-	}
-	.rt-footer-cta {
-		.rt-cta-title {
-			background: linear-gradient(90deg, #FFF -2.1%, #8B7AF5 53.56%, #FFF 83.46%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			font-size: 40px;
-			font-weight: 700;
-			line-height: 48px;
 		}
 	}
 	.rt-footer-shape {
@@ -87,16 +53,36 @@
 		left: 50px;
 		top: 50px;
 	}
-	.rt-footer-star-shape {
-		position: absolute;
-		top: -23px;
-		right: 12px;
-	}
-	.copyright-text-wrap, .rt-footer-cta {
-		@media (max-width: 991px) {
-			flex-direction: column;
-			gap: 15px;
-			text-align: center;
+	.footer-blur-shape {
+		ul {
+			li {
+				width: 431px;
+				height: 431px;
+				border-radius: 431px;
+				background: #231435;
+				filter: blur(100px);
+				position: absolute;
+				&:nth-child(1){
+					bottom: -36%;
+					left: 0;
+					background-color: rgba(27, 34, 54, 0.5);
+				}
+				&:nth-child(2){
+					top: -40%;
+					left: 17%;
+					background-color: rgba(54, 38, 22, 0.5);
+				}
+				&:nth-child(3){
+					top: -35%;
+					right: -10%;
+					background-color: rgba(30, 42, 75, 0.5);
+				}
+				&:nth-child(4){
+					bottom: -35%;
+					right: 5%;
+					background-color: rgba(52, 61, 87, 0.5);
+				}
+			}
 		}
 	}
 }

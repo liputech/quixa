@@ -18,10 +18,11 @@ $classes = Fns::class_list([
 ]);
 ?>
 </div><!-- #content -->
-
-<footer class="<?php echo esc_attr($classes); ?>" role="contentinfo">
-	<?php get_template_part( 'views/footer/footer', Opt::$footer_style ); ?>
-</footer><!-- #colophon -->
+<?php if( quixa_option('rt_footer_display') ) { ?>
+	<footer class="<?php echo esc_attr($classes); ?>" role="contentinfo">
+		<?php get_template_part( 'views/footer/footer', Opt::$footer_style ); ?>
+	</footer><!-- #colophon -->
+<?php } ?>
 
 </div><!-- #page -->
 

@@ -147,9 +147,12 @@ if ( ! function_exists( 'quixa_menu_icons_group' ) ) {
 				<?php endif; ?>
 
 				<?php if ( $has_button ) : ?>
-					<li class="quixa-get-started-btn">
-						<a class="btn button-1" href="<?php echo esc_url( $args['button_link'] ) ?>">
-							<?php echo esc_html( $args['button_label'] ); ?>
+					<li class="quixa-button">
+						<a class="btn button-3" href="<?php echo esc_url( $args['button_link'] ) ?>">
+							<div class="btn-wrap">
+								<span class="btn-text1"><?php echo esc_html( $args['button_label'] ); ?></span>
+								<span class="btn-text2"><?php echo esc_html( $args['button_label'] ); ?></span>
+							</div>
 						</a>
 					</li>
 				<?php endif; ?>

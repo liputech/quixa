@@ -13,6 +13,7 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 
 <?php if ( is_active_sidebar( 'rt-footer-sidebar' ) ) : ?>
 	<div class="footer-widgets-wrapper">
+		<?php if( quixa_option('rt_shape_footer') ) { ?>
 		<div class="footer-blur-shape">
 			<ul>
 				<li></li>
@@ -21,6 +22,7 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 				<li></li>
 			</ul>
 		</div>
+		<?php } ?>
 		<div class="footer-container <?php echo esc_attr($footer_width) ?>">
 			<div class="footer-widgets row">
 				<?php dynamic_sidebar( 'rt-footer-sidebar' ); ?>
@@ -32,7 +34,7 @@ $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between'
 <?php if ( ! empty( quixa_option( 'rt_footer_copyright' ) ) ) : ?>
 	<div class="footer-copyright-wrapper">
 		<div class="footer-container <?php echo esc_attr( $footer_width ) ?>">
-			<div class="d-flex align-items-center <?php echo esc_attr($copyright_center); ?>">
+			<div class="copyright-text-wrap d-flex align-items-center <?php echo esc_attr($copyright_center); ?>">
 				<div class="copyright-text">
 					<?php echo quixa_html( str_replace( '[y]', date( 'Y' ), quixa_option( 'rt_footer_copyright' ) ) ); ?>
 				</div>

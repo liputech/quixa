@@ -2,7 +2,7 @@
 //Footer Style 2
 .quixa-footer-2 {
 	.site-footer {
-		background-color: $title_color;
+		background-color: $footer_bg_color;
 		overflow: hidden;
 	}
 	.quixa-navigation ul > li:hover > ul {
@@ -27,28 +27,13 @@
 			}
 		}
 	}
-	.social-icon {
-		svg {
-			width: 14px;
-			height: 14px;
-		}
-		a:hover {
-			svg {
-				fill: $white_color;
-			}
-		}
-	}
 
 	.footer-copyright-wrapper {
-		border-top: 1px solid #1D212F;
-		background-color: $title_color;
-		position: relative;
+		border-top: 1px solid $footer_border_color;
+		background-color: $footer_bg_color;
 	}
 	.footer-blur-shape {
 		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
 			li {
 				width: 431px;
 				height: 431px;
@@ -76,6 +61,13 @@
 					background-color: #130B31;
 				}
 			}
+		}
+	}
+	.copyright-text-wrap {
+		@media (max-width: 767px) {
+			flex-direction: column;
+			gap: 8px;
+			text-align: center;
 		}
 	}
 }

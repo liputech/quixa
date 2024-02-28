@@ -43,7 +43,7 @@ class DynamicStyles {
 		$meta_color          = quixa_option( 'rt_meta_color', '#7F838C' );
 		$meta_light          = quixa_option( 'rt_meta_light', '#d3d9e1' );
 		$gray10              = quixa_option( 'rt_gray10_color', '#f8f8f8' );
-		$gray20              = quixa_option( 'rt_gray20_color', '#e7e7e7' );
+		$gray20              = quixa_option( 'rt_gray20_color', '#696969' );
 
 		ob_start(); ?>
 

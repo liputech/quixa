@@ -185,6 +185,117 @@ img {
     opacity: 1;
   }
 }
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes toBottomFromTop {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes Rtdraw {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 770;
+  }
+}
+@keyframes scale-up-one {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes move1 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-10px) translateX(30px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+@keyframes move2 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+@keyframes dash-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100%;
+  }
+}
+@keyframes rt-circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rt-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes headShake {
+  0% {
+    transform: translateX(0);
+  }
+  6.5% {
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+  18.5% {
+    transform: translateX(5px) rotateY(7deg);
+  }
+  31.5% {
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+  43.5% {
+    transform: translateX(2px) rotateY(3deg);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
 article,
 aside,
 details,
@@ -3688,14 +3799,14 @@ button {
 
 .btn, .quixa-post-card .read-more {
   display: inline-block;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  border: 1px solid transparent;
   border-radius: 6px;
   letter-spacing: 0.13px;
   padding: 15px 23px;
@@ -3781,6 +3892,129 @@ button {
 .button-1:hover {
   background-color: var(--rt-rating-color);
   color: var(--rt-title-color);
+}
+
+.quixa-button .button-2 {
+  color: #FFFFFF;
+  background-color: var(--rt-primary-color);
+  padding: 18px 30px;
+}
+.quixa-button .button-2 .btn-wrap {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+.quixa-button .button-2 .btn-text1 {
+  display: block;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.quixa-button .button-2 .btn-text2 {
+  position: absolute;
+  top: 100%;
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+.quixa-button .button-2 i {
+  font-size: 14px;
+  width: 26px;
+  display: inline-block;
+}
+.quixa-button .button-2:hover {
+  color: #FFFFFF;
+}
+.quixa-button .button-2:hover .btn-wrap .btn-text1 {
+  transform: translateY(-150%);
+}
+.quixa-button .button-2:hover .btn-wrap .btn-text2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.quixa-button .button-3 {
+  color: var(--rt-title-color);
+  background-color: var(--rt-rating-color);
+  box-shadow: 4px 7px 0px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--rt-title-color);
+  border-radius: 100px;
+  padding: 18px 30px;
+}
+.quixa-button .button-3 .btn-wrap {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+.quixa-button .button-3 .btn-text1 {
+  display: block;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.quixa-button .button-3 .btn-text2 {
+  position: absolute;
+  top: 100%;
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+.quixa-button .button-3 i {
+  font-size: 14px;
+  width: 26px;
+  display: inline-block;
+}
+.quixa-button .button-3:hover {
+  color: var(--rt-title-color);
+}
+.quixa-button .button-3:hover .btn-wrap .btn-text1 {
+  transform: translateY(-150%);
+}
+.quixa-button .button-3:hover .btn-wrap .btn-text2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.quixa-button .button-4 {
+  color: #FFFFFF;
+  background-color: var(--rt-gray20);
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.7);
+  padding: 18px 30px;
+}
+.quixa-button .button-4 .btn-wrap {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+.quixa-button .button-4 .btn-text1 {
+  display: block;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.quixa-button .button-4 .btn-text2 {
+  position: absolute;
+  top: 100%;
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+.quixa-button .button-4 i {
+  font-size: 14px;
+  width: 26px;
+  display: inline-block;
+}
+.quixa-button .button-4:hover {
+  color: #FFFFFF;
+  background-color: var(--rt-primary-color);
+  box-shadow: unset;
+}
+.quixa-button .button-4:hover .btn-wrap .btn-text1 {
+  transform: translateY(-150%);
+}
+.quixa-button .button-4:hover .btn-wrap .btn-text2 {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 a {
@@ -5502,10 +5736,15 @@ ol.wp-block-latest-comments li:last-child {
 ***************************/
 .site-footer {
   position: relative;
-  background: var(--rt-gray10);
+  background: #FFFFFF;
 }
 .site-footer .footer-container {
   position: relative;
+}
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-sidebar ul li {
@@ -5592,6 +5831,13 @@ ol.wp-block-latest-comments li:last-child {
   transform: perspective(1px) translateZ(0);
   z-index: 1;
 }
+.footer-widgets .frm-fluent-form .ff-btn-submit i {
+  display: block;
+  transition: all 0.4s ease-in-out;
+}
+.footer-widgets .frm-fluent-form .ff-btn-submit:hover i {
+  animation: headShake 1.5s;
+}
 .footer-widgets .frm-fluent-form .ff-t-cell:first-of-type {
   flex-basis: 100% !important;
 }
@@ -5605,13 +5851,13 @@ ol.wp-block-latest-comments li:last-child {
 /* Footer Copyright
 ***************************/
 .footer-copyright-wrapper {
+  position: relative;
   padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--rt-meta-color);
-  font-size: 14px;
-  background: rgba(var(--rt-title-rgb), 0.9);
+  font-size: 16px;
 }
 .footer-copyright-wrapper .copyright-text {
   text-align: center;
@@ -5622,18 +5868,37 @@ ol.wp-block-latest-comments li:last-child {
 .footer-copyright-wrapper a:hover {
   color: #FFFFFF;
 }
+.footer-copyright-wrapper .social-icon {
+  align-items: center;
+}
+.footer-copyright-wrapper .social-icon a {
+  height: 38px;
+  width: 38px;
+  border-radius: 38px;
+  background-color: #1D212F;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+.footer-copyright-wrapper .social-icon a:hover {
+  background-color: var(--rt-primary-color);
+}
+.footer-copyright-wrapper .social-icon a:hover svg {
+  fill: #FFFFFF;
+  animation: toBottomFromTop 0.7s forwards;
+}
+.footer-copyright-wrapper .social-icon svg {
+  width: 14px;
+  height: 14px;
+}
 
 .quixa-footer-1 .site-footer {
   position: relative;
   overflow: hidden;
 }
-.quixa-footer-1 .footer-blur-shape ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 .quixa-footer-1 .footer-blur-shape ul li {
-  z-index: 1;
   border-radius: 322px;
   width: 322px;
   height: 322px;
@@ -5650,9 +5915,21 @@ ol.wp-block-latest-comments li:last-child {
   right: 0;
   left: auto;
 }
+.quixa-footer-1 .footer-copyright-wrapper {
+  border-top: 1px solid #DDDDDD;
+}
+.quixa-footer-1 .footer-copyright-wrapper a:hover {
+  color: var(--rt-title-color);
+}
+.quixa-footer-1 .footer-copyright-wrapper .social-icon a {
+  background-color: var(--rt-gray10);
+}
+.quixa-footer-1 .footer-copyright-wrapper .social-icon a:hover {
+  background-color: var(--rt-primary-color);
+}
 
 .quixa-footer-2 .site-footer {
-  background-color: var(--rt-title-color);
+  background-color: #00081B;
   overflow: hidden;
 }
 .quixa-footer-2 .quixa-navigation ul > li:hover > ul {
@@ -5673,22 +5950,9 @@ ol.wp-block-latest-comments li:last-child {
 .quixa-footer-2 .footer-sidebar .phone-no a {
   color: #FFFFFF;
 }
-.quixa-footer-2 .social-icon svg {
-  width: 14px;
-  height: 14px;
-}
-.quixa-footer-2 .social-icon a:hover svg {
-  fill: #FFFFFF;
-}
 .quixa-footer-2 .footer-copyright-wrapper {
   border-top: 1px solid #1D212F;
-  background-color: var(--rt-title-color);
-  position: relative;
-}
-.quixa-footer-2 .footer-blur-shape ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  background-color: #00081B;
 }
 .quixa-footer-2 .footer-blur-shape ul li {
   width: 431px;
@@ -5717,9 +5981,16 @@ ol.wp-block-latest-comments li:last-child {
   right: 5%;
   background-color: #130B31;
 }
+@media (max-width: 767px) {
+  .quixa-footer-2 .copyright-text-wrap {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
 
 .quixa-footer-3 .site-footer {
-  background-color: var(--rt-title-color);
+  background-color: #00081B;
   overflow: hidden;
 }
 .quixa-footer-3 .quixa-navigation ul > li:hover > ul {
@@ -5740,28 +6011,19 @@ ol.wp-block-latest-comments li:last-child {
 .quixa-footer-3 .footer-sidebar .phone-no a {
   color: #FFFFFF;
 }
-.quixa-footer-3 .social-icon svg {
-  width: 14px;
-  height: 14px;
-}
-.quixa-footer-3 .social-icon a:hover svg {
-  fill: #FFFFFF;
-}
-.quixa-footer-3 .footer-copyright-wrapper {
+.quixa-footer-3 .footer-copyright-wrapper .copyright-wrap {
   border-top: 1px solid #1D212F;
-  background-color: var(--rt-title-color);
-  position: relative;
+  padding: 60px 0 40px;
 }
-.quixa-footer-3 .footer-blur-shape ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.quixa-footer-3 .footer-copyright-wrapper .copyright-text img {
+  display: block;
+  margin-bottom: 15px;
 }
 .quixa-footer-3 .footer-blur-shape ul li {
   width: 431px;
   height: 431px;
   border-radius: 431px;
-  background: #231435;
+  background: #141C35;
   filter: blur(100px);
   position: absolute;
 }
@@ -5784,7 +6046,7 @@ ol.wp-block-latest-comments li:last-child {
   right: 5%;
   background-color: #130B31;
 }
-.quixa-footer-3 .rt-cta-box .cta-title {
+.quixa-footer-3 .rt-footer-cta .rt-cta-title {
   background: linear-gradient(90deg, #FFF -2.1%, #8B7AF5 53.56%, #FFF 83.46%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -5793,9 +6055,26 @@ ol.wp-block-latest-comments li:last-child {
   font-weight: 700;
   line-height: 48px;
 }
+.quixa-footer-3 .rt-footer-shape {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+.quixa-footer-3 .rt-footer-star-shape {
+  position: absolute;
+  top: -23px;
+  right: 12px;
+}
+@media (max-width: 991px) {
+  .quixa-footer-3 .copyright-text-wrap, .quixa-footer-3 .rt-footer-cta {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
 
 .quixa-footer-4 .site-footer {
-  background-color: var(--rt-title-color);
+  background-color: #00081B;
   overflow: hidden;
 }
 .quixa-footer-4 .quixa-navigation ul > li:hover > ul {
@@ -5815,23 +6094,6 @@ ol.wp-block-latest-comments li:last-child {
 }
 .quixa-footer-4 .footer-sidebar .phone-no a {
   color: #FFFFFF;
-}
-.quixa-footer-4 .social-icon svg {
-  width: 14px;
-  height: 14px;
-}
-.quixa-footer-4 .social-icon a:hover svg {
-  fill: #FFFFFF;
-}
-.quixa-footer-4 .footer-copyright-wrapper {
-  border-top: 1px solid #1D212F;
-  background-color: var(--rt-title-color);
-  position: relative;
-}
-.quixa-footer-4 .footer-blur-shape ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 .quixa-footer-4 .footer-blur-shape ul li {
   width: 431px;
@@ -5859,6 +6121,119 @@ ol.wp-block-latest-comments li:last-child {
   bottom: -35%;
   right: 5%;
   background-color: #130B31;
+}
+.quixa-footer-4 .rt-top-wrap {
+  position: relative;
+  border-bottom: 1px solid #1D212F;
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+}
+.quixa-footer-4 .rt-footer-cta .rt-cta-title {
+  background: linear-gradient(90deg, #FFF -2.1%, #8B7AF5 53.56%, #FFF 83.46%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  animation: gradient 5s ease infinite;
+  background-size: 300% 100%;
+}
+.quixa-footer-4 .rt-footer-shape {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+.quixa-footer-4 .rt-footer-star-shape {
+  position: absolute;
+  bottom: -33px;
+  right: 0;
+}
+@media (max-width: 991px) {
+  .quixa-footer-4 .rt-footer-top, .quixa-footer-4 .rt-footer-cta {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .quixa-footer-4 .copyright-text-wrap {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+.quixa-footer-5 .site-footer {
+  background-color: #00081B;
+  overflow: hidden;
+}
+.quixa-footer-5 .quixa-navigation ul > li:hover > ul {
+  z-index: 9999;
+}
+.quixa-footer-5 .footer-widgets .widget-title, .quixa-footer-5 .footer-widgets .widgettitle {
+  color: #FFFFFF;
+}
+.quixa-footer-5 .footer-sidebar {
+  color: var(--rt-meta-color);
+}
+.quixa-footer-5 .footer-sidebar a {
+  color: var(--rt-meta-color);
+}
+.quixa-footer-5 .footer-sidebar a:hover {
+  color: #FFFFFF;
+}
+.quixa-footer-5 .footer-sidebar .phone-no a {
+  color: #FFFFFF;
+}
+.quixa-footer-5 .footer-copyright-wrapper .copyright-text-wrap {
+  position: relative;
+  border-top: 1px solid #1D212F;
+  padding: 40px 0 20px;
+}
+.quixa-footer-5 .footer-copyright-wrapper .rt-footer-star-shape li {
+  position: absolute;
+}
+.quixa-footer-5 .footer-copyright-wrapper .rt-footer-star-shape li:nth-child(1) {
+  top: -23px;
+  right: 0;
+}
+.quixa-footer-5 .footer-copyright-wrapper .rt-footer-star-shape li:nth-child(2) {
+  top: -23px;
+  left: 0;
+}
+.quixa-footer-5 .rt-footer-shape {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+.quixa-footer-5 .footer-blur-shape ul li {
+  width: 431px;
+  height: 431px;
+  border-radius: 431px;
+  background: #231435;
+  filter: blur(100px);
+  position: absolute;
+}
+.quixa-footer-5 .footer-blur-shape ul li:nth-child(1) {
+  bottom: -36%;
+  left: 0;
+  background-color: rgba(27, 34, 54, 0.5);
+}
+.quixa-footer-5 .footer-blur-shape ul li:nth-child(2) {
+  top: -40%;
+  left: 17%;
+  background-color: rgba(54, 38, 22, 0.5);
+}
+.quixa-footer-5 .footer-blur-shape ul li:nth-child(3) {
+  top: -35%;
+  right: -10%;
+  background-color: rgba(30, 42, 75, 0.5);
+}
+.quixa-footer-5 .footer-blur-shape ul li:nth-child(4) {
+  bottom: -35%;
+  right: 5%;
+  background-color: rgba(52, 61, 87, 0.5);
 }
 
 .quixa-search-form .search-box {

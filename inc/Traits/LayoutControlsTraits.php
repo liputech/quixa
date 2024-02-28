@@ -58,6 +58,13 @@ trait LayoutControlsTraits {
 				'choices' => Fns::sidebar_lists()
 			],
 
+			$prefix . '_page_bg_image' => [
+				'type'         => 'image',
+				'label'        => __( 'Page Background Image', 'quixa' ),
+				'description'  => __( 'Upload Background Image', 'quixa' ),
+				'button_label' => __( 'Background Image', 'quixa' ),
+			],
+
 			$prefix . '_header_heading' => [
 				'type'  => 'heading',
 				'label' => __( 'Header Settings', 'quixa' ),
@@ -154,6 +161,9 @@ trait LayoutControlsTraits {
 					'default' => __( '--Default--', 'quixa' ),
 					'1'       => __( 'Layout 1', 'quixa' ),
 					'2'       => __( 'Layout 2', 'quixa' ),
+					'3'       => __( 'Layout 3', 'quixa' ),
+					'4'       => __( 'Layout 4', 'quixa' ),
+					'5'       => __( 'Layout 5', 'quixa' ),
 				],
 			],
 

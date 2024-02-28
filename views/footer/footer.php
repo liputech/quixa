@@ -7,18 +7,20 @@
  * @package quixa
  */
 
-$footer_width = 'container'.quixa_option('rt_footer_width');
+$footer_width = 'container'. quixa_option('rt_footer_width');
 $copyright_center = quixa_option('rt_social_footer') ? 'justify-content-between' : 'justify-content-center';
 ?>
 
 <?php if ( is_active_sidebar( 'rt-footer-sidebar' ) ) : ?>
 	<div class="footer-widgets-wrapper">
+		<?php if( quixa_option('rt_shape_footer') ) { ?>
 		<div class="footer-blur-shape">
 			<ul>
 				<li></li>
 				<li></li>
 			</ul>
 		</div>
+		<?php } ?>
 		<div class="footer-container <?php echo esc_attr($footer_width) ?>">
 			<div class="footer-widgets row">
 				<?php dynamic_sidebar( 'rt-footer-sidebar' ); ?>

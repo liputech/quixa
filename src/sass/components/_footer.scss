@@ -2,10 +2,15 @@
 ***************************/
 .site-footer {
 	position: relative;
-	background: $gray10;
+	background: $white_color;
 
 	.footer-container {
 		position: relative;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -29,3 +34,4 @@
 @import "parts/_footer-2";
 @import "parts/_footer-3";
 @import "parts/_footer-4";
+@import "parts/_footer-5";

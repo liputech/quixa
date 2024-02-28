@@ -30,6 +30,7 @@ class Opt {
 	public static $has_tr_header;
 	public static $has_top_bar;
 	public static $single_style;
+	public static $pagebgimg;
 
 
 	public function __construct() {

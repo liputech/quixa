@@ -40,11 +40,18 @@ class Footer extends Customizer {
 
 		return apply_filters( 'quixa_footer_controls', [
 
+			'rt_footer_display' => [
+				'type'        => 'switch',
+				'label'       => __( 'Footer Display', 'quixa' ),
+				'description' => __( 'Show footer display', 'quixa' ),
+				'default' => 1,
+			],
+
 			'rt_footer_style' => [
 				'type'    => 'image_select',
 				'label'   => __( 'Choose Layout', 'quixa' ),
 				'default' => '1',
-				'choices' => Fns::image_placeholder( 'footer', 4 )
+				'choices' => Fns::image_placeholder( 'footer', 5 )
 			],
 
 			'rt_footer_width' => [
@@ -70,17 +77,24 @@ class Footer extends Customizer {
 				'description' => __( 'Show footer at the top when scrolling down', 'quixa' ),
 			],
 
+			'rt_shape_footer' => [
+				'type'        => 'switch',
+				'label'       => __( 'Shape', 'quixa' ),
+				'description' => __( 'Show footer at the shape display', 'quixa' ),
+				'default' => 1,
+			],
+
 			'rt_social_footer' => [
 				'type'        => 'switch',
 				'label'       => __( 'Social Icon', 'quixa' ),
-				'description' => __( 'Show footer at the social icon', 'quixa' ),
+				'description' => __( 'Show footer at the social icon, This options available for only Footer layout 1, 2, 4.', 'quixa' ),
 				'default' => 1,
 			],
 
 			'rt_contact_footer' => [
 				'type'        => 'switch',
-				'label'       => __( 'Contact', 'quixa' ),
-				'description' => __( 'Show footer at contact button', 'quixa' ),
+				'label'       => __( 'Get Started Button', 'quixa' ),
+				'description' => __( 'Show footer at Get Started Button. This options available for only Footer layout 3, 4.', 'quixa' ),
 				'default' => 1,
 			],
 			'rt_contact_button_url' => [
@@ -98,20 +112,21 @@ class Footer extends Customizer {
 
 			'rt_footer_heading1' => [
 				'type'  => 'heading',
-				'label' => __( 'Footer Menu Section', 'quixa' ),
+				'label' => __( 'Footer Logo', 'quixa' ),
+			],
+			'rt_footer_logo_display' => [
+				'type'        => 'switch',
+				'label'       => __( 'Logo Display', 'quixa' ),
+				'description' => __( 'Show footer Logo Display, This options available for only Footer layout 3, 4.', 'quixa' ),
+				'default' => 1,
+			],
+			'rt_footer_logo' => [
+				'type'         => 'image',
+				'label'        => __( 'Footer Logo', 'quixa' ),
+				'description'  => __( 'Upload footer logo. This options available for only Footer layout 3, 4.', 'quixa' ),
+				'button_label' => __( 'Footer Logo', 'quixa' ),
 			],
 
-			'rt_footer_menu_alignment' => [
-				'type'    => 'select',
-				'label'   => __( 'Footer Menu Alignment', 'quixa' ),
-				'default' => 'align-default',
-				'choices' => [
-					'align-default'          => __( 'Default from style', 'quixa' ),
-					'justify-content-start'  => __( 'Left', 'quixa' ),
-					'justify-content-center' => __( 'Center', 'quixa' ),
-					'justify-content-end'    => __( 'Right', 'quixa' ),
-				]
-			],
 
 		] );
 

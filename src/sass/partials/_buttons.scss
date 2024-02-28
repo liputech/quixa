@@ -5,7 +5,8 @@ button {
 
 .btn {
 	display: inline-block;
-	font-weight: 600;
+	font-size: 16px;
+	font-weight: 700;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -13,7 +14,6 @@ button {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	border: 1px solid transparent;
 	border-radius: 6px;
 	letter-spacing: 0.13px;
 	padding: ($base_fs - 2) ($base_fs + 6);
@@ -72,11 +72,142 @@ button {
 	@include button_style($white_color, $meta_color, $primary_color);
 }
 
+// button 1
 .button-1 {
 	background-color: $primary_color;
 	color: $white_color;
 	&:hover {
 		background-color: $rating_color;
 		color: $title_color;
+	}
+}
+// button 2
+.quixa-button .button-2 {
+	color: $white_color;
+	background-color: $primary_color;
+	padding: 18px 30px;
+	.btn-wrap {
+		display: inline-block;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		float: left;
+	}
+	.btn-text1 {
+		display: block;
+		position: relative;
+		transition: all 0.4s ease-in-out;
+	}
+	.btn-text2 {
+		position: absolute;
+		top: 100%;
+		display: block;
+		transition: all 0.4s ease-in-out;
+	}
+	i {
+		font-size: 14px;
+		width: 26px;
+		display: inline-block;
+	}
+	&:hover {
+		color: $white_color;
+		.btn-wrap {
+			.btn-text1 {
+				transform: translateY(-150%);
+			}
+			.btn-text2 {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+// button 3
+.quixa-button .button-3 {
+	color: $title_color;
+	background-color: $rating_color;
+	box-shadow: 4px 7px 0px 0px rgba(0, 0, 0, 0.2);
+	border: 2px solid $title_color;
+	border-radius: 100px;
+	padding: 18px 30px;
+	.btn-wrap {
+		display: inline-block;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		float: left;
+	}
+	.btn-text1 {
+		display: block;
+		position: relative;
+		transition: all 0.4s ease-in-out;
+	}
+	.btn-text2 {
+		position: absolute;
+		top: 100%;
+		display: block;
+		transition: all 0.4s ease-in-out;
+	}
+	i {
+		font-size: 14px;
+		width: 26px;
+		display: inline-block;
+	}
+	&:hover {
+		color: $title_color;
+		.btn-wrap {
+			.btn-text1 {
+				transform: translateY(-150%);
+			}
+			.btn-text2 {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+// button 4
+.quixa-button .button-4 {
+	color: $white_color;
+	background-color: $gray20;
+	box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.7);
+	padding: 18px 30px;
+	.btn-wrap {
+		display: inline-block;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		float: left;
+	}
+	.btn-text1 {
+		display: block;
+		position: relative;
+		transition: all 0.4s ease-in-out;
+	}
+	.btn-text2 {
+		position: absolute;
+		top: 100%;
+		display: block;
+		transition: all 0.4s ease-in-out;
+	}
+	i {
+		font-size: 14px;
+		width: 26px;
+		display: inline-block;
+	}
+	&:hover {
+		color: $white_color;
+		background-color: $primary_color;
+		box-shadow: unset;
+		.btn-wrap {
+			.btn-text1 {
+				transform: translateY(-150%);
+			}
+			.btn-text2 {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
 	}
 }

@@ -53,6 +53,7 @@ $classes = Fns::class_list( [
 	'quixa-breadcrumb-wrapper',
 	$has_image ? 'has-bg' : 'no-bg'
 ] );
+
 /*banner title*/
 if ( is_404() ) {
 	$quixa_title = "Error Page";

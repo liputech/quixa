@@ -59,6 +59,15 @@
 			overflow: hidden;
 			transform: perspective(1px) translateZ(0);
 			z-index: 1;
+			i {
+				display: block;
+				transition: all 0.4s ease-in-out;
+			}
+			&:hover {
+				i {
+					animation: headShake 1.5s;
+				}
+			}
 		}
 		.ff-t-cell {
 			&:first-of-type {
