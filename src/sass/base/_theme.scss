@@ -1,27 +1,9 @@
-.site-content {
-	padding-top: 120px;
-	padding-bottom: 100px;
+.content-area {
+	padding-top: 130px;
+	padding-bottom: 130px;
 }
 
-.no-trheader.no-banner .site-content {
-	padding-top: 60px;
-	padding-bottom: 50px;
-}
 
-.has-trheader .site-content {
-	padding-top: 140px;
-	padding-bottom: 100px;
-}
-
-.has-banner .site-content {
-	padding-top: 0;
-	padding-bottom: 0;
-
-	.quixa-breadcrumb-wrapper + div {
-		padding-top: 130px;
-		padding-bottom: 130px;
-	}
-}
 
 .post-edit-link {
 	position: absolute;

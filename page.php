@@ -15,42 +15,40 @@
 use RT\Quixa\Helpers\Fns;
 
 get_header(); ?>
+	<div id="primary" class="content-area">
+		<div class="container">
 
-	<div class="container">
+			<div class="row">
 
-		<div class="row">
+				<div class="<?php echo Fns::content_columns() ?>">
+						<main id="main" class="site-main" role="main">
 
-			<div class="<?php echo Fns::content_columns() ?>">
+							<?php
+							/* Start the Loop */
+							while ( have_posts() ) :
+								the_post();
 
-				<div id="primary" class="content-area">
-					<main id="main" class="site-main" role="main">
+								get_template_part( 'views/content', 'page' );
 
-						<?php
-						/* Start the Loop */
-						while ( have_posts() ) :
-							the_post();
+								// If comments are open or we have at least one comment, load up the comment template.
+								if ( comments_open() || get_comments_number() ) :
+									comments_template();
+								endif;
 
-							get_template_part( 'views/content', 'page' );
+							endwhile;
 
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
+							?>
 
-						endwhile;
+						</main><!-- #main -->
 
-						?>
+				</div><!-- .col- -->
 
-					</main><!-- #main -->
-				</div><!-- #primary -->
+				<?php get_sidebar(); ?>
 
-			</div><!-- .col- -->
+			</div><!-- .row -->
 
-			<?php get_sidebar(); ?>
-
-		</div><!-- .row -->
-
-	</div><!-- .container -->
+		</div><!-- .container -->
+	</div>
 
 <?php
 get_footer();

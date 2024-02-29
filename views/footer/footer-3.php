@@ -58,10 +58,10 @@ $copyright_center = quixa_option( 'rt_contact_footer' ) ? 'justify-content-betwe
 								<span class="btn-wrap">
 									<span
 										class="btn-text1"><?php echo wp_kses( quixa_option( 'rt_contact_button_text' ), 'allowed_html' ); ?><i
-											class="icon-arrow-right-1"></i> </span>
+											class="icon-rt-arrow-right-1"></i> </span>
 									<span
 										class="btn-text2"><?php echo wp_kses( quixa_option( 'rt_contact_button_text' ), 'allowed_html' ); ?><i
-											class="icon-arrow-right-1"></i> </span>
+											class="icon-rt-arrow-right-1"></i> </span>
 								</span>
 								</a>
 							</div>

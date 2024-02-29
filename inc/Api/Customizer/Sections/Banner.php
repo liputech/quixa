@@ -60,7 +60,7 @@ class Banner extends Customizer {
 				'label'   => __( 'Breadcrumb Alignment', 'quixa' ),
 				'default' => 'align-items-center',
 				'choices' => [
-					''                       => __( 'Breadcrumb Alignment', 'quixa' ),
+					''                       => __( 'Breadcrumb Default', 'quixa' ),
 					'align-items-center'  => __( 'Alignment Center', 'quixa' ),
 				]
 			],

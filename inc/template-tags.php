@@ -570,12 +570,12 @@ if ( ! function_exists( 'quixa_meta_icons' ) ) {
 			return;
 		}
 		$icon_list = [
-			'author'   => '<i class="icon-quixa-user"></i>',
-			'date'     => '<i class="icon-quixa-calender-4"></i>',
-			'comment'  => '<i class="icon-quixa-comment"></i>',
-			'category' => '<i class="icon-quixa-tags"></i>',
-			'tag'      => '<i class="icon-quixa-tag"></i>',
-			'reading'  => '<i class="icon-quixa-clock"></i>',
+			'author'   => '<i class="icon-rt-user"></i>',
+			'date'     => '<i class="icon-rt-calender-4"></i>',
+			'comment'  => '<i class="icon-rt-comments"></i>',
+			'category' => '<i class="icon-rt-tag"></i>',
+			'tag'      => '<i class="icon-rt-tags"></i>',
+			'reading'  => '<i class="icon-rt-clock"></i>',
 		];
 
 		if ( isset( $icon_list[ $name ] ) ) {

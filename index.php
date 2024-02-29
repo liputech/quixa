@@ -19,7 +19,6 @@ get_header();
 
 				<div class="<?php echo esc_attr( Fns::content_columns() ); ?>">
 
-					<div id="primary" class="content-area">
 						<main id="main" class="site-main" role="main">
 							<div class="row">
 								<?php
@@ -38,7 +37,7 @@ get_header();
 							<?php Pagination::pagination(); ?>
 
 						</main><!-- #main -->
-					</div><!-- #primary -->
+
 
 				</div><!-- .col- -->
 
@@ -48,7 +47,7 @@ get_header();
 			</div><!-- .row -->
 
 		</div><!-- .container -->
-	</div>
+	</div><!-- #primary -->
 
 <?php
 get_footer();

@@ -20,8 +20,6 @@ $content_columns = Fns::content_columns();
 			<div class="row align-stretch">
 
 				<div class="<?php echo esc_attr( $content_columns ); ?>">
-
-					<div id="primary" class="content-area">
 						<main id="main" class="site-main" role="main">
 							<div class="row">
 								<?php
@@ -40,7 +38,6 @@ $content_columns = Fns::content_columns();
 							<?php Pagination::pagination(); ?>
 
 						</main><!-- #main -->
-					</div><!-- #primary -->
 
 				</div><!-- .col- -->
 
@@ -50,7 +47,7 @@ $content_columns = Fns::content_columns();
 			</div><!-- .row -->
 
 		</div><!-- .container -->
-	</div>
+	</div><!-- #primary -->
 
 <?php
 get_footer();

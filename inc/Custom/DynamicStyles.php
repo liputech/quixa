@@ -34,16 +34,16 @@ class DynamicStyles {
 
 	private function inline_style() {
 
-		$primary_color       = quixa_option( 'rt_primary_color', '#004BFF' );
-		$secondary_color     = quixa_option( 'rt_secondary_color', '#fef4f0' );
-		$body_color          = quixa_option( 'rt_body_color', '#343C4D' );
-		$body_bg_color       = quixa_option( 'rt_body_bg_color', '#ffffff' );
-		$title_color         = quixa_option( 'rt_title_color', '#00030C' );
-		$rating_color        = quixa_option( 'rt_rating_color', '#F9BA19' );
-		$meta_color          = quixa_option( 'rt_meta_color', '#7F838C' );
-		$meta_light          = quixa_option( 'rt_meta_light', '#d3d9e1' );
-		$gray10              = quixa_option( 'rt_gray10_color', '#f8f8f8' );
-		$gray20              = quixa_option( 'rt_gray20_color', '#696969' );
+		$primary_color   = quixa_option( 'rt_primary_color', '#004BFF' );
+		$secondary_color = quixa_option( 'rt_secondary_color', '#fef4f0' );
+		$body_color      = quixa_option( 'rt_body_color', '#343C4D' );
+		$body_bg_color   = quixa_option( 'rt_body_bg_color', '#ffffff' );
+		$title_color     = quixa_option( 'rt_title_color', '#00030C' );
+		$rating_color    = quixa_option( 'rt_rating_color', '#F9BA19' );
+		$meta_color      = quixa_option( 'rt_meta_color', '#7F838C' );
+		$meta_light      = quixa_option( 'rt_meta_light', '#d3d9e1' );
+		$gray10          = quixa_option( 'rt_gray10_color', '#f8f8f8' );
+		$gray20          = quixa_option( 'rt_gray20_color', '#696969' );
 
 		ob_start(); ?>
 
@@ -77,6 +77,7 @@ class DynamicStyles {
 		$this->breadcrumb_css();
 		$this->content_padding_css();
 		$this->footer_css();
+		$this->site_background();
 
 		return ob_get_clean();
 	}
@@ -144,8 +145,8 @@ class DynamicStyles {
 		<?php //Header Logo CSS ?>
 		<?php if ( Opt::$header_width == 'full' ) :
 			$h_width = '100%';
-			if ( ($header_width = quixa_option( 'rt_header_max_width' )) > 768 ) {
-				$h_width = $header_width.'px';
+			if ( ( $header_width = quixa_option( 'rt_header_max_width' ) ) > 768 ) {
+				$h_width = $header_width . 'px';
 			}
 			?>
 			.header-container, .topbar-container {width: <?php echo $h_width; ?>;max-width: 100%;}
@@ -237,9 +238,9 @@ class DynamicStyles {
 	 * @return void
 	 */
 	protected function breadcrumb_css() {
-		$banner_bg         = quixa_option( 'rt_banner_bg' );
-		$breadcrumb_color  = quixa_option( 'rt_breadcrumb_color' );
-		$breadcrumb_active = quixa_option( 'rt_breadcrumb_active' );
+		$banner_bg                 = quixa_option( 'rt_banner_bg' );
+		$breadcrumb_color          = quixa_option( 'rt_breadcrumb_color' );
+		$breadcrumb_active         = quixa_option( 'rt_breadcrumb_active' );
 		$rt_breadcrumb_title_color = quixa_option( 'rt_breadcrumb_title_color' );
 		if ( ! empty( $rt_breadcrumb_title_color ) ) : ?>
 			.quixa-breadcrumb-wrapper .entry-title {color: <?php echo esc_attr( $rt_breadcrumb_title_color ) ?> !important;}
@@ -332,8 +333,13 @@ class DynamicStyles {
 		<?php
 		echo self::font_css( 'body', $typo_body );
 		echo self::font_css( '.site-header', [ 'font' => $typo_menu['font'] ] );
-		echo self::font_css( '.main-header-section .quixa-navigation ul li a', [ 'size' => $typo_menu['size'], 'regularweight' => $typo_menu['regularweight'], 'lineheight' => $typo_menu['lineheight'] ] );
-		echo self::font_css( '.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6', [ 'font' => $typo_heading['font'], 'regularweight' => $typo_heading['regularweight'] ] );
+		echo self::font_css( '.quixa-navigation ul li a', [ 'size'          => $typo_menu['size'],
+															'regularweight' => $typo_menu['regularweight'],
+															'lineheight'    => $typo_menu['lineheight']
+		] );
+		echo self::font_css( '.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6', [ 'font'          => $typo_heading['font'],
+																			'regularweight' => $typo_heading['regularweight']
+		] );
 
 		$heading_fonts = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
 		foreach ( $heading_fonts as $heading ) {
@@ -383,6 +389,27 @@ class DynamicStyles {
 		$css .= '}'; //End CSS
 
 		return $css;
+	}
+
+	/**
+	 * Site background
+	 *
+	 * @return string
+	 */
+
+	function site_background() {
+		if ( ! empty( Opt::$pagebgimg ) ) {
+			$bg = wp_get_attachment_image_src( Opt::$pagebgimg, 'full' );
+			if( !empty( $bg[0] ) ) { ?>
+			body {
+			background-image: url(<?php echo esc_url( $bg[0] ) ?>);
+			background-repeat: repeat;
+			background-position: center center;
+			background-size: cover;
+			}
+			<?php
+			}
+		}
 	}
 
 

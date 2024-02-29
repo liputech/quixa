@@ -16,21 +16,21 @@ $classes = Fns::class_list( [
 	Fns::is_single_fullwidth() ? 'should-full-width' : ''
 ] );
 ?>
+	<div id="primary" class="content-area">
+		<div class="<?php echo esc_attr( $classes ) ?>">
 
-	<div class="<?php echo esc_attr( $classes ) ?>">
+			<?php while ( have_posts() ) :
+				the_post(); ?>
 
-		<?php while ( have_posts() ) :
-			the_post(); ?>
+				<?php do_action( 'quixa_before_single_content', get_the_ID() ); ?>
 
-			<?php do_action( 'quixa_before_single_content', get_the_ID() ); ?>
+				<div class="container">
+					<div class="row content-row">
 
-			<div class="container">
-				<div class="row content-row">
+						<div class="content-col <?php echo esc_attr( Fns::single_content_colums() ); ?>">
 
-					<div class="content-col <?php echo esc_attr( Fns::single_content_colums() ); ?>">
 
-						<div id="primary" class="content-area single-content">
-							<main id="main" class="site-main" role="main">
+							<main id="main" class="site-main single-content" role="main">
 								<?php
 								get_template_part( 'views/content-single', Opt::$single_style );
 								//post thumbnail navigation
@@ -42,20 +42,21 @@ $classes = Fns::class_list( [
 								endif;
 								?>
 							</main><!-- #main -->
-						</div><!-- #primary -->
 
-					</div><!-- .col- -->
 
-					<?php get_sidebar(); ?>
+						</div><!-- .col- -->
 
-				</div><!-- .row -->
-			</div><!-- .container -->
+						<?php get_sidebar(); ?>
 
-			<?php do_action( 'quixa_after_single_content' ); ?>
+					</div><!-- .row -->
+				</div><!-- .container -->
 
-		<?php endwhile; ?>
+				<?php do_action( 'quixa_after_single_content' ); ?>
 
-	</div>
+			<?php endwhile; ?>
+		</div>
+
+	</div><!-- #primary -->
 
 <?php
 get_footer();

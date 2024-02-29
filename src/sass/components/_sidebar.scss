@@ -54,10 +54,11 @@
 						content: '';
 						left: 0;
 						top: 12px;
-						width: 4px;
-						height: 4px;
+						width: 5px;
+						height: 5px;
 						opacity: 0;
 						visibility: hidden;
+						border-radius: 50%;
 						background-color: $primary_color;
 						transition: all .21s ease-in-out;
 					}
@@ -117,6 +118,9 @@
 		}
 		.entry-content {
 			padding-top: 12px;
+		}
+		.post-thumbnail-wrap .posted-on {
+			display: none;
 		}
 	}
 	.blog-list-style {

@@ -31,11 +31,11 @@ $topinfo = ( quixa_option( 'rt_topbar_address' ) || quixa_option( 'rt_topbar_pho
 		<?php if( $topinfo ) { ?>
 			<ul class="offcanvas-info">
 				<?php if( quixa_option( 'rt_topbar_address' ) ) { ?>
-					<li> <?php echo quixa_get_svg( 'map-pin' ); ?><?php echo wp_kses( quixa_option( 'rt_contact_address' ) , 'allowed_html' );?> </li>
+					<li><i class="icon-rt-location-4"></i><?php echo wp_kses( quixa_option( 'rt_contact_address' ) , 'allowed_html' );?> </li>
 				<?php } if( quixa_option( 'rt_topbar_phone' ) ) { ?>
-					<li> <?php echo quixa_get_svg( 'phone' ); ?><a href="tel:<?php echo esc_attr( quixa_option( 'rt_phone' ) );?>"><?php echo wp_kses( quixa_option( 'rt_phone' ) , 'allowed_html' );?></a> </li>
+					<li><i class="icon-rt-phone-2"></i><a href="tel:<?php echo esc_attr( quixa_option( 'rt_phone' ) );?>"><?php echo wp_kses( quixa_option( 'rt_phone' ) , 'allowed_html' );?></a> </li>
 				<?php } if( quixa_option( 'rt_topbar_email' ) ) { ?>
-					<li> <?php echo quixa_get_svg( 'email' ); ?><a href="mailto:<?php echo esc_attr( quixa_option( 'rt_email' ) );?>"><?php echo wp_kses( quixa_option( 'rt_email' ) , 'allowed_html' );?></a> </li>
+					<li><i class="icon-rt-email"></i><a href="mailto:<?php echo esc_attr( quixa_option( 'rt_email' ) );?>"><?php echo wp_kses( quixa_option( 'rt_email' ) , 'allowed_html' );?></a> </li>
 				<?php } ?>
 			</ul>
 		<?php } ?>

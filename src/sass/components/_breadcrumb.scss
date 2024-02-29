@@ -67,12 +67,17 @@
 
 }
 
-.has-trheader .quixa-breadcrumb-wrapper {
-	padding-top: 130px;
-	opacity: 0;
-	transition: opacity .3s;
-
-
+.has-trheader {
+	.quixa-breadcrumb-wrapper {
+		background-color: transparent;
+		padding-top: 130px;
+		padding-bottom: 0;
+		opacity: 0;
+		transition: opacity .3s;
+		&.has-bg {
+			padding-bottom: 60px;
+		}
+	}
 }
 
 .quixa-breadcrumb-wrapper,
@@ -120,11 +125,14 @@
 		}
 	}
 	&.has-trheader {
-		.quixa-navigation {
-			ul {
-				li {
-					a {
+		.quixa-navigation .menu-main-menu-container {
+			> ul {
+				> li {
+					> a {
 						color: $white_color;
+						svg {
+							fill: $white_color
+						}
 					}
 				}
 			}
@@ -135,14 +143,14 @@
 					li {
 						a {
 							color: $title_color;
+							svg {
+								fill: $title_color
+							}
 						}
 					}
 				}
 			}
 			.menu-icon-wrapper {
-				svg {
-					fill: $title_color;
-				}
 				.ham_burger {
 					.line {
 						stroke: $title_color;

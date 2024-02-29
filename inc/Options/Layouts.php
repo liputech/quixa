@@ -29,7 +29,6 @@ class Layouts {
 			$post_id          = get_the_id();
 			$this->meta_value = get_post_meta( $post_id, "rt_layout_meta_data", true );
 
-
 			switch ( $post_type ) {
 				case 'post':
 					$this->type = 'single_post';
@@ -59,20 +58,8 @@ class Layouts {
 			Opt::$breadcrumb_title = $this->check_meta_and_layout_value( 'breadcrumb_title', true, true );
 			Opt::$has_breadcrumb   = $this->check_meta_and_layout_value( 'breadcrumb', true, true );
 			Opt::$has_banner       = $this->check_meta_and_layout_value( 'banner', true, true );
-			
 			Opt::$single_style = $this->check_meta_option_value( 'single_post_style' );
-
-			//Opt::$pagebgimg     = $this->check_meta_and_layout_value( 'page_bg_image', false, true );
-
-			if( !empty( $this->check_meta_option_value['rt_page_bg_image'] ) ) {
-				$attch_url      = wp_get_attachment_image_src( $this->check_meta_option_value['rt_page_bg_image'], 'full', true );
-				Opt::$pagebgimg = $attch_url[0];
-				echo 'lipu 1';
-			} elseif( !empty( $this->check_meta_option_value[$this->type . '_page_bg_image'] ) ) {
-				$attch_url      = wp_get_attachment_image_src( $this->check_meta_option_value[$this->type . '_page_bg_image'], 'full', true );
-				Opt::$pagebgimg = $attch_url[0];
-				echo 'lipu 2';
-			}
+			Opt::$pagebgimg = $this->check_meta_and_layout_value( 'page_bg_image', false, true );
 
 		} // Blog and Archive
 		elseif ( is_home() || is_archive() || is_search() || is_404() ) {
@@ -102,14 +89,7 @@ class Layouts {
 			Opt::$breadcrumb_title = $this->check_option_value( 'breadcrumb_title', true, true );
 			Opt::$has_breadcrumb   = $this->check_option_value( 'breadcrumb', true, true );
 			Opt::$has_banner       = $this->check_option_value( 'banner', true, true );
-
-			//Opt::$pagebgimg    = $this->check_option_value( 'page_bg_image', false, true );
-
-			if( !empty( $this->check_option_value[$this->type . '_page_bg_image'] ) ) {
-				$attch_url      = wp_get_attachment_image_src( $this->check_option_value[$this->type. '_page_bg_image'], 'full', true );
-				Opt::$pagebgimg = $attch_url[0];
-				echo 'next page';
-			}
+			Opt::$pagebgimg        = $this->check_option_value( 'page_bg_image', false, true );
 		}
 	}
 
@@ -126,7 +106,6 @@ class Layouts {
 		$meta_value      = $this->meta_value[ $key ] ?? 'default';
 		$opt_from_layout = Opt::$options[ $option_key ] ?? 'default';
 		$opt_from_global = Opt::$options[ 'rt_' . $key ] ?? 'default';
-
 
 		if ( ! empty( $meta_value ) && $meta_value != 'default' ) { //Check from Meta
 			$result = $meta_value;

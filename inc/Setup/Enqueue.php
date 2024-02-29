@@ -44,24 +44,6 @@ class Enqueue {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		// Template Style
-		wp_add_inline_style( 'quixa-gfonts', $this->quixa_template_style() );
-	}
-
-	public function quixa_template_style(){
-		ob_start();
-		?>
-
-		<?php
-
-		echo 'fdsfds';
-		if( isset( Opt::$pagebgimg ) ) { ?>
-			#page {
-			background-image: url( <?php echo Opt::$pagebgimg; ?> );
-			}
-		<?php } ?>
-
-		<?php return ob_get_clean();
 	}
 
 	public function fonts_url() {
