@@ -95,11 +95,11 @@ $breadcrumb_classes = quixa_option( 'rt_breadcrumb_alignment' );
 	<div class="container d-flex row-gap-10 flex-column <?php echo esc_attr( $breadcrumb_classes ) ?>">
 		<?php if ( Opt::$breadcrumb_title ) { ?>
 			<?php if ( is_single() ) { ?>
-				<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
+				<h1 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h1>
 			<?php } else if ( is_page() ) { ?>
-				<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
+				<h1 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h1>
 			<?php } else { ?>
-				<h2 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h2>
+				<h1 class="entry-title"><?php echo wp_kses( $quixa_title , 'allowed_html' );?></h1>
 			<?php } ?>
 		<?php } ?>
 		<?php if ( Opt::$has_breadcrumb ) { ?>

@@ -268,149 +268,142 @@ class DynamicStyles {
 	 */
 	protected function content_padding_css() {
 
-		$content_padding_top    = $this->meta_data['rt_padding_top'] ?? '';
-		$content_padding_bottom = $this->meta_data['rt_padding_bottom'] ?? '';
+		if ( ! empty( Opt::$padding_top ) && 'default' !== Opt::$padding_top) { ?>
+			.content-area {padding-top: <?php echo esc_attr( Opt::$padding_top ); ?>px;}
+		<?php }
 
-		if ( ! ( $content_padding_top || $content_padding_bottom ) ) {
-			return;
-		}
-		$class = 'body .site-content';
-		if ( Opt::$has_banner ) {
-			$class = 'body.has-banner .site-content .quixa-breadcrumb-wrapper + div';
-		}
-		?>
-		<?php echo esc_attr( $class ) ?> {
-		<?php if ( $content_padding_top ) : ?>
-			padding-top: <?php echo esc_attr( $content_padding_top ); ?>px;
-		<?php endif; ?>
-		<?php if ( $content_padding_bottom ) : ?>
-			padding-bottom: <?php echo esc_attr( $content_padding_bottom ); ?>px;
-		<?php endif; ?>
-		}
-		<?php
+		if ( ! empty( Opt::$padding_bottom ) && 'default' !== Opt::$padding_bottom) { ?>
+			.content-area {padding-bottom: <?php echo esc_attr( Opt::$padding_bottom ); ?>px;}
+		<?php }
+
 	}
 
-	/**
-	 * Footer CSS
-	 * @return void
-	 */
-	protected function footer_css() {
-		if ( quixa_option( 'rt_footer_width' ) && quixa_option( 'rt_footer_max_width' ) > 1400 ) {
-			echo self::css( '.site-footer .footer-container', 'width', 'rt_footer_max_width', 'px;max-width: 100%' );
-		}
-
-		echo self::css( 'body .site-footer *:not(a)', 'color', 'rt_footer_text_color' );
-		echo self::css( 'body .site-footer a, .quixa-footer-2 .site-footer .widget a', 'color', 'rt_footer_link_color' );
-		echo self::css( 'body .site-footer a:hover, .quixa-footer-2 .footer-sidebar a:hover', 'color', 'rt_footer_link_hover_color' );
-		echo self::css( 'body .site-footer, .quixa-footer-2 .site-footer, body .site-footer select option', 'background-color', 'rt_footer_bg' );
-		echo self::css( '.site-footer .widget :is(td, th, select, .search-box)', 'border-color', 'rt_footer_input_border_color' );
-		echo self::css( 'body .site-footer .widget-title, .quixa-footer-2 .footer-widgets .widget-title', 'color', 'rt_footer_widget_title_color' );
-		echo self::css( 'body .footer-copyright-wrapper .copyright-text', 'color', 'rt_copyright_text_color' );
-		echo self::css( 'body .site-footer .footer-copyright-wrapper a', 'color', 'rt_copyright_link_color' );
-		echo self::css( 'body .site-footer .footer-copyright-wrapper a:hover', 'color', 'rt_copyright_link_hover_color' );
-		echo self::css( 'body .site-footer .footer-copyright-wrapper', 'background-color', 'rt_copyright_bg' );
-	}
-
-
-	/**
-	 * Load site fonts
-	 * @return void
-	 */
-	protected function site_fonts() {
-
-		$typo_body           = json_decode( quixa_option( 'rt_body_typo' ), true );
-		$typo_menu           = json_decode( quixa_option( 'rt_menu_typo' ), true );
-		$typo_heading        = json_decode( quixa_option( 'rt_all_heading_typo' ), true );
-		$body_font_family    = $typo_body['font'] ?? 'Urbanist';
-		$heading_font_family = $typo_heading['font'] ?? $body_font_family;
-		?>
-		:root{
-		--rt-body-font: '<?php echo esc_html( $typo_body['font'] ); ?>', sans-serif;;
-		--rt-heading-font: '<?php echo esc_html( $heading_font_family ); ?>', sans-serif;
-		--rt-menu-font: '<?php echo esc_html( $typo_body['font'] ); ?>', sans-serif;
-		}
-
-		<?php
-		echo self::font_css( 'body', $typo_body );
-		echo self::font_css( '.site-header', [ 'font' => $typo_menu['font'] ] );
-		echo self::font_css( '.quixa-navigation ul li a', [ 'size'          => $typo_menu['size'],
-															'regularweight' => $typo_menu['regularweight'],
-															'lineheight'    => $typo_menu['lineheight']
-		] );
-		echo self::font_css( '.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6', [ 'font'          => $typo_heading['font'],
-																			'regularweight' => $typo_heading['regularweight']
-		] );
-
-		$heading_fonts = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
-		foreach ( $heading_fonts as $heading ) {
-			$font = json_decode( quixa_option( "rt_heading_{$heading}_typo" ), true );
-			if ( ! empty( $font['font'] ) ) {
-				$selector = "$heading, .$heading";
-				echo self::font_css( $selector, $font );
+		/**
+		 * Footer CSS
+		 * @return void
+		 */
+		protected
+		function footer_css() {
+			if ( quixa_option( 'rt_footer_width' ) && quixa_option( 'rt_footer_max_width' ) > 1400 ) {
+				echo self::css( '.site-footer .footer-container', 'width', 'rt_footer_max_width', 'px;max-width: 100%' );
 			}
+
+			echo self::css( 'body .site-footer *:not(a)', 'color', 'rt_footer_text_color' );
+			echo self::css( 'body .site-footer a, .quixa-footer-2 .site-footer .widget a', 'color', 'rt_footer_link_color' );
+			echo self::css( 'body .site-footer a:hover, .quixa-footer-2 .footer-sidebar a:hover', 'color', 'rt_footer_link_hover_color' );
+			echo self::css( 'body .site-footer, .quixa-footer-2 .site-footer, body .site-footer select option', 'background-color', 'rt_footer_bg' );
+			echo self::css( '.site-footer .widget :is(td, th, select, .search-box)', 'border-color', 'rt_footer_input_border_color' );
+			echo self::css( 'body .site-footer .widget-title, .quixa-footer-2 .footer-widgets .widget-title', 'color', 'rt_footer_widget_title_color' );
+			echo self::css( 'body .footer-copyright-wrapper .copyright-text', 'color', 'rt_copyright_text_color' );
+			echo self::css( 'body .site-footer .footer-copyright-wrapper a', 'color', 'rt_copyright_link_color' );
+			echo self::css( 'body .site-footer .footer-copyright-wrapper a:hover', 'color', 'rt_copyright_link_hover_color' );
+			echo self::css( 'body .site-footer .footer-copyright-wrapper', 'background-color', 'rt_copyright_bg' );
 		}
-	}
 
 
-	/**
-	 * Generate CSS
-	 *
-	 * @param $selector
-	 * @param $property
-	 * @param $theme_mod
-	 *
-	 * @return string|void
-	 */
-	public static function css( $selector, $property, $theme_mod, $after_css = '' ) {
-		$theme_mod = quixa_option( $theme_mod );
+		/**
+		 * Load site fonts
+		 * @return void
+		 */
+		protected
+		function site_fonts() {
 
-		if ( ! empty( $theme_mod ) ) {
-			return sprintf( '%s { %s:%s%s; }', $selector, $property, $theme_mod, $after_css );
-		}
-	}
-
-	/**
-	 * Font CSS
-	 *
-	 * @param $selector
-	 * @param $property
-	 * @param $theme_mod
-	 * @param $after_css
-	 *
-	 * @return string
-	 */
-	public static function font_css( $selector, $font ) {
-		$css = '';
-		$css .= $selector . '{'; //Start CSS
-		$css .= ! empty( $font['font'] ) ? "font-family: '" . $font['font'] . "', sans-serif;" : '';
-		$css .= ! empty( $font['size'] ) ? "font-size: {$font['size']}px;" : '';
-		$css .= ! empty( $font['lineheight'] ) ? "line-height: {$font['lineheight']}px;" : '';
-		$css .= ! empty( $font['regularweight'] ) ? "font-weight: {$font['regularweight']};" : '';
-		$css .= '}'; //End CSS
-
-		return $css;
-	}
-
-	/**
-	 * Site background
-	 *
-	 * @return string
-	 */
-
-	function site_background() {
-		if ( ! empty( Opt::$pagebgimg ) ) {
-			$bg = wp_get_attachment_image_src( Opt::$pagebgimg, 'full' );
-			if( !empty( $bg[0] ) ) { ?>
-			body {
-			background-image: url(<?php echo esc_url( $bg[0] ) ?>);
-			background-repeat: repeat;
-			background-position: center center;
-			background-size: cover;
+			$typo_body           = json_decode( quixa_option( 'rt_body_typo' ), true );
+			$typo_menu           = json_decode( quixa_option( 'rt_menu_typo' ), true );
+			$typo_heading        = json_decode( quixa_option( 'rt_all_heading_typo' ), true );
+			$body_font_family    = $typo_body['font'] ?? 'Urbanist';
+			$heading_font_family = $typo_heading['font'] ?? $body_font_family;
+			?>
+			:root{
+			--rt-body-font: '<?php echo esc_html( $typo_body['font'] ); ?>', sans-serif;;
+			--rt-heading-font: '<?php echo esc_html( $heading_font_family ); ?>', sans-serif;
+			--rt-menu-font: '<?php echo esc_html( $typo_body['font'] ); ?>', sans-serif;
 			}
+
 			<?php
+			echo self::font_css( 'body', $typo_body );
+			echo self::font_css( '.site-header', [ 'font' => $typo_menu['font'] ] );
+			echo self::font_css( '.quixa-navigation ul li a', [
+				'size'          => $typo_menu['size'],
+				'regularweight' => $typo_menu['regularweight'],
+				'lineheight'    => $typo_menu['lineheight']
+			] );
+			echo self::font_css( '.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6', [
+				'font'          => $typo_heading['font'],
+				'regularweight' => $typo_heading['regularweight']
+			] );
+
+			$heading_fonts = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ];
+			foreach ( $heading_fonts as $heading ) {
+				$font = json_decode( quixa_option( "rt_heading_{$heading}_typo" ), true );
+				if ( ! empty( $font['font'] ) ) {
+					$selector = "$heading, .$heading";
+					echo self::font_css( $selector, $font );
+				}
 			}
 		}
+
+
+		/**
+		 * Generate CSS
+		 *
+		 * @param $selector
+		 * @param $property
+		 * @param $theme_mod
+		 *
+		 * @return string|void
+		 */
+		public
+		static function css( $selector, $property, $theme_mod, $after_css = '' ) {
+			$theme_mod = quixa_option( $theme_mod );
+
+			if ( ! empty( $theme_mod ) ) {
+				return sprintf( '%s { %s:%s%s; }', $selector, $property, $theme_mod, $after_css );
+			}
+		}
+
+		/**
+		 * Font CSS
+		 *
+		 * @param $selector
+		 * @param $property
+		 * @param $theme_mod
+		 * @param $after_css
+		 *
+		 * @return string
+		 */
+		public
+		static function font_css( $selector, $font ) {
+			$css = '';
+			$css .= $selector . '{'; //Start CSS
+			$css .= ! empty( $font['font'] ) ? "font-family: '" . $font['font'] . "', sans-serif;" : '';
+			$css .= ! empty( $font['size'] ) ? "font-size: {$font['size']}px;" : '';
+			$css .= ! empty( $font['lineheight'] ) ? "line-height: {$font['lineheight']}px;" : '';
+			$css .= ! empty( $font['regularweight'] ) ? "font-weight: {$font['regularweight']};" : '';
+			$css .= '}'; //End CSS
+
+			return $css;
+		}
+
+		/**
+		 * Site background
+		 *
+		 * @return string
+		 */
+
+		function site_background() {
+			if ( ! empty( Opt::$pagebgimg ) ) {
+				$bg = wp_get_attachment_image_src( Opt::$pagebgimg, 'full' );
+				if ( ! empty( $bg[0] ) ) { ?>
+					body {
+					background-image: url(<?php echo esc_url( $bg[0] ) ?>);
+					background-repeat: repeat;
+					background-position: center center;
+					background-size: cover;
+					}
+					<?php
+				}
+			}
+		}
+
 	}
-
-
-}

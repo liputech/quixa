@@ -13,7 +13,7 @@
                 menuDropdown: $('.dropdown-menu.depth_0'),
             };
 
-            Quixa.readyFunctionality();
+            //Quixa.readyFunctionality();
             Quixa.menuDrawerOpen(offCanvas);
             Quixa.offcanvasMenuToggle(offCanvas);
             Quixa.headerSearchOpen();
@@ -108,13 +108,13 @@
             }
         },
 
-        readyFunctionality: function () {
-            const siteHeader = $('.site-header');
-            const paddingTop = siteHeader.height() + siteHeader.position().top + 10;
-            $('.has-trheader .quixa-breadcrumb-wrapper').css({'paddingTop': paddingTop + 'px', 'opacity': 1})
-
-            const commentBody = $('.comment-list .comment-body').last().addClass('last-item');
-        },
+        // readyFunctionality: function () {
+        //     const siteHeader = $('.site-header');
+        //     const paddingTop = siteHeader.height() + siteHeader.position().top + 10;
+        //     $('.has-trheader .quixa-breadcrumb-wrapper').css({'paddingTop': paddingTop + 'px', 'opacity': 1})
+		//
+        //     const commentBody = $('.comment-list .comment-body').last().addClass('last-item');
+        // },
 
         menuDrawerOpen: function (offCanvas) {
             offCanvas.menuBar.on('click', e => {

@@ -164,7 +164,8 @@ class Layouts {
 
 	public function overwrite_options_value() {
 		if ( Opt::$single_style == '3' ) {
-			Opt::$has_tr_header = '1';
+			Opt::$has_tr_header = false;
+			Opt::$has_banner = false;
 		}
 
 	}

@@ -570,7 +570,7 @@ if ( ! function_exists( 'quixa_meta_icons' ) ) {
 			return;
 		}
 		$icon_list = [
-			'author'   => '<i class="icon-rt-user"></i>',
+			'author'   => '<i class="icon-rt-user-1"></i>',
 			'date'     => '<i class="icon-rt-calender-4"></i>',
 			'comment'  => '<i class="icon-rt-comments"></i>',
 			'category' => '<i class="icon-rt-tag"></i>',

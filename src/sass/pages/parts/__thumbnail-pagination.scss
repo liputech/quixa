@@ -3,24 +3,9 @@
 	flex-direction: row;
 	flex: 0 1 auto;
 	flex-wrap: wrap;
-	border: 1px dashed $gray20;
-	padding: 36px 40px;
 	position: relative;
 	align-items: flex-start;
-	margin-bottom: 30px;
-
-	@media (min-width: 800px) {
-		&.two-cols::after {
-			content: "";
-			width: 1px;
-			height: 70px;
-			left: 50%;
-			top: 50%;
-			position: absolute;
-			transform: translate(-50%, -50%);
-			background-color: $gray20;
-		}
-	}
+	margin-bottom: 40px;
 
 	p {
 		margin: 0;
@@ -38,9 +23,8 @@
 		@media (max-width: 799px) {
 			flex: 0 0 100%;
 			&:not(:last-child) {
-				margin-bottom: 30px;
-				border-bottom: 1px solid #ddd;
-				padding-bottom: 30px;
+				margin-bottom: 15px;
+				padding-bottom: 15px;
 			}
 
 		}
@@ -54,17 +38,14 @@
 		background-position: center;
 		flex: 0 0 50px;
 	}
-
-
-	.nav-title,
 	.link {
-		flex: 0 0 calc(100% - 50px);
 		display: flex;
+		flex: 0 0 calc(100% - 50px);
 		align-items: center;
 		gap: 15px;
-		font-size: 15px;
-		font-weight: 600;
-		color: $title_color;
+		font-size: 16px;
+		line-height: 1.4;
+		color: $meta_color;
 
 		&:hover {
 			@extend .primaryColor;
@@ -72,12 +53,20 @@
 	}
 
 	.nav-title {
+		display: flex;
+		align-items: center;
+		gap: 15px;
 		flex: 0 0 100%;
-		font-weight: normal;
-		margin-bottom: 12px;
+		font-weight: 600;
+		font-size: 20px;
+		margin-bottom: 15px;
+		color: $title_color;
 
-		&:hover svg {
-			fill: $primary_color;
+		&:hover {
+			@extend .primaryColor;
+			svg {
+				fill: $primary_color;
+			}
 		}
 
 		svg {

@@ -1,8 +1,5 @@
 .comments-area {
 	margin-top: 50px;
-	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
 
 	.comment-list-wrapper {
 		margin-top: 40px;
@@ -154,9 +151,23 @@
 }
 
 .comment-respond {
-	margin-top: 0;
-	background: #f3f3f3;
+	background-color: $white_color;
+	box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+	border-radius: 15px;
 	padding: 40px 55px;
+	.comment-reply-title {
+		font-size: 36px;
+	}
+	.comment-notes, .logged-in-as {
+		color: $meta_color;
+		font-size: 16px;
+		a {
+			color: $meta_color;
+			&:hover {
+				color: $black_color;
+			}
+		}
+	}
 }
 
 .comment-form {

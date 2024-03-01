@@ -28,7 +28,7 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 
 	<?php if ( have_comments() ) : ?>
 		<div class="comment-list-wrapper">
-			<h2 class="comments-title">
+			<h3 class="comments-title">
 				<?php
 				printf(
 				/* translators: 1: Comments count. */
@@ -36,7 +36,7 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 					absint( get_comments_number() )
 				);
 				?>
-			</h2><!-- .comments-title -->
+			</h3><!-- .comments-title -->
 
 			<ol class="comment-list">
 				<?php
