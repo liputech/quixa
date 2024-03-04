@@ -20,7 +20,7 @@
 			justify-content: flex-end;
 		}
 
-		@media (max-width: 799px) {
+		@media (max-width: 767px) {
 			flex: 0 0 100%;
 			&:not(:last-child) {
 				margin-bottom: 15px;

@@ -1,6 +1,11 @@
 .quixa-widget-area {
 	position: relative;
-	padding-left: 30px;
+	@media (min-width: 1140px) {
+		padding-left: 30px;
+	}
+	.widget:last-child {
+		margin-bottom: 0;
+	}
 	ul {
 		list-style: none;
 		margin: 0;
@@ -88,7 +93,8 @@
 			padding: 8px 18px;
 			line-height: 1.4;
 			&:hover {
-				background-color: $rating_color;
+				background-color: $secondary_color;
+				color: $white_color;
 			}
 		}
 	}
@@ -134,6 +140,18 @@
 		}
 		.post-thumbnail-wrap {
 			width: 150px;
+		}
+	}
+}
+@media(max-width: 1140px) {
+	.layout-right-sidebar {
+		.quixa-widget-area {
+			padding-top: 60px;
+		}
+	}
+	.layout-left-sidebar {
+		.quixa-widget-area {
+			padding-bottom: 60px;
 		}
 	}
 }

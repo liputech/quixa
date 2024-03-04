@@ -21,25 +21,25 @@
 	}
 
 	.breadcrumb {
+		display: block;
 		padding: 0;
 		list-style: none;
 		background-color: transparent;
 		border-radius: 0;
-		color: $body_color;
-		font-size: $base_fs - 2;
+		color: $meta_color;
+		font-size: $base_fs - 1;
 		font-weight: 500;
-		display: flex;
-		gap: 10px;
 		margin: 0;
 		position: relative;
 
 		li {
-			display: flex;
+			display: inline;
 			position: relative;
 			align-items: center;
 			gap: 10px;
 		}
 		.raquo {
+			padding: 0 5px;
 			line-height: 1;
 			svg {
 				width: 7px;
@@ -48,11 +48,11 @@
 		}
 
 		a {
-			color: $body_color;
+			color: $meta_color;
 		}
 
 		path {
-			stroke: $body_color;
+			stroke: $meta_color;
 		}
 
 		li.active .title {
@@ -61,7 +61,8 @@
 
 	}
 	.entry-title {
-		font-size: 50px;
+		font-size: clamp(30px, 4vw, 50px);
+		line-height: 1.2;
 		margin-bottom: 0;
 	}
 
@@ -81,10 +82,10 @@
 .quixa-breadcrumb-wrapper,
 .has-trheader .quixa-breadcrumb-wrapper {
 	.breadcrumb {
-		color: $title_color;
+		color: $meta_color;
 
 		a {
-			color: $title_color;
+			color: $meta_color;
 
 			&:hover {
 				color: $primary_color;

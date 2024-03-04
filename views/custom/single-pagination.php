@@ -13,7 +13,7 @@ $cols     = ( $previous && $next ) ? 'two-cols' : 'one-cols';
 ?>
 <div class="single-post-pagination <?php echo esc_attr( $cols ) ?>">
 	<?php if ( $previous ):
-		$prev_image = get_the_post_thumbnail_url( $previous ); ?>
+		$prev_image = get_the_post_thumbnail_url( $previous, 'thumbnail' ); ?>
 
 		<div class="post-navigation prev">
 			<a href="<?php echo esc_url( get_permalink( $previous ) ); ?>" class="nav-title">
@@ -31,7 +31,7 @@ $cols     = ( $previous && $next ) ? 'two-cols' : 'one-cols';
 	<?php endif; ?>
 
 	<?php if ( $next ):
-		$next_image = get_the_post_thumbnail_url( $next ); ?>
+		$next_image = get_the_post_thumbnail_url( $next, 'thumbnail' ); ?>
 
 		<div class="post-navigation next text-right">
 			<a href="<?php echo esc_url( get_permalink( $next ) ); ?>" class="nav-title">

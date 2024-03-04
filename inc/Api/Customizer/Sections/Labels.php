@@ -99,6 +99,12 @@ class Labels extends Customizer {
 				'default'     => __( 'Tags:', 'quixa' ),
 				'description' => __( 'Context: Single blog footer tags label', 'quixa' ),
 			],
+			'rt_social'                 => [
+				'type'        => 'text',
+				'label'       => __( 'Socials:', 'quixa' ),
+				'default'     => __( 'Socials:', 'quixa' ),
+				'description' => __( 'Context: Single blog footer Socials label', 'quixa' ),
+			],
 
 		] );
 	}

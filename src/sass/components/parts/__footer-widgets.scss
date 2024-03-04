@@ -82,3 +82,36 @@
 		}
 	}
 }
+.widget_nav_menu {
+	ul {
+		li {
+			a {
+				position: relative;
+				&:before {
+					background-color: $primary_color;
+					position: absolute;
+					content: "";
+					bottom: 1px;
+					right: 0;
+					height: 1px;
+					width: 0;
+					opacity: 0;
+					transition: 0.5s;
+				}
+				&:hover {
+					&:before {
+						width: 100%;
+						left: 0;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+.quixa-footer-2 .widget_nav_menu ul li a:before,
+.quixa-footer-3 .widget_nav_menu ul li a:before,
+.quixa-footer-4 .widget_nav_menu ul li a:before,
+.quixa-footer-5 .widget_nav_menu ul li a:before {
+	background-color: $white_color;
+}

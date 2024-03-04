@@ -78,14 +78,12 @@ elseif (is_post_type_archive('quixa_team')) {
 	$quixa_title = single_term_title( '', false );
 
 } elseif ( is_archive() ) {
-	$quixa_title = esc_html__( 'All Posts', 'quixa' );
+	$quixa_title = esc_html__( 'Our Recent Posts', 'quixa' );
 
-} elseif ( class_exists('WeDevs_Dokan') && dokan_is_user_seller(get_query_var( 'author' )) ) {
-	$store_user   = dokan()->vendor->get( get_query_var( 'author' ) );
-	$store_info   = $store_user->get_shop_info();
-	$quixa_title  = esc_html($store_info['store_name']);
+} elseif ( is_single() ) {
+	$quixa_title = esc_html__( 'Post Details', 'quixa' );
 
-} else {
+}  else {
 	$quixa_title = get_the_title();
 }
 $breadcrumb_classes = quixa_option( 'rt_breadcrumb_alignment' );

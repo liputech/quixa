@@ -78,6 +78,24 @@ class BlogSingle extends Customizer {
 				'type'  => 'switch',
 				'label' => __( 'Above Meta Visibility', 'quixa' ),
 			],
+			'rt_single_tag_visibility' => [
+				'type'  => 'switch',
+				'label' => __( 'Tag Visibility', 'quixa' ),
+			],
+			'rt_single_share_visibility' => [
+				'type'    => 'switch',
+				'label'   => __( 'Share Visibility', 'quixa' ),
+			],
+			'rt_post_share' => [
+				'type'        => 'select2',
+				'label'       => __( 'Choose Share Media', 'quixa' ),
+				'description' => __( 'You can sort meta by drag and drop', 'quixa' ),
+				'placeholder' => __( 'Choose Media', 'quixa' ),
+				'multiselect' => true,
+				'default'     => 'facebook,twitter,linkedin',
+				'choices'     => Fns::post_share_list(),
+				'condition' => [ 'rt_single_share_visibility' ]
+			],
 
 		] );
 	}

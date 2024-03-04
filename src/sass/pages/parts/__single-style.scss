@@ -1,45 +1,106 @@
 .single-post {
-	.post-thumbnail-wrap {
+	.single-post-thumbnail {
 		margin-bottom: 50px;
-	}
-	.post-thumbnail {
-		img {
-			border-radius: 15px;
+		.post-thumbnail {
+			img {
+				border-radius: 15px;
+			}
 		}
 	}
-	.entry-header {
-		.entry-title {
-			font-size: clamp(30px, 4vw, 40px);
-			line-height: 1.2;
+	.single-content {
+		.entry-header {
+			.entry-title {
+				font-size: clamp(30px, 4vw, 40px);
+				line-height: 1.2;
+				margin-bottom: 24px;
+			}
+		}
+		.quixa-post-meta {
 			margin-bottom: 24px;
 		}
-	}
-	.quixa-post-meta {
-		margin-bottom: 24px;
-	}
-	.wp-block-quote {
-		border-left: 6px solid;
-		border-color: $primary_color;
-		color: $title_color;
-		margin: 30px 0;
-		padding-left: 30px;
-		font-size: 20px;
-		font-style: italic;
-		line-height: 1.5;
-		cite {
-			color: $black_color;
-			font-weight: 700;
+		.wp-block-quote {
+			border-left: 6px solid;
+			border-color: $primary_color;
+			color: $title_color;
+			margin: 30px 0;
+			padding-left: 30px;
+			font-size: 20px;
+			font-style: italic;
+			line-height: 1.5;
+			cite {
+				color: $black_color;
+				font-weight: 700;
+			}
 		}
-	}
-	.entry-footer {
-		border-bottom: 1px solid $border_color;
-		margin-bottom: 50px;
-		padding-bottom: 25px;
-		.post-tags {
+		.entry-footer {
 			display: flex;
-			flex-wrap: wrap;
-			gap: 15px;
+			border-bottom: 1px solid $border_color;
+			margin-bottom: 50px;
+			padding-bottom: 50px;
+			@media (max-width: 767px) {
+				flex-direction: column;
+				align-items: baseline !important;
+				gap: 20px;
+			}
+			.post-tags {
+				display: flex;
+				gap: 15px;
+			}
+			.tag-links {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 7px;
+				.sp {
+					display: none;
+				}
+				a {
+					color: var(--rt-primary-color);
+					border: 1px solid #E7E7E7;
+					border-radius: 6px;
+					font-size: 14px;
+					font-weight: 600;
+					min-height: 32px;
+					padding: 0 12px;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					&:hover {
+						background-color: $primary_color;
+						color: $white_color;
+						border-color: transparent;
+					}
+				}
+			}
+			.post-share {
+				display: flex;
+				gap: 15px;
+			}
+			.social-share-list {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				align-items: center;
+				gap: 7px;
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 16px;
+					width: 32px;
+					height: 32px;
+					border: 1px solid $border_color;
+					border-radius: 50%;
+					color: $primary_color;
+					&:hover {
+						background-color: $primary_color;
+						color: $white_color;
+						border-color: transparent;
+					}
+				}
+			}
 		}
 	}
-
 }

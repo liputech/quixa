@@ -35,7 +35,7 @@ class DynamicStyles {
 	private function inline_style() {
 
 		$primary_color   = quixa_option( 'rt_primary_color', '#004BFF' );
-		$secondary_color = quixa_option( 'rt_secondary_color', '#fef4f0' );
+		$secondary_color = quixa_option( 'rt_secondary_color', '#013bc5' );
 		$body_color      = quixa_option( 'rt_body_color', '#343C4D' );
 		$body_bg_color   = quixa_option( 'rt_body_bg_color', '#ffffff' );
 		$title_color     = quixa_option( 'rt_title_color', '#00030C' );

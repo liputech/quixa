@@ -2,7 +2,9 @@
 	padding-top: 130px;
 	padding-bottom: 130px;
 }
-
+.quixa-breadcrumb-wrapper.no-bg + div {
+	padding-top: 90px;
+}
 .post-edit-link {
 	position: absolute;
 	top: 0;

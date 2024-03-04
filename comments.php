@@ -43,7 +43,7 @@ if ( 'open' !== get_option( 'default_comment_status' ) ) {
 				wp_list_comments(
 					[
 						'style'       => 'ol',
-						'avatar_size' => 45,
+						'avatar_size' => 100,
 						'short_ping'  => true,
 						'callback'    => 'quixa_comments_cbf',
 					]

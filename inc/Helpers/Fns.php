@@ -164,7 +164,7 @@ class Fns {
 	 * @return string
 	 */
 	public static function sidebar_columns() {
-		$columns = "col-md-4";
+		$columns = "col-xl-4";
 
 		return $columns;
 	}
@@ -173,9 +173,9 @@ class Fns {
 	 * Return content columns
 	 * @return string
 	 */
-	public static function content_columns( $full_width_col = 'col-md-12' ) {
+	public static function content_columns( $full_width_col = 'col-12' ) {
 		$sidebar = Opt::$sidebar === 'default' ? 'rt-sidebar' : Opt::$sidebar;
-		$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-md-8';
+		$columns = ! is_active_sidebar( $sidebar ) ? $full_width_col : 'col-xl-8';
 		if ( Opt::$layout === 'full-width' ) {
 			$columns = $full_width_col;
 		}
@@ -185,10 +185,10 @@ class Fns {
 
 	public static function single_content_colums() {
 		$sidebar = Opt::$sidebar === 'default' ? 'rt-single-sidebar' : Opt::$sidebar;
-		$columns = is_active_sidebar( $sidebar ) ? "col-md-8" : "col-md-10 col-md-offset-1";
+		$columns = is_active_sidebar( $sidebar ) ? "col-xl-8" : "col-xl-10 col-md-offset-1";
 
 		if ( Opt::$layout === 'full-width' ) {
-			$columns = "col-md-10 col-md-offset-1";
+			$columns = "col-xl-10 col-md-offset-1";
 		}
 
 		return $columns;
@@ -290,12 +290,27 @@ class Fns {
 	 */
 	public static function blog_meta_list() {
 		return [
-			'author'   => __( 'Author', 'skyrocket' ),
-			'date'     => __( 'Date', 'skyrocket' ),
-			'category' => __( 'Category', 'skyrocket' ),
-			'tag'      => __( 'Tag', 'skyrocket' ),
-			'comment'  => __( 'Comment', 'skyrocket' ),
-			'reading'  => __( 'Reading', 'skyrocket' ),
+			'author'   => __( 'Author', 'quixa' ),
+			'date'     => __( 'Date', 'quixa' ),
+			'category' => __( 'Category', 'quixa' ),
+			'tag'      => __( 'Tag', 'quixa' ),
+			'comment'  => __( 'Comment', 'quixa' ),
+			'reading'  => __( 'Reading', 'quixa' ),
+		];
+	}
+
+	/**
+	 * Blog Meta Style
+	 * @return array
+	 */
+	public static function post_share_list() {
+		return [
+			'facebook' => __( 'Facebook', 'quixa' ),
+			'twitter'  => __( 'Twitter X', 'quixa' ),
+			'linkedin' => __( 'Linkedin', 'quixa' ),
+			'pinterest'  => __( 'Pinterest', 'quixa' ),
+			'whatsapp'  => __( 'Whatsapp', 'quixa' ),
+			'youtube'  => __( 'Youtube', 'quixa' ),
 		];
 	}
 

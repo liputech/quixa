@@ -8,6 +8,7 @@
 
 use RT\Quixa\Options\Opt;
 use RT\Quixa\Helpers\Fns;
+use RT\Quixa\Modules\PostShare;
 
 function quixa_html( $html, $checked = true ) {
 	$allowed_html = [
@@ -148,7 +149,7 @@ if ( ! function_exists( 'quixa_menu_icons_group' ) ) {
 
 				<?php if ( $has_button ) : ?>
 					<li class="quixa-button">
-						<a class="btn button-3" href="<?php echo esc_url( $args['button_link'] ) ?>">
+						<a class="btn button-2" href="<?php echo esc_url( $args['button_link'] ) ?>">
 							<div class="btn-wrap">
 								<span class="btn-text1"><?php echo esc_html( $args['button_label'] ); ?></span>
 								<span class="btn-text2"><?php echo esc_html( $args['button_label'] ); ?></span>
@@ -687,8 +688,8 @@ if ( ! function_exists( 'quixa_post_thumbnail' ) ) {
 			<?php
 			if ( quixa_option( 'rt_blog_style' ) == 'grid-2' && quixa_option( 'rt_blog_above_meta_visibility' ) ) { ?>
 				<div class="posted-on">
-				<span class="day"><?php echo get_the_date( 'j' ); ?></span>
-				<span class="month"><?php echo get_the_date( 'M' ); ?></span>
+					<span class="day"><?php echo get_the_date( 'j' ); ?></span>
+					<span class="month"><?php echo get_the_date( 'M' ); ?></span>
 				</div>
 			<?php } ?>
 
@@ -707,7 +708,7 @@ if ( ! function_exists( 'quixa_post_single_thumbnail' ) ) {
 			return;
 		}
 		?>
-		<div class="post-thumbnail-wrap">
+		<div class="post-thumbnail-wrap single-post-thumbnail">
 			<figure class="post-thumbnail">
 				<?php the_post_thumbnail( 'full', [ 'loading' => true ] ); ?>
 				<?php edit_post_link( 'Edit' ); ?>
@@ -740,14 +741,29 @@ if ( ! function_exists( 'quixa_entry_footer' ) ) {
 				</footer><?php
 			}
 		} else {
-			if ( 'post' === get_post_type() && has_tag() ) { ?>
-				<footer class="entry-footer">
-					<div class="post-tags">
-						<?php if ( $tags_label = quixa_option( 'rt_tags' ) ) {
-							printf( "<span>%s</span>", esc_html( $tags_label ) );
-						} ?>
-						<?php quixa_separate_meta( 'content-below-meta', [ 'tag' ] ); ?>
-					</div>
+			if ( ( has_tag() && quixa_option( 'rt_single_tag_visibility' ) ) || quixa_option( 'rt_single_share_visibility' ) ) { ?>
+				<footer class="entry-footer d-flex align-items-center justify-content-between">
+					<?php if ( quixa_option( 'rt_single_tag_visibility' ) ) { ?>
+						<div class="post-tags">
+							<?php if ( $tags_label = quixa_option( 'rt_tags' ) ) {
+								printf( "<span>%s</span>", esc_html( $tags_label ) );
+							} ?>
+
+							<?php
+							quixa_single_post_footer_meta(
+								'content-below-meta', [ 'tag' ]
+							);
+							?>
+						</div>
+					<?php }
+					if ( quixa_option( 'rt_single_share_visibility' ) ) { ?>
+						<div class="post-share">
+							<?php if ( $tags_label = quixa_option( 'rt_social' ) ) {
+								printf( "<span>%s</span>", esc_html( $tags_label ) );
+							} ?>
+							<?php PostShare::quixa_post_share(); ?>
+						</div>
+					<?php } ?>
 				</footer>
 				<?php
 			}
@@ -755,7 +771,25 @@ if ( ! function_exists( 'quixa_entry_footer' ) ) {
 
 	}
 }
-
+if ( ! function_exists( 'quixa_single_post_footer_meta' ) ) {
+	/**
+	 * Get single post footer meta
+	 *
+	 * @return string
+	 */
+	function quixa_single_post_footer_meta( $class = '', $includes = [ 'tag' ] ) {
+		if ( is_single() && quixa_option( 'rt_single_tag_visibility' ) ) : ?>
+			<div class="post-footer-meta <?php echo esc_attr( $class ) ?>">
+				<?php echo quixa_post_meta( [
+					'with_list' => false,
+					'with_icon' => false,
+					'include'   => $includes,
+				] ); ?>
+			</div>
+		<?php
+		endif;
+	}
+}
 if ( ! function_exists( 'quixa_entry_content' ) ) {
 	/**
 	 * Entry Content
@@ -1041,30 +1075,31 @@ function quixa_comments_cbf( $comment, $args, $depth ) {
 						</a><?php
 						edit_comment_link( __( 'Edit', 'quixa' ), '  ', '' ); ?>
 					</div><!-- .comment-meta -->
+					<div class="comment-details">
+
+						<div class="comment-text"><?php comment_text(); ?></div><!-- .comment-text -->
+						<?php
+						// Display comment moderation text
+						if ( $comment->comment_approved == '0' ) { ?>
+							<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quixa' ); ?></em>
+							<br/><?php
+						} ?>
+
+						<?php
+						$icon = quixa_get_svg( 'share' );
+						// Display comment reply link
+						comment_reply_link( array_merge( $args, [
+							'add_below'  => $add_below,
+							'depth'      => $depth,
+							'max_depth'  => $args['max_depth'],
+							'reply_text' => $icon . __( 'Reply', 'quixa' )
+						] ) ); ?>
+
+					</div><!-- .comment-details -->
 				</div>
 
 			</div><!-- .comment-author -->
-			<div class="comment-details">
 
-				<div class="comment-text"><?php comment_text(); ?></div><!-- .comment-text -->
-				<?php
-				// Display comment moderation text
-				if ( $comment->comment_approved == '0' ) { ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quixa' ); ?></em>
-					<br/><?php
-				} ?>
-
-				<?php
-				$icon = quixa_get_svg( 'share' );
-				// Display comment reply link
-				comment_reply_link( array_merge( $args, [
-					'add_below'  => $add_below,
-					'depth'      => $depth,
-					'max_depth'  => $args['max_depth'],
-					'reply_text' => $icon . __( 'Reply', 'quixa' )
-				] ) ); ?>
-
-			</div><!-- .comment-details -->
 			<?php
 			if ( 'div' != $args['style'] ) { ?>
 				</div>

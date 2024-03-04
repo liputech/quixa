@@ -79,7 +79,10 @@ elseif (is_post_type_archive('quixa_team')) {
 	$quixa_title = single_term_title( '', false );
 
 } elseif ( is_archive() ) {
-	$quixa_title = esc_html__( 'All Posts', 'quixa' );
+	$quixa_title = esc_html__( 'Our Recent Posts', 'quixa' );
+
+} elseif ( is_single() ) {
+	$quixa_title = esc_html__( 'Post Details', 'quixa' );
 
 } else {
 	$quixa_title = get_the_title();
