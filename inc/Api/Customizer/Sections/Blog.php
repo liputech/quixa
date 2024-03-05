@@ -51,6 +51,7 @@ class Blog extends Customizer {
 					'list'    => __( 'List', 'quixa' ),
 					'grid-2'    => __( 'Grid 2', 'quixa' ),
 					'grid-3'    => __( 'Grid 3', 'quixa' ),
+					'grid-4'    => __( 'Grid 4', 'quixa' ),
 				]
 			],
 
@@ -127,6 +128,12 @@ class Blog extends Customizer {
 			],
 
 			'rt_blog_footer_visibility' => [
+				'type'    => 'switch',
+				'label'   => __( 'Entry Footer Visibility', 'quixa' ),
+				'default' => 1
+			],
+
+			'rt_blog_footer_list_visibility' => [
 				'type'    => 'switch',
 				'label'   => __( 'Entry Footer Visibility', 'quixa' ),
 				'default' => 1

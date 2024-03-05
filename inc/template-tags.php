@@ -124,10 +124,10 @@ if ( ! function_exists( 'quixa_menu_icons_group' ) ) {
 		<div class="menu-icon-wrapper d-flex pl-15 ml-auto align-items-center gap-15">
 			<ul class="d-flex gap-15 align-items-center <?php echo esc_attr( $menu_classes ) ?>">
 				<?php if ( $args['hamburg'] ) : ?>
-					<?php newsfit_hanburger( 'desktop-hamburg' ); ?>
+					<?php quixa_hanburger( 'desktop-hamburg' ); ?>
 				<?php endif; ?>
 
-				<?php newsfit_hanburger( 'mobile-hamburg' ); ?>
+				<?php quixa_hanburger( 'mobile-hamburg' ); ?>
 
 				<?php if ( $args['search'] ) : ?>
 					<li class="quixa-search-popup">
@@ -1110,7 +1110,7 @@ function quixa_comments_cbf( $comment, $args, $depth ) {
 }
 
 
-if ( ! function_exists( 'newsfit_hanburger' ) ) {
+if ( ! function_exists( 'quixa_hanburger' ) ) {
 
 	/**
 	 * Newsfit hanburger
@@ -1119,7 +1119,7 @@ if ( ! function_exists( 'newsfit_hanburger' ) ) {
 	 *
 	 * @return void
 	 */
-	function newsfit_hanburger( $class = '' ) {
+	function quixa_hanburger( $class = '' ) {
 		?>
 		<li class="<?php esc_attr_e( $class ) ?>">
 			<a class="menu-bar trigger-off-canvas" href="#">

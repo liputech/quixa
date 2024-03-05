@@ -1,0 +1,15 @@
+//Style 5
+.quixa-single-5 {
+	.quixa-post-card {
+		.separate-meta {
+			a {
+				background-color: $primary_color;
+				color: $white_color;
+				border: none;
+				&:hover {
+					background-color: $secondary_color;
+				}
+			}
+		}
+	}
+}

@@ -273,6 +273,7 @@ class Fns {
 			'2' => __( 'Style 2 (Full-width Thumbnail)', 'quixa' ),
 			'3' => __( 'Style 3 (Transparent Menu)', 'quixa' ),
 			'4' => __( 'Style 4 (Content over on Thumb)', 'quixa' ),
+			'5' => __( 'Style 5 (Meta over on Thumb)', 'quixa' ),
 		];
 
 		if ( ! empty( $exclude ) && is_array( $exclude ) ) {

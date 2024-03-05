@@ -3354,16 +3354,11 @@ input[type=submit]:active {
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'rt-fontello';
-    src: url('../font/rt-fontello.svg?99477873#rt-fontello') format('svg');
-  }
+[class^=icon-],
+[class*=" icon-"] {
+  line-height: 1;
 }
-*/
+
 [class^=icon-]:before, [class*=" icon-"]:before {
   font-family: "rt-fontello";
   font-style: normal;
@@ -6815,14 +6810,33 @@ article:hover .quixa-post-meta ul li.edit-link {
      object-position: center;
 }
 
-.blog-default .entry-wrapper, .blog-list .entry-wrapper {
+.blog-default .entry-wrapper {
   padding: 24px;
 }
-.blog-default .article-inner-wrapper, .blog-list .article-inner-wrapper {
+.blog-default .article-inner-wrapper {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
   border: 1px solid #E7E7E7;
+}
+
+.blog-list .entry-wrapper {
+  padding: 50px 50px 40px;
+}
+@media (max-width: 767px) {
+  .blog-list .entry-wrapper {
+    padding: 24px 24px 15px;
+  }
+}
+.blog-list .separate-meta a {
+  background-color: #FFFFFF;
+  color: var(--rt-title-color);
+}
+.blog-list .article-inner-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--rt-gray10);
 }
 
 .blog-grid-2 .entry-wrapper {
@@ -6888,7 +6902,7 @@ article:hover .quixa-post-meta ul li.edit-link {
   color: #FFFFFF;
 }
 .blog-grid-3 .entry-wrapper .entry-title a:hover {
-  color: var(--rt-rating-color);
+  color: var(--rt-primary-color);
 }
 .blog-grid-3 .separate-meta a {
   border: none;
@@ -6897,8 +6911,7 @@ article:hover .quixa-post-meta ul li.edit-link {
   border-radius: 50px;
 }
 .blog-grid-3 .separate-meta a:hover {
-  background-color: var(--rt-rating-color);
-  color: var(--rt-title-color);
+  background-color: var(--rt-secondary-color);
 }
 .blog-grid-3 .quixa-post-meta {
   color: #CBCBCB;
@@ -6908,6 +6921,26 @@ article:hover .quixa-post-meta ul li.edit-link {
 }
 .blog-grid-3 .quixa-post-meta a:hover {
   color: #FFFFFF;
+}
+
+.blog-grid-4 .post-thumbnail img {
+  border-radius: 15px;
+}
+.blog-grid-4 .entry-wrapper {
+  margin-top: -16px;
+}
+.blog-grid-4 .entry-wrapper .separate-meta {
+  margin-bottom: 15px;
+  padding-right: 15px;
+}
+.blog-grid-4 .entry-wrapper .separate-meta a {
+  background-color: #FFFFFF;
+  color: var(--rt-title-color);
+  border-radius: 50px;
+}
+.blog-grid-4 .entry-wrapper .separate-meta a:hover {
+  border: 1px solid var(--rt-primary-color);
+  color: var(--rt-primary-color);
 }
 
 .widget .quixa-post-card .entry-title {
@@ -7042,17 +7075,6 @@ body:not(.quixa-single-1) .wp-block-quote p {
   margin-bottom: 5px;
 }
 
-.content-top-area {
-  position: relative;
-}
-.content-top-area .single-top-header {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  left: 0;
-  width: 100%;
-}
-
 .post-thumbnail-wrap .wp-caption-text {
   margin-top: 5px;
   margin-bottom: 15px;
@@ -7066,21 +7088,34 @@ body:not(.quixa-single-1) .wp-block-quote p {
   line-height: 1;
 }
 
+.wp-block-image img {
+  border-radius: 12px;
+}
+
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 24px;
+}
+
+:where(.wp-block-columns) {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
 .single-post .single-post-thumbnail {
   margin-bottom: 50px;
 }
 .single-post .single-post-thumbnail .post-thumbnail img {
   border-radius: 15px;
 }
-.single-post .single-content .entry-header .entry-title {
+.single-post .quixa-post-card .entry-header .entry-title {
   font-size: clamp(30px, 4vw, 40px);
   line-height: 1.2;
   margin-bottom: 24px;
 }
-.single-post .single-content .quixa-post-meta {
+.single-post .quixa-post-card .quixa-post-meta {
   margin-bottom: 24px;
 }
-.single-post .single-content .wp-block-quote {
+.single-post .quixa-post-card .wp-block-quote {
   border-right: 6px solid;
   border-color: var(--rt-primary-color);
   color: var(--rt-title-color);
@@ -7090,37 +7125,38 @@ body:not(.quixa-single-1) .wp-block-quote p {
   font-style: italic;
   line-height: 1.5;
 }
-.single-post .single-content .wp-block-quote cite {
+.single-post .quixa-post-card .wp-block-quote cite {
   color: #000000;
   font-weight: 700;
 }
-.single-post .single-content .entry-footer {
+.single-post .entry-footer {
   display: flex;
   border-bottom: 1px solid #E7E7E7;
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
 @media (max-width: 767px) {
-  .single-post .single-content .entry-footer {
+  .single-post .entry-footer {
     flex-direction: column;
     align-items: baseline !important;
     gap: 20px;
   }
 }
-.single-post .single-content .entry-footer .post-tags {
+.single-post .entry-footer .post-tags {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
-.single-post .single-content .entry-footer .tag-links {
+.single-post .entry-footer .tag-links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 7px;
 }
-.single-post .single-content .entry-footer .tag-links .sp {
+.single-post .entry-footer .tag-links .sp {
   display: none;
 }
-.single-post .single-content .entry-footer .tag-links a {
+.single-post .entry-footer .tag-links a {
   color: var(--rt-primary-color);
   border: 1px solid #E7E7E7;
   border-radius: 6px;
@@ -7133,16 +7169,17 @@ body:not(.quixa-single-1) .wp-block-quote p {
   align-items: center;
   position: relative;
 }
-.single-post .single-content .entry-footer .tag-links a:hover {
+.single-post .entry-footer .tag-links a:hover {
   background-color: var(--rt-primary-color);
   color: #FFFFFF;
   border-color: transparent;
 }
-.single-post .single-content .entry-footer .post-share {
+.single-post .entry-footer .post-share {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
-.single-post .single-content .entry-footer .social-share-list {
+.single-post .entry-footer .social-share-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7150,21 +7187,27 @@ body:not(.quixa-single-1) .wp-block-quote p {
   align-items: center;
   gap: 7px;
 }
-.single-post .single-content .entry-footer .social-share-list a {
+.single-post .entry-footer .social-share-list a {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border: 1px solid #E7E7E7;
   border-radius: 50%;
-  color: var(--rt-primary-color);
+  color: var(--rt-meta-color);
 }
-.single-post .single-content .entry-footer .social-share-list a:hover {
+.single-post .entry-footer .social-share-list a i {
+  display: block;
+}
+.single-post .entry-footer .social-share-list a:hover {
   background-color: var(--rt-primary-color);
   color: #FFFFFF;
   border-color: transparent;
+}
+.single-post .entry-footer .social-share-list a:hover i {
+  animation: headShake 1.5s;
 }
 
 .quixa-single-2 .single-post-container .content-top-area .post-thumbnail img {
@@ -7179,7 +7222,15 @@ body:not(.quixa-single-1) .wp-block-quote p {
   padding-top: 0;
 }
 .quixa-single-3 .content-top-area {
+  position: relative;
   padding: 0;
+}
+.quixa-single-3 .content-top-area .single-top-header {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  left: 0;
+  width: 100%;
 }
 .quixa-single-3 .content-top-area .separate-meta a {
   background-color: var(--rt-primary-color);
@@ -7270,6 +7321,15 @@ body:not(.quixa-single-1) .wp-block-quote p {
 }
 .quixa-single-4 .post-thumbnail-wrap .wp-caption-text svg {
   fill: #FFFFFF;
+}
+
+.quixa-single-5 .quixa-post-card .separate-meta a {
+  background-color: var(--rt-primary-color);
+  color: #FFFFFF;
+  border: none;
+}
+.quixa-single-5 .quixa-post-card .separate-meta a:hover {
+  background-color: var(--rt-secondary-color);
 }
 
 .single-post-pagination {

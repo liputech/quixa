@@ -5,6 +5,14 @@
 		padding-top: 0;
 	}
 	.content-top-area {
+		position: relative;
+		.single-top-header {
+			position: absolute;
+			bottom: 80px;
+			left: 0;
+			right: 0;
+			width: 100%;
+		}
 		.separate-meta {
 			a {
 				background-color: $primary_color;

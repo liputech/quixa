@@ -11,8 +11,6 @@
 	.separate-meta {
 		margin-bottom: 15px;
 	}
-
-
 }
 
 //Common Style for others
@@ -34,19 +32,6 @@ body:not(.quixa-single-1) {
 	}
 }
 
-.content-top-area {
-	position: relative;
-
-	.single-top-header {
-		position: absolute;
-		bottom: 80px;
-		left: 0;
-		right: 0;
-		width: 100%;
-	}
-
-}
-
 .post-thumbnail-wrap .wp-caption-text {
 	margin-top: 5px;
 	margin-bottom: 15px;
@@ -60,9 +45,21 @@ body:not(.quixa-single-1) {
 		line-height: 1;
 	}
 }
-
+.wp-block-image {
+	img {
+		border-radius: 12px;
+	}
+}
+:where(.wp-block-columns.is-layout-flex) {
+	gap: 24px;
+}
+:where(.wp-block-columns) {
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
 @import "parts/_single-style";
 @import "parts/_single-style-2";
 @import "parts/_single-style-3";
 @import "parts/_single-style-4";
+@import "parts/_single-style-5";
 @import "parts/_thumbnail-pagination";
