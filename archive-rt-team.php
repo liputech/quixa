@@ -9,9 +9,17 @@
 
 use RT\Quixa\Helpers\Fns;
 use RT\Quixa\Modules\Pagination;
+use RT\Quixa\Options\Opt;
 
 get_header();
 $content_columns = Fns::content_columns();
+
+$post_classes = "";
+if ( Opt::$layout == 'right-sidebar' || Opt::$layout == 'left-sidebar' ) {
+	$post_classes = 'col-sm-6 col-lg-4';
+} else {
+	$post_classes = 'col-sm-6 col-xl-3 col-lg-4';
+}
 
 ?>
 	<div id="primary" class="content-area">
@@ -24,9 +32,11 @@ $content_columns = Fns::content_columns();
 							if ( have_posts() ) :
 								/* Start the Loop */
 								while ( have_posts() ) :
-									the_post();
-									get_template_part( 'views/content', quixa_option( 'rt_blog_style' ) );
-								endwhile;
+									the_post(); ?>
+									<div class="<?php echo esc_attr( $post_classes ); ?>">
+										<?php get_template_part( 'views/content', 'team-1' ); ?>
+									</div>
+								<?php endwhile;
 							else :
 								get_template_part( 'views/content', 'none' );
 							endif;
@@ -39,5 +49,6 @@ $content_columns = Fns::content_columns();
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div><!-- #primary -->
+
 <?php
 get_footer();

@@ -36,6 +36,9 @@ class Layouts {
 				case 'product' :
 					$this->type = 'woocommerce_single';
 					break;
+				case 'rt-team' :
+					$this->type = 'team';
+					break;
 				default:
 					$this->type = 'page';
 			}
@@ -64,7 +67,9 @@ class Layouts {
 		} // Blog and Archive
 		elseif ( is_home() || is_archive() || is_search() || is_404() ) {
 			if ( class_exists( 'WooCommerce' ) && is_shop() ) {
-				$this->type = 'woocommerce_archive';
+				$this->type = 'woo-archive';
+			} elseif( is_post_type_archive( "rt-team" ) || is_tax( "rt-team-department" ) ) {
+				$this->type = 'rt-team';
 			} elseif ( is_404() ) {
 				$this->type = 'error';
 			} else {

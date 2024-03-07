@@ -550,9 +550,7 @@ if ( ! function_exists( 'quixa_scroll_top' ) ) {
 	function quixa_scroll_top( $class = '', $icon = 'scroll-top' ) {
 		if ( quixa_option( 'rt_back_to_top' ) ) {
 			?>
-			<a href="#" class="scrollToTop <?php echo esc_attr( $class ) ?>">
-				<?php echo quixa_get_svg( $icon ); ?>
-			</a>
+			<a href="#" class="scrollToTop <?php echo esc_attr( $class ) ?>"><i class="icon-rt-up-angle-bar"></i></a>
 			<?php
 		}
 	}

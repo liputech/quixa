@@ -48,6 +48,14 @@ class General extends Customizer {
 				'label' => __( 'Preloader', 'quixa' ),
 			],
 
+			'rt_preloader_logo' => [
+				'type'         => 'image',
+				'label'        => __( 'Preloader Logo', 'quixa' ),
+				'description'  => __( 'Upload preloader logo for your site.', 'quixa' ),
+				'button_label' => __( 'Logo', 'quixa' ),
+				'condition' => [ 'rt_preloader' ]
+			],
+
 			'rt_back_to_top' => [
 				'type'  => 'switch',
 				'label' => __( 'Back to Top', 'quixa' ),

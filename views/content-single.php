@@ -14,7 +14,7 @@ use RT\Quixa\Options\Opt;
 <article data-post-id="<?php the_ID(); ?>" <?php post_class( quixa_post_class() ); ?>>
 	<div class="article-inner-wrapper">
 
-		<?php if ( ! in_array( Opt::$single_style, [ '2', '3', '4' ] ) ) : ?>
+		<?php if ( ! in_array( Opt::$single_style, [ '2', '3', '4', '5' ] ) ) : ?>
 			<?php quixa_post_single_thumbnail(); ?>
 		<?php endif; ?>
 

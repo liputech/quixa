@@ -133,12 +133,6 @@ class Blog extends Customizer {
 				'default' => 1
 			],
 
-			'rt_blog_footer_list_visibility' => [
-				'type'    => 'switch',
-				'label'   => __( 'Entry Footer Visibility', 'quixa' ),
-				'default' => 1
-			],
-
 		] );
 	}
 

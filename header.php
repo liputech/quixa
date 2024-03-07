@@ -22,6 +22,23 @@ use RT\Quixa\Options\Opt;
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+// Preloader
+if ( quixa_option( 'rt_preloader' ) ) {
+	if( !empty( quixa_option( 'rt_preloader_logo' ) ) ) { ?>
+		<div id="preloader"><?php echo wp_get_attachment_image( quixa_option( 'rt_preloader_logo' ), 'full', true );?></div>
+	<?php } else { ?>
+		<div id="preloader" class="loader">
+			<div class="cssload-loader">
+				<div class="cssload-inner cssload-one"></div>
+				<div class="cssload-inner cssload-two"></div>
+				<div class="cssload-inner cssload-three"></div>
+			</div>
+		</div>
+	<?php }
+}
+?>
+
 <div id="page" class="site">
 	<header id="masthead" class="site-header" role="banner">
 		<?php get_template_part( 'views/header/topbar', Opt::$topbar_style ); ?>

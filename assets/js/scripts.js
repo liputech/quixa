@@ -18,6 +18,7 @@
             Quixa.offcanvasMenuToggle(offCanvas);
             Quixa.headerSearchOpen();
             Quixa.backToTop();
+            Quixa.preLoader();
             Quixa.menuOffset();
             Quixa.slickSlider();
             Quixa.magnificPopup();
@@ -43,16 +44,6 @@
             if (typeof $.fn.slick == 'function') {
                 $('.rt-slick').slick()
             }
-
-            /*{
-                dots: true,
-                    arrows: false,
-                fade: true,
-                speed: 100,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                // adaptiveHeight: true,
-            }*/
 
         },
 
@@ -170,7 +161,13 @@
             } else {
                 $('.scrollToTop').removeClass('show');
             }
-        }
+        },
+
+		preLoader: function () {
+			$('#preloader').fadeOut('slow', function () {
+				$(this).remove();
+			});
+		},
 
     };
 

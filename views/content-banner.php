@@ -69,10 +69,10 @@ elseif ( is_home() ) {
 		$quixa_title = apply_filters( 'theme_blog_title', esc_html__( 'All Posts', 'quixa' ) );
 	}
 }
-elseif (is_post_type_archive('quixa_team')) {
+elseif (is_post_type_archive('rt-team')) {
 	$quixa_title  = esc_html__( 'Our Teams', 'quixa' );
 
-} elseif (is_tax('quixa_team_category')) {
+} elseif (is_tax('rt-team-department')) {
 	$quixa_title  = single_term_title( '', false );
 
 } elseif ( is_category() ) {
@@ -103,7 +103,9 @@ $breadcrumb_classes = quixa_option( 'rt_breadcrumb_alignment' );
 			<?php } ?>
 		<?php } ?>
 		<?php if ( Opt::$has_breadcrumb ) { ?>
-			<?php quixa_breadcrumb(); ?>
+			<?php //quixa_breadcrumb();
+			get_template_part( 'views/content', 'breadcrumb' );
+			?>
 		<?php } ?>
 	</div>
 </div>
