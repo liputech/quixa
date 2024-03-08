@@ -1,9 +1,6 @@
 .quixa-widget-area {
 	position: relative;
 	@media (min-width: 1140px) {
-		align-self: flex-start;
-		position: sticky;
-		top: 86px;
 		padding-left: 30px;
 	}
 	.widget:last-child {
@@ -155,5 +152,12 @@
 		.quixa-widget-area {
 			padding-bottom: 60px;
 		}
+	}
+}
+@media(min-width: 1140px) {
+	.sidebar-sticky {
+		align-self: flex-start;
+		position: sticky;
+		top: 86px;
 	}
 }

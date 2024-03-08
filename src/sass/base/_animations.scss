@@ -367,3 +367,18 @@
 		transform: translateX(0)
 	}
 }
+
+@keyframes slideInLeft {
+	0% {
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible
+	}
+
+	to {
+		transform: translateZ(0)
+	}
+}
+
+.animate__slideInLeft {
+	animation-name: slideInLeft
+}

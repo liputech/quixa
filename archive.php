@@ -13,6 +13,11 @@ use RT\Quixa\Modules\Pagination;
 get_header();
 $content_columns = Fns::content_columns();
 
+if ( is_post_type_archive( "rt-team" ) || is_tax( "rt-team-department" ) ) {
+	get_template_part( 'views/archive', 'team' );
+	return;
+}
+
 ?>
 	<div id="primary" class="content-area">
 		<div class="container">

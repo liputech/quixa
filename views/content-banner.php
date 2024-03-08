@@ -81,6 +81,8 @@ elseif (is_post_type_archive('rt-team')) {
 } elseif ( is_archive() ) {
 	$quixa_title = esc_html__( 'Our Recent Posts', 'quixa' );
 
+} elseif (is_singular('rt-team')) {
+	$quixa_title  = esc_html__( 'Team Details', 'quixa' );
 } elseif ( is_single() ) {
 	$quixa_title = esc_html__( 'Post Details', 'quixa' );
 

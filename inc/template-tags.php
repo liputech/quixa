@@ -828,7 +828,7 @@ if ( ! function_exists( 'quixa_sidebar' ) ) {
 
 		$sidebar_cols = Fns::sidebar_columns();
 		?>
-		<aside id="sidebar" class="quixa-widget-area <?php echo esc_attr( $sidebar_cols ) ?>" role="complementary">
+		<aside id="sidebar" class="quixa-widget-area sidebar-sticky <?php echo esc_attr( $sidebar_cols ) ?>" role="complementary">
 			<?php dynamic_sidebar( $sidebar_id ); ?>
 		</aside><!-- #sidebar -->
 		<?php

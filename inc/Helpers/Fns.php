@@ -57,11 +57,61 @@ class Fns {
 				'title' => __( 'Skype', 'quixa' ),
 				'url'   => quixa_option( 'skype' ),
 			],
-			'tiktok'     => [
+			'tiktok'    => [
 				'title' => __( 'TikTok', 'quixa' ),
 				'url'   => quixa_option( 'tiktok' ),
 			],
 		] );
+
+	}
+
+	/**
+	 * Social icon for the site
+	 * @return mixed|null
+	 */
+	public static function get_team_socials() {
+		return apply_filters( 'quixa_team_socials', array(
+			'facebook'      => array(
+				'label' => esc_html__( 'Facebook', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-facebook',
+			),
+			'twitter'       => array(
+				'label' => esc_html__( 'Twitter', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-x-twitter',
+			),
+			'linkedin'      => array(
+				'label' => esc_html__( 'Linkedin', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-linkedin',
+			),
+			'skype'         => array(
+				'label' => esc_html__( 'Skype', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-skype',
+			),
+			'youtube'       => array(
+				'label' => esc_html__( 'Youtube', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-youtube',
+			),
+			'pinterest'     => array(
+				'label' => esc_html__( 'Pinterest', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-pinterest',
+			),
+			'instagram'     => array(
+				'label' => esc_html__( 'Instagram', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'icon-rt-instagram',
+			),
+			'tiktok'        => array(
+				'label' => esc_html__( 'TikTok', 'quixa' ),
+				'type'  => 'text',
+				'icon'  => 'fa-tiktok',
+			),
+		) );
 
 	}
 
@@ -210,9 +260,12 @@ class Fns {
 		$output = 'col-lg-4';
 		if ( $blog_colum_opt ) {
 			$output = $blog_colum_opt;
-		} elseif(quixa_option( 'rt_blog_style' ) === 'list'){
+		} elseif ( quixa_option( 'rt_blog_style' ) === 'list' ) {
 			$output = 'col-lg-12';
-		} elseif ( in_array( $blog_layout, [ 'left-sidebar', 'right-sidebar' ] ) && is_active_sidebar( $blog_sidebar ) ) {
+		} elseif ( in_array( $blog_layout, [
+				'left-sidebar',
+				'right-sidebar'
+			] ) && is_active_sidebar( $blog_sidebar ) ) {
 			$output = 'col-lg-6';
 		}
 
@@ -232,7 +285,15 @@ class Fns {
 		);
 		$post_types = wp_list_pluck( $post_types, 'label', 'name' );
 
-		$exclude = apply_filters( 'quixa_exclude_post_type', [ 'attachment', 'revision', 'nav_menu_item', 'elementor_library', 'tpg_builder', 'e-landing-page', 'elementor-quixa' ] );
+		$exclude = apply_filters( 'quixa_exclude_post_type', [
+			'attachment',
+			'revision',
+			'nav_menu_item',
+			'elementor_library',
+			'tpg_builder',
+			'e-landing-page',
+			'elementor-quixa'
+		] );
 
 		foreach ( $exclude as $ex ) {
 			unset( $post_types[ $ex ] );
@@ -301,22 +362,26 @@ class Fns {
 	}
 
 	/**
-	 * Blog Meta Style
+	 * Post Social Meta
 	 * @return array
 	 */
 	public static function post_share_list() {
 		return [
-			'facebook' => __( 'Facebook', 'quixa' ),
-			'twitter'  => __( 'Twitter X', 'quixa' ),
-			'linkedin' => __( 'Linkedin', 'quixa' ),
-			'pinterest'  => __( 'Pinterest', 'quixa' ),
+			'facebook'  => __( 'Facebook', 'quixa' ),
+			'twitter'   => __( 'Twitter X', 'quixa' ),
+			'linkedin'  => __( 'Linkedin', 'quixa' ),
+			'pinterest' => __( 'Pinterest', 'quixa' ),
 			'whatsapp'  => __( 'Whatsapp', 'quixa' ),
-			'youtube'  => __( 'Youtube', 'quixa' ),
+			'youtube'   => __( 'Youtube', 'quixa' ),
 		];
 	}
 
 	public static function is_single_fullwidth() {
-		if ( in_array( Opt::$single_style, [ 'rt-single-top-thumb', 'rt-single-transparent', 'rt-single-content-on-thumb' ] ) ) {
+		if ( in_array( Opt::$single_style, [
+			'rt-single-top-thumb',
+			'rt-single-transparent',
+			'rt-single-content-on-thumb'
+		] ) ) {
 			return true;
 		}
 
