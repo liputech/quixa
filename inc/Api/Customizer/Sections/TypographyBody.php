@@ -48,8 +48,8 @@ class TypographyBody extends Customizer {
 					[
 						'font'          => 'Urbanist',
 						'regularweight' => '500',
-						'size'          => '17',
-						'lineheight'    => '26',
+						'size'          => '16',
+						'lineheight'    => '28',
 					]
 				)
 			],

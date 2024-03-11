@@ -49,6 +49,8 @@ class Team extends Customizer {
 				'choices'     => [
 					'default' => __( 'Default From Theme', 'quixa' ),
 					'2'    => __( 'Team 02', 'quixa' ),
+					'3'    => __( 'Team 03', 'quixa' ),
+					'4'    => __( 'Team 04', 'quixa' ),
 				]
 			],
 
@@ -58,10 +60,29 @@ class Team extends Customizer {
 				'default' => '8',
 			],
 
+			'rt_team_ar_designation' => [
+				'type'    => 'switch',
+				'label'   => __( 'Designation Visibility', 'quixa' ),
+				'default' => 1
+			],
+
+			'rt_team_ar_social' => [
+				'type'    => 'switch',
+				'label'   => __( 'Social Visibility', 'quixa' ),
+				'default' => 1
+			],
+
+			'rt_team_ar_excerpt' => [
+				'type'    => 'switch',
+				'label'   => __( 'Excerpt Visibility', 'quixa' ),
+				'default' => 0
+			],
+
 			'rt_team_excerpt_limit' => [
 				'type'    => 'text',
 				'label'   => __( 'Content Limit', 'quixa' ),
-				'default' => '15',
+				'default' => '12',
+				'condition' => [ 'rt_team_ar_excerpt' ]
 			],
 
 			'rt_meta_heading' => [

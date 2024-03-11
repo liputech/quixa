@@ -22,7 +22,7 @@ $content = wp_trim_words( get_the_excerpt(), quixa_option( 'rt_team_excerpt_limi
 		<div class="team-content-wrap">
 			<div class="team-thumbs">
 				<?php quixa_post_thumbnail('full'); ?>
-				<?php //if ( ToyupTheme::$options['team_ar_social'] ) { ?>
+				<?php if ( quixa_option( 'rt_team_ar_social' ) ) { ?>
 				<ul class="team-social">
 					<?php foreach ( $socials as $key => $value ):
 						if(! $value){
@@ -34,19 +34,18 @@ $content = wp_trim_words( get_the_excerpt(), quixa_option( 'rt_team_excerpt_limi
 					<?php endif; ?>
 					<?php endforeach; ?>
 				</ul>
-				<?php //} ?>
+				<?php } ?>
 			</div>
 			<div class="team-content">
 				<div class="team-info">
 					<h3 class="team-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-
-						<div class="team-designation"><?php echo esc_html( $designation );?></div>
-
-						<p><?php echo wp_kses( $content , 'allowed_html' ); ?></p>
-
+					<?php if ( quixa_option( 'rt_team_ar_designation' ) ) { ?>
+					<div class="team-designation"><?php echo esc_html( $designation );?></div>
+					<?php } if ( quixa_option( 'rt_team_ar_excerpt' ) ) { ?>
+					<p><?php echo wp_kses( $content , 'allowed_html' ); ?></p>
+					<?php } ?>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </article>
