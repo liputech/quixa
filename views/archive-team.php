@@ -11,9 +11,19 @@ use RT\Quixa\Modules\Pagination;
 
 $post_classes = "";
 if ( Opt::$layout == 'right-sidebar' || Opt::$layout == 'left-sidebar' ) {
-	$post_classes = 'col-sm-6 col-lg-4';
+	if(quixa_option( 'rt_team_style' ) == '4') {
+		$post_classes = 'col-sm-12 col-lg-6';
+	} else {
+		$post_classes = 'col-sm-6 col-lg-4';
+	}
+
 } else {
-	$post_classes = 'col-sm-6 col-xl-3 col-lg-4';
+	if(quixa_option( 'rt_team_style' ) == '4') {
+		$post_classes = 'col-sm-12 col-xl-4 col-lg-6';
+	} else {
+		$post_classes = 'col-sm-6 col-xl-3 col-lg-4';
+	}
+
 }
 
 if ( quixa_option( 'rt_team_style' ) == 'default' ){

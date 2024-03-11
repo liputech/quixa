@@ -4,6 +4,7 @@
 	.team-item {
 		margin-bottom: 24px;
 		.team-title {
+			position: relative;
 			font-size: 22px;
 			margin-bottom: 0;
 			line-height: 1.4;
@@ -66,6 +67,7 @@
 			visibility: hidden;
 			transform: translateX(10px);
 			transition: all 0.2s ease-in-out;
+			line-height: 1;
 			.social-link {
 				display: inline-flex;
 				align-items: center;
@@ -241,6 +243,78 @@
 				img {
 					transform: scale(1.05);
 					filter: grayscale(1);
+				}
+			}
+		}
+		p {
+			margin-top: 8px;
+		}
+	}
+}
+
+.rt-team-multi-layout-4 {
+	.team-item {
+		background-color: $white_color;
+		border-radius: 20px;
+		padding: 27px 35px 0;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+		.team-thumbs {
+			overflow: hidden;
+			flex: 0 0 40%;
+			z-index: 1;
+			@include transition_default;
+			img {
+				@include transition_default;
+			}
+		}
+		.team-thumb-shape {
+			position: absolute;
+			left: 0;
+			top: 5px;
+			z-index: -1;
+		}
+		.team-title {
+			z-index: 1;
+			&:after {
+				content: "";
+				height: 6px;
+				width: 51px;
+				background-color: $primary_color;
+				position: absolute;
+				top: 18px;
+				left: 1px;
+				z-index: -1;
+				@include transition_default;
+			}
+		}
+		.team-social {
+			position: unset;
+			transform: unset;
+			gap: 13px;
+			margin-top: 12px;
+			li {
+				opacity: 1;
+				visibility: visible;
+				transform: unset;
+				.social-link {
+					width: auto;
+					height: auto;
+					color: $title_color;
+					&:hover {
+						color: $primary_color;
+					}
+				}
+			}
+		}
+		&:hover {
+			.team-thumbs {
+				img {
+					transform: scale(1.05);
+				}
+			}
+			.team-title {
+				&:after {
+					width: 102px;
 				}
 			}
 		}

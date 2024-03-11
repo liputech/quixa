@@ -7129,7 +7129,7 @@ article:hover .quixa-post-meta ul li.edit-link {
 
 .pagination-list {
   list-style: none;
-  margin: 0;
+  margin: 20px 0 0;
   padding: 0;
   display: flex;
 }
@@ -7511,6 +7511,7 @@ body:not(.quixa-single-1) .wp-block-quote p {
   margin-bottom: 24px;
 }
 .rt-team-default .team-item .team-title {
+  position: relative;
   font-size: 22px;
   margin-bottom: 0;
   line-height: 1.4;
@@ -7568,6 +7569,7 @@ body:not(.quixa-single-1) .wp-block-quote p {
   visibility: hidden;
   transform: translateX(10px);
   transition: all 0.2s ease-in-out;
+  line-height: 1;
 }
 .rt-team-default .team-social li .social-link {
   display: inline-flex;
@@ -7686,6 +7688,70 @@ body:not(.quixa-single-1) .wp-block-quote p {
   filter: grayscale(1);
 }
 .rt-team-multi-layout-3 .team-item p {
+  margin-top: 8px;
+}
+
+.rt-team-multi-layout-4 .team-item {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 27px 35px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+.rt-team-multi-layout-4 .team-item .team-thumbs {
+  overflow: hidden;
+  flex: 0 0 40%;
+  z-index: 1;
+  transition: all 320ms ease;
+}
+.rt-team-multi-layout-4 .team-item .team-thumbs img {
+  transition: all 320ms ease;
+}
+.rt-team-multi-layout-4 .team-item .team-thumb-shape {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  z-index: -1;
+}
+.rt-team-multi-layout-4 .team-item .team-title {
+  z-index: 1;
+}
+.rt-team-multi-layout-4 .team-item .team-title:after {
+  content: "";
+  height: 6px;
+  width: 51px;
+  background-color: var(--rt-primary-color);
+  position: absolute;
+  top: 18px;
+  left: 1px;
+  z-index: -1;
+  transition: all 320ms ease;
+}
+.rt-team-multi-layout-4 .team-item .team-social {
+  position: unset;
+  transform: unset;
+  gap: 13px;
+  margin-top: 12px;
+}
+.rt-team-multi-layout-4 .team-item .team-social li {
+  opacity: 1;
+  visibility: visible;
+  transform: unset;
+}
+.rt-team-multi-layout-4 .team-item .team-social li .social-link {
+  width: auto;
+  height: auto;
+  color: var(--rt-title-color);
+}
+.rt-team-multi-layout-4 .team-item .team-social li .social-link:hover {
+  color: var(--rt-primary-color);
+}
+.rt-team-multi-layout-4 .team-item:hover .team-thumbs img {
+  transform: scale(1.05);
+}
+.rt-team-multi-layout-4 .team-item:hover .team-title:after {
+  width: 102px;
+}
+.rt-team-multi-layout-4 .team-item p {
   margin-top: 8px;
 }
 
