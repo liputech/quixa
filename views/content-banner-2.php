@@ -79,11 +79,11 @@ elseif (is_post_type_archive('rt-team')) {
 
 } elseif ( is_archive() ) {
 	$quixa_title = esc_html__( 'Our Recent Posts', 'quixa' );
-
+} elseif (is_singular('rt-team')) {
+	$quixa_title  = esc_html__( 'Team Details', 'quixa' );
 } elseif ( is_single() ) {
 	$quixa_title = esc_html__( 'Post Details', 'quixa' );
-
-}  else {
+} else {
 	$quixa_title = get_the_title();
 }
 $breadcrumb_classes = quixa_option( 'rt_breadcrumb_alignment' );
@@ -101,7 +101,8 @@ $breadcrumb_classes = quixa_option( 'rt_breadcrumb_alignment' );
 			<?php } ?>
 		<?php } ?>
 		<?php if ( Opt::$has_breadcrumb ) { ?>
-			<?php quixa_breadcrumb(); ?>
+			<?php //quixa_breadcrumb();
+			get_template_part( 'views/content', 'breadcrumb' ); ?>
 		<?php } ?>
 	</div>
 </div>

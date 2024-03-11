@@ -21,6 +21,8 @@ class Hooks {
 		add_action( 'quixa_before_single_content', [ __CLASS__, 'before_single_content' ] );
 		add_action( 'wp_footer', [ __CLASS__, 'wp_footer_hook' ] );
 
+		add_action('bcn_after_fill', [ __CLASS__, 'toyup_hseparator_breadcrumb_trail' ] );
+
 	}
 
 	public static function wp_footer_hook() {
@@ -86,6 +88,12 @@ class Hooks {
 			<?php
 		}
 
+	}
+	// Update Breadcrumb Separator
+
+	public static function toyup_hseparator_breadcrumb_trail($object){
+		$object->opt['hseparator'] = '<span class="dvdr"><i class="icon-rt-chevron-right"></i></span>';
+		return $object;
 	}
 
 }

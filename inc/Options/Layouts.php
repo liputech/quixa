@@ -39,6 +39,9 @@ class Layouts {
 				case 'rt-team' :
 					$this->type = 'team';
 					break;
+				case 'rt-service' :
+					$this->type = 'service';
+					break;
 				default:
 					$this->type = 'page';
 			}
@@ -70,6 +73,8 @@ class Layouts {
 				$this->type = 'woo-archive';
 			} elseif( is_post_type_archive( "rt-team" ) || is_tax( "rt-team-department" ) ) {
 				$this->type = 'rt-team';
+			} elseif( is_post_type_archive( "rt-service" ) || is_tax( "rt-service-category" ) ) {
+				$this->type = 'rt-service';
 			} elseif ( is_404() ) {
 				$this->type = 'error';
 			} else {

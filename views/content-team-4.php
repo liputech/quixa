@@ -23,7 +23,7 @@ $content = wp_trim_words( get_the_excerpt(), quixa_option( 'rt_team_excerpt_limi
 			<div class="team-thumbs">
 				<?php quixa_post_thumbnail('full'); ?>
 				<div class="team-thumb-shape">
-					<svg width="156" height="94" viewBox="0 0 156 94" fill="#D8F1E5" xmlns="http://www.w3.org/2000/svg">
+					<svg width="136" height="83" viewBox="0 0 156 94" fill="#D8F1E5" xmlns="http://www.w3.org/2000/svg">
 						<path d="M0 55.1131L38.9579 94L78 55.029C56.4301 33.5919 21.534 33.6183 0 55.1131Z" fill=""></path>
 						<path d="M156 54.9449C134.43 33.5077 99.5356 33.5327 78 55.029L116.958 93.9159L156 54.9449Z" fill=""></path>
 						<path d="M117.042 16.058C95.4722 -5.37912 60.5777 -5.3542 39.0421 16.1421L78 55.029L117.042 16.058Z" fill=""></path>

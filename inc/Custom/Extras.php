@@ -21,7 +21,7 @@ class Extras {
 		add_action( 'wp_update_nav_menu_item', [ $this, 'menu_update' ], 10, 2 );
 		add_filter( 'wp_get_nav_menu_items', [ $this, 'menu_modify' ], 11, 3 );
 		add_action( 'after_switch_theme', [ $this, 'rewrite_flush' ] );
-		add_action( 'pre_get_posts', [ $this, 'quixa_team_pagesize' ],1 );
+		add_action( 'pre_get_posts', [ $this, 'quixa_custom_pagesize' ],1 );
 	}
 
 	/*
@@ -76,7 +76,7 @@ class Extras {
 
 
 	/*custom team archive */
-	function quixa_team_pagesize( $query ) {
+	function quixa_custom_pagesize( $query ) {
 
 		if( is_admin() || ! $query->is_main_query() ){
 			return;
@@ -85,6 +85,12 @@ class Extras {
 		if ( is_post_type_archive( 'rt-team' ) || is_tax( "rt-team-department" ) ) {
 			$team_post_number = quixa_option( 'rt_team_item_number' );
 			$query->set( 'posts_per_page', $team_post_number );
+			return;
+		}
+
+		if ( is_post_type_archive( 'rt-service' ) || is_tax( "rt-service-category" ) ) {
+			$service_post_number = quixa_option( 'rt_service_item_number' );
+			$query->set( 'posts_per_page', $service_post_number );
 			return;
 		}
 

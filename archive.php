@@ -17,6 +17,10 @@ if ( is_post_type_archive( "rt-team" ) || is_tax( "rt-team-department" ) ) {
 	get_template_part( 'views/archive', 'team' );
 	return;
 }
+if ( is_post_type_archive( "rt-service" ) || is_tax( "rt-service-category" ) ) {
+	get_template_part( 'views/archive', 'service' );
+	return;
+}
 
 ?>
 	<div id="primary" class="content-area">
